@@ -1,5 +1,7 @@
 if (Meteor.isClient) {
-
+    Template.create_session.destroyed = function () {
+      Session.set('newUserList', undefined);
+    };
 
     Template.create_session.events({
        	'click #menu-toggle': function(e) {
@@ -25,10 +27,23 @@ if (Meteor.isClient) {
 	    		});
 	    		if (skipr) return;
 
-	       		Meteor.call('createSpreadsheet', {listed: list}, function (e, res) {
+            // Blaze.saveAsPDF(Template.report, {
+            //   filename: "attendance.pdf",
+            //   data: Session.get('newUserList'),
+            //   orientation: "portrait",
+            //   unit: "in",
+            //   format: "letter"
+            // });
+	       		Meteor.call('createDocument', {listed: list}, function (e, res) {
 	       			if (e)
 	       				return alert(e.error);
 	       			else if(res){
+
+
+
+                  download(res, "attendance.html", "text/html")
+
+
 	       		// 		var byteCharacters = atob(res);
 	       		// 		var byteNumbers = new Array(byteCharacters.length);
     						// for (var i = 0; i < byteCharacters.length; i++) {
@@ -38,8 +53,8 @@ if (Meteor.isClient) {
 
     						// var blob = new Blob([byteArray], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}); `
 
-                var blob = new Blob([res], {type: ""});//application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-	       				saveAs(blob, "attendance.xlsx");
+            //     var blob = new Blob([res], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});//application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+	       				// saveAs(blob, "attendance.xlsx");
                 // window.open(res, "_blank");
 	       			}
 	       		});
@@ -95,6 +110,7 @@ if (Meteor.isClient) {
               }).map(function(g) {
   		    			return Users.findOne({"_id": g.userId});
   		    		});
+              Session.set('newUserList', list);
               return list;
 	    		}
 	    		else return [{"fullName": "Loading..."}];
