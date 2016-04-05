@@ -1,0 +1,121 @@
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cliqur</title>
+</head>
+
+
+<template name="indexItem">
+            <section>
+                <div class="container-fluid demo">
+                   <div class="content">
+                      <div id="large-header" class="large-header">
+                         <canvas id="demo-canvas"></canvas>
+                         <h1 class="main-title">Cliqur</h1>
+                          <p1 class="thin-title">Revolutionize Your Classroom Experience</p1>
+                          <div class="row button-group">
+                          <div class="col-md-offset-2 col-md-8">
+                            <div class="row">
+                           <div id="errorMSG-ONE" style="font-size: 24px;color:red;opacity:0"></div>
+                              <div class="col-md-8" data-toggle="tooltip" data-placement="top" title="Enter here the session ID's your instructor have given you and click join session!">
+                                <input class="form-control student-input" id="codeInput" type="text" placeholder="Enter Your Session ID">
+                              </div>
+                              <div class="col-md-4">
+                              <div data-toggle="tooltip" data-target="#joinSessionBtn" data-placement="top" title="Cliqur allows you to create quick, on the fly, virtual sessions to make classroom interactions easy, efficient, and simple.">
+                                <button class="btn btn-default" data-toggle="modal" data-target="#joinSession" style="color:black;width:120px" id="joinSessionBtn">Join a Session</button> 
+                                <button class="btn btn-default" style="color:black;width:120px" id="joinPublicViewBtn">Join Public View</button>
+                              </div>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-md-12" data-toggle="tooltip" data-placement="bottom" title="Students have the ability to ask questions, voice their opinion, and enjoy a virtual classroom. Cliqur also replaces the physical clicker in class with a modern, online 'Clicker' curated to both the instructor and the student.">
+                                <button class="btn btn-default btn-fluid" data-toggle="modal" style="color:black" data-target="#createSession" id = "createSessionBtn">Instructor? Create a Session</button>
+                              </div>
+                            </div>
+                            </div>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+            </section>
+
+
+
+<div class="modal fade join-panel" id="joinSession" tabindex="-1" role="dialog" aria-labelledby="joinSession">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Join a Session: {{toJoinSession}}</h4>
+      </div>
+      <div class="modal-body">
+        <form id="toJoinForm">
+        <div id="errorMSG-joinForm" style="font-size: 18px;color:red"></div>
+          <div class="form-group">
+            <label for="firstNameInput" class="control-label">First Name:</label>
+            <input type="text" class="form-control" id="firstNameInput">
+          </div>
+          <div class="form-group">
+            <label for="lastNameInput" class="control-label">Last Name:</label>
+            <input type="text" class="form-control" id="lastNameInput">
+          </div>
+          <div class="form-group">
+            <label for="studentId" class="control-label">Student ID No.:</label>
+            <input type="text" class="form-control" id="studentId">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn-modal" onclick='$("#toJoinForm").trigger("submit")'>Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="createSession" tabindex="-1" role="dialog" aria-labelledby="createSession">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Create a Session</h4>
+      </div>
+      <div class="modal-body">
+        <form id="createSessionForm">
+            <div id="errorMSG-createSession" style="font-size: 18px;color:red"></div>
+          <div class="form-group">
+            <label for="firstNameInput2" class="control-label">First Name:</label>
+            <input type="text" class="form-control" id="firstNameInput2">
+          </div>
+          <div class="form-group">
+            <label for="lastNameInput2" class="control-label">Last Name:</label>
+            <input type="text" class="form-control" id="lastNameInput2">
+          </div>
+          <div class="form-group">
+            <label for="classNameInput2" class="control-label">Class Name:</label>
+            <input type="text" class="form-control" id="classNameInput2">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="control-label">Passcode (Optional):</label>
+            <br />
+              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
+              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
+              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
+              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
+              <br />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn-modal" onclick='$("#createSessionForm").trigger("submit")'>Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</template>

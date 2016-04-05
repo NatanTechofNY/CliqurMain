@@ -1,0 +1,517 @@
+
+.row {
+	background-color: transparent !important;
+}
+#rowleft {
+	margin: 3%;
+}
+#right-container {
+	background-color: white;	
+	height: 100% !important;
+	width: 60% !important;
+}
+#left-container {
+	position: absolute;
+	top:0%;
+	height: 100% !important;
+	width: 100% !important;
+	margin-left: 60%;
+}
+#fullView {
+	height: 100%;
+	width: 100%;
+}
+#firstrow {
+	margin-top: 15% !important;
+	margin: auto !important;
+}
+#leftblock {
+	background-color: 2px solid red !important;
+	margin-left: 7%;
+	margin-top: 15%;
+	background-color: white;
+	height: 100% !important;
+}
+#rightblock {
+	background-color: 2px solid red !important;
+	margin: auto;
+	margin-top: 31%;
+	background-color: white;
+	height: 100% !important;
+}
+#joinSessionBtn {
+	width: 100%;
+}
+#createSessionBtn {
+	width: 100%;
+}
+#codeInput {
+	border-radius: 0px;
+	font-size: 13px;
+	padding-left: 4%;
+}
+.move-right {
+    left: 10vh;
+}
+.block {
+	height: 100%;
+	width: 100%;
+}
+.vr {
+    width:2px;
+    height:150px;
+    background-color:#000000;
+    position:absolute;
+    top:0px;
+    left:0;
+}
+.button-padding {
+    padding-right: 200px;
+}
+.block a {
+    text-decoration: none;
+}
+.btn a {
+    text-decoration:none;
+}
+.header-text {
+    padding: 50px;
+}
+
+.control-label {
+	width: 20%;
+	height: 12%;
+}
+
+
+
+
+.vertical-text {
+    transform: rotate(90deg);
+	transform-origin: left top 0;
+}
+
+.scrollbar {
+    height: 92%;
+    width: 100%;
+    position: absolute;
+    background-color: gray;
+    z-index: -999;
+    overflow: scroll;
+}
+.list-group {
+    width: 93%;
+    left: 10vh;
+    position: absolute;
+}
+.student-item {
+    color: #333;
+}
+.generate-button {
+    position: fixed;
+    bottom: 0;
+    border-radius: 0px;
+    height: 100px;
+}
+
+.container-box, .jumbotron {
+	margin-top: 3% !important;
+}
+.jumbotron {
+	height: 10% !important;
+	background-color: #263238;
+	opacity: 0.5;
+}
+.display-question {
+	font-size: 18px;
+	color: black;
+}
+.student-response {
+    height: 100px;
+	resize: none;
+}
+
+.student-input {
+	font-size: 18px !important;
+	padding-left: 5px;
+	padding-right: 5px;
+    width: 100%;
+    height: 70px;
+	border: 1px solid #BDBDBD;
+	resize: none;
+    
+}
+.qa-button-group {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.response-area {
+    top: 20vh;
+    position: relative;
+    padding-bottom: 20px;
+}
+.student-qa-button {
+    width: 100%;
+    height: 50px;
+	border-radius: 2px !important;
+}
+
+.student-response-button {
+    width: 100%;
+	color: #263238;
+	border-radius: 2px;
+	border: 1.5px solid #FF7043;
+	background:none;
+	background-color: transparent; 
+}
+.student-response-button:hover {
+	background-color: #FF7043;
+}
+.mc {
+	margin-top: 1.5%;
+	background-color: #263238;
+	color: white;
+	border: none;
+
+}
+.mc:hover {
+	color: #FF7043;
+	background-color: #263238;
+}
+.response-label {
+	width: 100%;
+}
+
+.public-display {
+    height: 82vh;
+    width: 100%;
+    overflow: scroll;
+}
+.public-display li {
+    font-size: 300%;
+    padding: 50px;
+}
+.public-poll {
+    height: 88vh;
+    width: 100%;
+}
+.padding-top {
+   padding-top: 20px;
+}
+#login-name {
+	width: 15%;
+	margin-top: 1.5%;
+}
+#cover-text {
+	color: white;
+	margin-left: 42%;
+	font-size: 17px;
+}
+
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+   border-radius: 0px;
+}
+body {
+}
+#pinDiv {
+  z-index: 9997;
+  background-color: rgba(0,0,0, 0.9);
+  height: 100%;
+  width: 100%;
+  position:absolute;
+}
+input[type=password] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+#pinForm {
+     height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    z-index: 9998;
+}
+
+#pinTitle {
+  z-index: 9999;
+  color: white;
+}
+#sendQuestionBtn, #clearQuestionBtn {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 10px;
+}
+
+#createSessionForm{ 
+    overflow: hidden;
+}
+
+.nopadding-bottom {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+#status  {
+    margin-top: 1.4%;
+	width: 20%;
+}
+
+.navbar {
+	border-radius: 0px !important;
+	
+}
+.navbar-brand {
+	color: #BDBDBD;
+	margin-left: 0.5% !important;
+}
+.navbar-brand: hover {
+	color: white;
+}
+.exit {
+	cursor: pointer;
+	background-color: #FF7043;
+	height: 40%;
+	width: 10%;
+	margin-right: 0%;
+}
+.progress span{
+    float: left;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    padding-right: 5px;
+    padding-left: 5px;
+    position: absolute;
+}
+.index-container input {
+    height: 72px;
+}
+.index-container {
+ padding-top: 30vh;
+}
+.btn-modal {
+    padding: 15px 30px;
+}
+.well {
+    height: 60vh;
+    width: 100vh;
+    padding-top: 50px;
+    position: absolute;
+    }
+.btn-fluid {
+  width: 100vh;
+}
+.button-group {
+  top: 30vh;
+  position: relative;
+}
+
+
+
+/*demo */
+.large-header {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   background: #111;
+ 	overflow-x: hidden;
+   background-size: cover;
+   background-position: center center;
+   z-index: 999;
+}
+
+.demo .large-header {
+   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+}
+
+.container .demo {
+   padding: 0;
+   margin: 0;
+   z-index: 9999
+}
+.container-fluid {
+   padding: 0;
+}
+
+
+.main-title {
+   position: absolute;
+   margin: 0;
+   padding: 0;
+   color: #F9F1E9;
+   text-align: center;
+   top: 20%;
+   left: 50%;
+   -webkit-transform: translate3d(-50%, -50%, 0);
+   transform: translate3d(-50%, -50%, 0);
+}
+.thin-title {
+   position:absolute;
+   margin: 0;
+   padding: 0;
+   color: #F9F1E9;
+   text-align: center;
+   top: 30%;
+   left: 50%;
+   -webkit-transform: translate3d(-50%, -50%, 0);
+   transform: translate3d(-50%, -50%, 0);
+   font-size: 18px;
+}
+.demo .main-title {
+   text-transform: uppercase;
+   font-size: 4.2em;
+   letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+   font-weight: 200;
+}
+
+
+
+ @media screen and (min-width: 1024px) {
+    .fix-button-left {
+    height: 50px;
+    width: 20%;
+    top: 10vh;
+      left: 3%;
+      position: relative;
+    }
+    .navbar-right {
+        float: right;
+    }
+
+    .panel-button-group {
+            position: fixed;
+            bottom: 0%;
+            left: 0%;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+                }
+        .generate-button {
+            bottom: 8vh;
+            width: inherit;
+            position: absolute;
+        }
+        .button-1 {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            height: 100%;
+            width: 100%;
+        }
+
+.btn-lg {
+    width: 150px;
+    padding: 20px;
+}
+ }
+
+
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        body {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        .well {
+    left: 10vh;
+    margin-top: 20px;
+    width: 60vh;
+    height: 70vh;
+}
+    .fix-button-left {
+    height: 50px;
+    width: 50%;
+    top: 10vh;
+      left: 5%;
+      position: relative;
+    }
+    .navbar-right {
+        float: right;
+    }
+
+    .panel-button-group {
+            position: fixed;
+            bottom: 10vh;
+            left: 11%;
+            width: 60vh;
+            padding: 0px;
+            margin: 0px;
+                }
+        .generate-button {
+            bottom: 10vh;
+            width: inherit;
+            position: absolute;
+        }
+        .button-1 {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            width: 20vh;
+            display: inline;
+        }
+
+.btn-lg {
+    width: 150px;
+    padding: 20px;
+}
+    }
+
+/*smart phones */
+@media screen and (max-width: 480px) and (min-width: 320px) {
+body {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        .well {
+    left: 8vh;
+    margin-top: 20px;
+    width: 60vh;
+}
+    .fix-button-left {
+    height: 50px;
+    width: 50%;
+    top: 10vh;
+      left: 8%;
+      position: relative;
+    }
+    .navbar-right {
+        float: right;
+    }
+    .btn-lg {
+        padding: 10px 0px;
+    }
+    .panel-button-group {
+            position: fixed;
+            bottom: 0;
+            left: 10%;
+            width: 60vh;
+            padding: 0px;
+            margin: 0px;
+                }
+        .generate-button {
+            bottom: 8vh;
+            width: inherit;
+            position: absolute;
+        }
+        .button-1 {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            width: 10vh;
+            display: inline;
+            height: 70%;
+        }
+}
+
