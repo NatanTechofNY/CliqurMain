@@ -7,8 +7,8 @@ if (Meteor.isClient) {
        		$('#wrapper').toggleClass("toggled");
        	},
        	'click #endssn': function() {
-       		Session.setPersistent('userSessItem', {});
-       		window.location.href = "/thankyou";
+       		Router.go("/endsession");
+          Session.setPersistent('userSessItem', {});
        	},
        	'click #createAtten': function() {
        		if (Sessions.findOne({"sessionId": Router.current().params.sessionId}) && Sessions.findOne({"sessionId": Router.current().params.sessionId}).userList) {

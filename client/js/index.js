@@ -71,7 +71,7 @@ if (Meteor.isClient) {
 			var lname = $('#lastNameInput').val();
 			var stdntId = $('#studentId').val();
 			var regCheckName = /^\d+$/;
-			if(regCheckName.test(fname) || regCheckName.test(lname) || fname.length < 2 || lname.length < 2)
+			if(regCheckName.test(fname) || regCheckName.test(lname) || fname.length < 1 || lname.length < 1)
 				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid name.", $("#errorMSG-joinForm").show(), $('#errorMSG-joinForm').fadeOut(2400);
 			else if (stdntId.length < 2)
 				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid student ID.", $("#errorMSG-joinForm").show(), $('#errorMSG-joinForm').fadeOut(2400);

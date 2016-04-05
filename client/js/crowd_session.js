@@ -2,8 +2,8 @@ if (Meteor.isClient) {
 
 	Template.crowd_session.events({
        	'click #endssn': function() {
-       		Session.setPersistent('userSessItem', {});
-       		window.location.href = "/thankyou";
+       		Router.go("/endsession");
+          Session.setPersistent('userSessItem', {});
        	},
        	'click .mc': function(e) {
        		document.getElementById('status').innerHTML='Sending your response';
