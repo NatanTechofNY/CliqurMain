@@ -61,6 +61,9 @@ if (Meteor.isClient) {
 		      input_flds.eq(input_flds.index(e.currentTarget) + 1).select();
 		    }
 		},
+		'click input.inputPasswordTs': function(e) {
+			$(e.currentTarget).select();
+		},
 		'submit #toJoinForm': function(e) {
 			e.preventDefault();
 			var classCode = Session.get('toJoinSession');
@@ -109,6 +112,9 @@ if (Meteor.isClient) {
 						      var input_flds = $(this).closest('form').find(':input[name="pinpw"]');
 						      input_flds.eq(input_flds.index(this) + 1).select();
 						    }
+						});
+						$('input[name="pinpw"]').click(function() {
+							$(this).select();
 						});
 						$('#pinForm').on('submit', function(e) {
 							e.preventDefault();
