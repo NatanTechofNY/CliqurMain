@@ -332,7 +332,7 @@ input[type=password] {
 }
 
 .demo .large-header {
-   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+   background: white;
 }
 
 .container .demo {
@@ -360,9 +360,9 @@ input[type=password] {
    position:absolute;
    margin: 0;
    padding: 0;
-   color: #F9F1E9;
+   color: black;
    text-align: center;
-   top: 30%;
+   top: 40%;
    left: 50%;
    -webkit-transform: translate3d(-50%, -50%, 0);
    transform: translate3d(-50%, -50%, 0);
