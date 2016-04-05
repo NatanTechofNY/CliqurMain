@@ -14,7 +14,8 @@ if (Meteor.isClient) {
 
           var selectedResponse = parseInt(e.currentTarget.getAttribute('data-idx'));
 
-          Meteor.call('addResponses', {sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId, respIndx: selectedResponse}, function (e, res) {
+          var usr = Users.findOne({"studentId":Session.get('userSessItem').userId});
+          Meteor.call('addResponses', {sessionId: Router.current().params.sessionId, studentId: usr? usr.studentId: undefined, respIndx: selectedResponse}, function (e, res) {
             if (e)
               alert(e.error);
             else{
