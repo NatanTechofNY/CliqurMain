@@ -90,11 +90,12 @@ if (Meteor.isClient) {
     				return g.userId;
 	    		})});
 	    		if (subscribtn.ready()) {
-		    		var list = Sessions.findOne({"sessionId": Router.current().params.sessionId}).userList.map(function(g) {
-		    			return Users.findOne({"_id": g.userId});
-		    		});
-
-		    		return list;
+		    		var list = Sessions.findOne({"sessionId": Router.current().params.sessionId}).userList.filter(function(g) {
+                return g.studentId !== 'SessionOwner';
+              }).map(function(g) {
+  		    			return Users.findOne({"_id": g.userId});
+  		    		});
+              return list;
 	    		}
 	    		else return [{"fullName": "Loading..."}];
     		}
