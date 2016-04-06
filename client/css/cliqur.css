@@ -1,16 +1,94 @@
 /* Global view goes here, everything that does not effect margin on each device, such as color scheme, background color, and fonts */
+	
 
+	.main_style_section {
+		font-family: Cabin;
+		background: white;
+	}
+	
 
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
 
+@media screen and (min-width: 1440px) and (max-width: 2560px) {
 
+	
+
+
+
+
+
+
+
+
+
+
+
+}
 /* For screen size 1024 - 1440 px, for 15-17 inch laptop/desktops */
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
 
+	
+
+
+
+
+
+
+
+
+
+
+
+}
 /* For screen size 768 - 1024 px, for smaller laptops */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 
+	
+
+
+
+
+
+
+
+
+
+
+
+}
 
 /* For screen size 425 - 768 px, for tablets */
+@media screen and (min-width: 425px) and (max-width: 768px) {
 
+	
+
+
+
+
+
+
+
+
+
+
+
+}
 
 /* For screen size 425 or lower px, for smaller phoens, iPhone5 is 320px, iPhone6 is 375px and iPhone6 Plus is 414px */   
+
+@media screen and (max-width: 425px) {
+
+	
+
+
+
+
+
+
+
+
+
+
+
+}
