@@ -303,13 +303,28 @@ input[type=password] {
 .btn-modal {
     padding: 15px 30px;
 }
-.well {
+.studentQuestionSelector {
     height: 60vh;
     width: 100vh;
-    padding-top: 20px;
     padding-left: 10px;
     position: absolute;
+    overflow:auto;
+    overflow-x:hidden;
+    height:400px;
+    margin-top:15%;
+    z-index:3;
+    padding-top:30px;
+    padding-bottom: 20px;
     }
+.instructorOwnQuestion {
+    height: 60vh;
+    width: 100vh;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    position: absolute;
+    }
+
 .btn-fluid {
   width: 100vh;
 }
