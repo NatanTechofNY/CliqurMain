@@ -306,7 +306,8 @@ input[type=password] {
 .well {
     height: 60vh;
     width: 100vh;
-    padding-top: 50px;
+    padding-top: 20px;
+    padding-left: 10px;
     position: absolute;
     }
 .btn-fluid {

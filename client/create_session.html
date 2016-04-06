@@ -1,16 +1,21 @@
 <template name="create_session">
+<style>
+body {
+  width: 98.75%;
+}
+</style>
   <title>Admin | Cliqur</title>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
       <div class="navbar-brand" href="">Cliqur | Session ID: <input readonly type="text" value="{{sessionId}}" id="autoSelectrLoc"> </div>
       
-    <div class="btn-admin-group row">
+    <!--<div class="btn-admin-group row" style="margin-right: 2%">
 
       <button class="btn btn-danger btn-lg navbar-right col-md-6 col-xs-6" id="endssn">End Session</button>
       <a target="_blank" href="/d/{{sessionId}}/p"><button class="btn btn-primary btn-lg navbar-right col-md-6 col-xs-6">Go to Public View</button></a>
-    </div> 
-    <!--<div class="btn btn-danger btn-lg navbar-right">End Session </div>
-    <div class="btn btn-primary btn-lg navbar-right">Go to Public View</div> -->
+    </div> -->
+    <div class="btn btn-danger btn-lg navbar-right" id="endssn">End Session </div>
+    <a target="_blank" href="/d/{{sessionId}}/p"><div class="btn btn-primary btn-lg navbar-right">Go to Public View</div></a>
     </div>
 </nav>
 
@@ -18,13 +23,23 @@
 <div class="row">
     <div class="col-md-offset-2 col-md-10">
         <div class="well" style="overflow: auto;height:500px;overflow-x:hidden">
+            <h1>Publically push your own question</h1>
+            <div class="row">
+            <div class="col-md-6">
+        <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+        <button class="btn btn-default" style="color:white;width:120px;padding:20px;background-color: #ECAD24;border-color: #ECAD24;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Push!</button>
+        </div>
+        </div>
+        <hr>
             <h1>Student asked questions.</h1>
-            <small>"Push" the ones that are most relevant to the class.</small>
+            <h3>Push the questions that matter</h3>
             {{#each questionItem}}
               <div class="radio">
                 <label>
                   <input type="radio" name="optionsRadios" class="optionsRadios" value="{{_id}}" checked="{{isPublic}}">
-                  <p>{{{body}}}</p>
+                  {{{body}}}<br>
                   {{#if thisAuthorName}}<span>&ndash; by {{thisAuthorName}}</span>{{/if}}
                 </label>
               </div>
