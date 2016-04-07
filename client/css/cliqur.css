@@ -87,7 +87,49 @@
 	   left: 50%;
 	}
 
+		.main_input_container {
+		width: 100%;
+	}
+	.main_joinsession_input {
+	font-size: 18px;
+    width: 100%;
+    height: 70px;
+	border: 1px solid #BDBDBD;
+	resize: none;
+	margin-bottom: 20px;
+}
+.main_join_button {
+		padding: 10px;
+		color:white;
+		background-color: #B31D30;
+		border-color: #B31D30;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		height: 77px;
+		width: inherit;
+		font-weight: 200;
+	}
+	.main_spectate_button {
+		padding: 10px;
+		color:white;
+		background-color: #ECAD24;
+		border-color: #ECAD24;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: 100%;
+		height: 77px;
+		font-weight: 200;
 
+	}
+	.main_create_button {
+		color:white;
+		background-color: #2875B8;
+		border-color: #2875B8;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: inherit;
+		font-weight: 200;
+	}
 
 
 
@@ -107,12 +149,55 @@
 	}
 
 		.main_header_text {
-		margin-top: 5px;
 	   font-size: 32px;
 	   left: 50%;
 	}
+	.main_center_text {
+		margin-top: 40px;
+	}
+	.main_input_container {
+		width: 100%;
+	}
+	.main_joinsession_input {
+	font-size: 18px;
+    width: 100%;
+    height: 70px;
+	border: 1px solid #BDBDBD;
+	resize: none;
+	margin-bottom: 30px;
+}
+.main_join_button {
+		padding: 10px;
+		color:white;
+		background-color: #B31D30;
+		border-color: #B31D30;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		height: 77px;
+		width: inherit;
+		font-weight: 200;
+	}
+	.main_spectate_button {
+		padding: 10px;
+		color:white;
+		background-color: #ECAD24;
+		border-color: #ECAD24;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: 100%;
+		height: 77px;
+		font-weight: 200;
 
-
+	}
+	.main_create_button {
+		color:white;
+		background-color: #2875B8;
+		border-color: #2875B8;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: 100%;
+		font-weight: 200;
+	}
 
 
 
@@ -127,19 +212,61 @@
 /* For screen size 768 - 1024 px, for smaller laptops */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
-	.main_logo_img {
-		padding: 0px;
-		margin-top: 48px;
-		width: 60%;
+		.main_logo_img {
+			padding: 0px;
+			margin-top: 48px;
+			width: 60%;
+		}
+
+			.main_header_text {
+		   font-size: 28px;
+		   top: 40%;
+		   left: 50%;
+		}
+
+		.main_input_container {
+			width: 100%;
+		}
+		.main_joinsession_input {
+		font-size: 18px;
+	    width: 100%;
+	    height: 70px;
+		border: 1px solid #BDBDBD;
+		resize: none;
+		margin-bottom: 20px;
 	}
-
-		.main_header_text {
-	   font-size: 28px;
-	   top: 40%;
-	   left: 50%;
+	.main_join_button {
+		padding: 10px;
+		color:white;
+		background-color: #B31D30;
+		border-color: #B31D30;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		height: 77px;
+		width: inherit;
+		font-weight: 200;
 	}
+	.main_spectate_button {
+		padding: 10px;
+		color:white;
+		background-color: #ECAD24;
+		border-color: #ECAD24;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: 100%;
+		height: 77px;
+		font-weight: 200;
 
-
+	}
+	.main_create_button {
+		color:white;
+		background-color: #2875B8;
+		border-color: #2875B8;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: inherit;
+		font-weight: 200;
+	}
 
 
 
@@ -167,7 +294,49 @@
 	   transform: translate3d(-50%, -40%, 0);
 	   font-size: 23px;
 	}
+		.main_input_container {
+		width: 100%;
+	}
+	.main_joinsession_input {
+	font-size: 18px;
+    width: 100%;
+    height: 70px;
+	border: 1px solid #BDBDBD;
+	resize: none;
+	margin-bottom: 20px;
+	}
+.main_join_button {
+		padding: 10px;
+		color:white;
+		background-color: #B31D30;
+		border-color: #B31D30;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		height: 77px;
+		width: inherit;
+		font-weight: 200;
+	}
+	.main_spectate_button {
+		padding: 10px;
+		color:white;
+		background-color: #ECAD24;
+		border-color: #ECAD24;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: 100%;
+		height: 77px;
+		font-weight: 200;
 
+	}
+	.main_create_button {
+		color:white;
+		background-color: #2875B8;
+		border-color: #2875B8;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: inherit;
+		font-weight: 200;
+	}
 
 
 
@@ -221,7 +390,7 @@
 		color:white;
 		background-color: #ECAD24;
 		border-color: #ECAD24;
-		font-family: Cabin;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size:14px;
 		width: 100%;
 		height: 77px;
