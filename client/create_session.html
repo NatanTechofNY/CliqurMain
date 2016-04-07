@@ -20,7 +20,7 @@ body {
 </nav>
 <div class="row">
 <div class="instructorOwnQuestion col-md-offset-3">
-<h1>Publicly push your own question</h1>
+<h1>Publish your own question</h1>
             <form>
             <div class="row">
             <div class="col-md-6">
@@ -36,14 +36,14 @@ body {
                 </center>
         </div>
         <div class="col-md-6">
-        <button class="btn btn-success" style="color:white;width:120px;padding:20px;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Push!</button>
+        <button class="btn btn-success" style="color:white;width:120px;padding:20px;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Publish!</button>
         </div>
         </div>
         </form>
 <hr style="width:90%">
 <h1>Student asked questions</h1>
-<p>Push the questions that matter most.</p>
-<div style="height:300px;overflow:auto;padding-left: 10px;padding-top: 10px">   
+<p>Publish the questions that matter most.</p>
+<div style="height:300px;overflow:auto;padding-left: 10px;padding-top: 10px">  
             {{#each questionItem}}
               <div class="radio" style="font-size: 18px">
                 <label>
@@ -52,6 +52,8 @@ body {
                   {{#if thisAuthorName}}<span>&ndash; by {{thisAuthorName}}</span>{{/if}}
                 </label>
               </div>
+              {{else}}
+              <h1>No questions asked yet.</h1>
             {{/each}}
 </div>
 </div>
@@ -59,7 +61,7 @@ body {
 <section>
   <div class="row panel-button-group">
     <div class="col-md-4 nopadding">
-      <button id="changeToThisPublic" style="font-family: Cabin;font-size:18px" class="btn btn-success btn-block">Push to public view</button>
+      <button id="changeToThisPublic" style="font-family: Cabin;font-size:18px" class="btn btn-success btn-block">Publish to public view</button>
     </div>
     <div class="col-md-4 nopadding">
       <button id="resetPollBtn" style="font-family: Cabin;font-size:18px" class="btn btn-warning btn-block">Reset Polls</button>
