@@ -45,9 +45,9 @@ body {
 <p>Push the questions that matter most.</p>
 <div style="height:300px;overflow:auto;padding-left: 10px;padding-top: 10px">   
             {{#each questionItem}}
-              <div class="radio">
+              <div class="radio" style="font-size: 18px">
                 <label>
-                  <input type="radio" name="optionsRadios" class="optionsRadios" value="{{_id}}" checked="{{isPublic}}">
+                  <input type="radio" style="width:20px !important;height: 20px !important;" name="optionsRadios" class="optionsRadios" value="{{_id}}" checked="{{isPublic}}">
                   {{{body}}}<br>
                   {{#if thisAuthorName}}<span>&ndash; by {{thisAuthorName}}</span>{{/if}}
                 </label>
