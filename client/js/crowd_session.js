@@ -14,17 +14,20 @@ if (Meteor.isClient) {
 
           var selectedResponse = parseInt(e.currentTarget.getAttribute('data-idx'));
 
-          var usr = Users.findOne({"studentId":Session.get('userSessItem').userId});
-          Meteor.call('addResponses', {sessionId: Router.current().params.sessionId, studentId: usr? usr.studentId: undefined, respIndx: selectedResponse}, function (e, res) {
-            if (e)
+          var usr = Users.findOne({"_id": Session.get('userSessItem').userId});
+          Meteor.call('addResponses', {sessionId: Router.current().params.sessionId, studentId: usr? usr.studentId: undefined, userId: usr? usr._id: undefined, respIndx: selectedResponse}, function (e, res) {
+            if (e) {
               alert(e.error);
-            else{
+              document.getElementById('status').innerHTML='Error sending response.';
+            }
+            else
               document.getElementById('status').innerHTML='Response sent.';
-              setTimeout(function() {
-                    $THIS.children('span').css('opacity', '0');
-                    document.getElementById('status').innerHTML='';
-              }, 1800);
-            };
+            
+
+            setTimeout(function() {
+                  $THIS.children('span').css('opacity', '0');
+                  document.getElementById('status').innerHTML='';
+            }, 1800);
           });
 
     		},
