@@ -59,6 +59,7 @@ if(Meteor.isClient) {
 								d: rsD,
 							},
 							wholes: {
+								total: totalResp,
 								a: rsA/totalResp,
 								b: rsB/totalResp,
 								c: rsC/totalResp,
