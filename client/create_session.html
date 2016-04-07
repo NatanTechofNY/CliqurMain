@@ -14,49 +14,60 @@ body {
       <button class="btn btn-danger btn-lg navbar-right col-md-6 col-xs-6" id="endssn">End Session</button>
       <a target="_blank" href="/d/{{sessionId}}/p"><button class="btn btn-primary btn-lg navbar-right col-md-6 col-xs-6">Go to Public View</button></a>
     </div> -->
-    <div class="btn btn-danger btn-lg navbar-right" id="endssn">End Session </div>
-    <a target="_blank" href="/d/{{sessionId}}/p"><div class="btn btn-primary btn-lg navbar-right">Go to Public View</div></a>
+    <div class="btn btn-danger btn-lg navbar-right" style="font-family: Cabin;font-size:15px" id="endssn">End Session</div>
+    <a target="_blank" href="/d/{{sessionId}}/p"><div style="font-family: Cabin;font-size:15px" class="btn btn-primary btn-lg navbar-right">Go to Public View</div></a>
     </div>
 </nav>
-
-<section>
 <div class="row">
-    <div class="col-md-offset-2 col-md-10">
-        <div class="well" style="overflow: auto;height:500px;overflow-x:hidden">
-            <h1>Publically push your own question</h1>
+<div class="instructorOwnQuestion col-md-offset-3">
+<h1>Publish your own question</h1>
+            <form>
             <div class="row">
             <div class="col-md-6">
         <input type="text" class="form-control">
+        <center><br>
+                <label>
+                  <input type="radio" name="optionsRadios" class="optionsRadios">
+                  60 sec
+                </label> or 
+                <label>
+                  <input type="text" placeholder="Set a custom time (seconds)" style="width:200px">
+                  </label>
+                </center>
         </div>
         <div class="col-md-6">
-        <button class="btn btn-default" style="color:white;width:120px;padding:20px;background-color: #ECAD24;border-color: #ECAD24;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Push!</button>
+        <button class="btn btn-success" style="color:white;width:120px;padding:20px;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Publish!</button>
         </div>
         </div>
-        <hr>
-            <h1>Student asked questions.</h1>
-            <h3>Push the questions that matter</h3>
+        </form>
+<hr style="width:90%">
+<h1>Student asked questions</h1>
+<p>Publish the questions that matter most.</p>
+<div style="height:300px;overflow:auto;padding-left: 10px;padding-top: 10px">  
             {{#each questionItem}}
-              <div class="radio">
+              <div class="radio" style="font-size: 18px">
                 <label>
-                  <input type="radio" name="optionsRadios" class="optionsRadios" value="{{_id}}" checked="{{isPublic}}">
+                  <input type="radio" style="width:20px !important;height: 20px !important;" name="optionsRadios" class="optionsRadios" value="{{_id}}" checked="{{isPublic}}">
                   {{{body}}}<br>
                   {{#if thisAuthorName}}<span>&ndash; by {{thisAuthorName}}</span>{{/if}}
                 </label>
               </div>
+              {{else}}
+              <h1>No questions asked yet.</h1>
             {{/each}}
-            <br /><br />
-        </div>
-    </div>
 </div>
+</div>
+</div>
+<section>
   <div class="row panel-button-group">
     <div class="col-md-4 nopadding">
-      <button id="changeToThisPublic" class="btn btn-success btn-block">Push to public view</button>
+      <button id="changeToThisPublic" style="font-family: Cabin;font-size:18px" class="btn btn-success btn-block">Publish selected question</button>
     </div>
     <div class="col-md-4 nopadding">
-      <button id="resetPollBtn" class="btn btn-warning btn-block">Reset Polls</button>
+      <button id="resetPollBtn" style="font-family: Cabin;font-size:18px" class="btn btn-warning btn-block">Reset Polls</button>
     </div> 
     <div class="col-md-4 nopadding">
-      <button id="deleteThisQuestion" class="btn btn-danger btn-block">Delete</button>
+      <button id="deleteThisQuestion" style="font-family: Cabin;font-size:18px" class="btn btn-danger btn-block">Delete</button>
     </div>
   </div>
 </section>
