@@ -1,19 +1,91 @@
 /* Global view goes here, everything that does not effect margin on each device, such as color scheme, background color, and fonts */
 	
 
+	body {
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		background-color: #fff;
+	    width: 100%;
+	    height: 100%;
+	}
+
 	.main_style_section {
-		font-family: Cabin;
-		background: white;
+		background-color: #fff;
+   		z-index: 1;
 	}
 	
-
+	.main_header_text {
+	   color: #333;
+	   text-align: center;
+	   letter-spacing: 2px;
+	}
+	.main_input_container {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		position: fixed;
+	}
+	.main_errormsg_text {
+		color: red;
+		font-size: 22px;
+		opacity: 0;
+	}
+	.main_join_button {
+		color:white;
+		width:120px;
+		background-color: #B31D30;
+		border-color: #B31D30;
+		padding:20px;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:18px;
+		width: inherit;
+	}
+	.main_spectate_button {
+		color:white;
+		width:120px;
+		padding:20px;
+		background-color: #ECAD24;
+		border-color: #ECAD24;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:18px;
+		width: inherit;
+	}
+	.main_create_button {
+		color:white;
+		background-color: #2875B8;
+		border-color: #2875B8;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:18px;
+		width: inherit;
+	}
+	.global_no_padding {
+		padding: 0;
+	}
+	.global_no_margin {
+		margin: 0;
+	}
+	.main_left_button {
+		width: 50%;
+		float: left;
+	}
+	.main_right_button {
+		width: 50%;
+		float: right;
+	}
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
 
 @media screen and (min-width: 1440px) and (max-width: 2560px) {
 
-	
+	.main_logo_img {
+		padding: 0px;
+		margin-top: 48px;
+		width: 60%;
+	}
 
-
+		.main_header_text {
+		margin-top: 5px;
+	   font-size: 38px;
+	   left: 50%;
+	}
 
 
 
@@ -28,7 +100,18 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
 
-	
+	.main_logo_img {
+		padding: 0px;
+		margin-top: 48px;
+		width: 70%;
+	}
+
+		.main_header_text {
+		margin-top: 5px;
+	   font-size: 32px;
+	   left: 50%;
+	}
+
 
 
 
@@ -44,8 +127,17 @@
 /* For screen size 768 - 1024 px, for smaller laptops */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
-	
+	.main_logo_img {
+		padding: 0px;
+		margin-top: 48px;
+		width: 60%;
+	}
 
+		.main_header_text {
+	   font-size: 28px;
+	   top: 40%;
+	   left: 50%;
+	}
 
 
 
@@ -59,9 +151,23 @@
 }
 
 /* For screen size 425 - 768 px, for tablets */
-@media screen and (min-width: 425px) and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
 
-	
+	.main_logo_img {
+			padding: 0px;
+			margin-bottom: 30px;
+			margin-top: 35px;
+			width: 60%;
+		}
+		.main_header_text {
+		margin-top: 5px;
+		top: 45%;
+		left: 50%
+	   -webkit-transform: translate3d(-50%, -40%, 0);
+	   transform: translate3d(-50%, -40%, 0);
+	   font-size: 23px;
+	}
+
 
 
 
@@ -78,11 +184,59 @@
 /* For screen size 425 or lower px, for smaller phoens, iPhone5 is 320px, iPhone6 is 375px and iPhone6 Plus is 414px */   
 
 @media screen and (max-width: 425px) {
+	.main_logo_img {
+		margin-top: 35px;
+		width: 70%;
+		margin-bottom: 35px;
+	}
+	.main_header_text {
+		margin-top: 50px;
+	   font-size: 16px;
+	   text-align: center;
+	}
+	.main_input_container {
+		width: 100%;
+	}
+	.main_joinsession_input {
+	font-size: 18px;
+    width: 100%;
+    height: 70px;
+	border: 1px solid #BDBDBD;
+	resize: none;
+	margin-bottom: 20px;
+}
+.main_join_button {
+		padding: 10px;
+		color:white;
+		background-color: #B31D30;
+		border-color: #B31D30;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		height: 77px;
+		width: inherit;
+		font-weight: 200;
+	}
+	.main_spectate_button {
+		padding: 10px;
+		color:white;
+		background-color: #ECAD24;
+		border-color: #ECAD24;
+		font-family: Cabin;
+		font-size:14px;
+		width: 100%;
+		height: 77px;
+		font-weight: 200;
 
-	
-
-
-
+	}
+	.main_create_button {
+		color:white;
+		background-color: #2875B8;
+		border-color: #2875B8;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size:14px;
+		width: inherit;
+		font-weight: 200;
+	}
 
 
 

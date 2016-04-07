@@ -310,14 +310,6 @@ input[type=password] {
     padding-left: 10px;
     position: absolute;
     }
-.btn-fluid {
-  width: 100vh;
-}
-.button-group {
-  top: 30vh;
-  position: relative;
-}
-
 
 
 /*demo */
@@ -339,7 +331,7 @@ input[type=password] {
 .container .demo {
    padding: 0;
    margin: 0;
-   z-index: 9999
+   z-index: 9999;
 }
 .container-fluid {
    padding: 0;

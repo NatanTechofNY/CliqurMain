@@ -10,51 +10,49 @@
 
 
 <template name="indexItem">
-          {{#if isPhone}}
- <section class="main_style_section">
-                <div class="container-fluid demo">
-                   <div class="content">
-                      <div id="large-header" class="large-header">
+                  <section class="main_style_section">
                          <center>
-                         <img src="/logoCliqurcopy.png" width="50%" style="padding: 0px;margin-top:48px;">
+                              <img class="main_logo_img" src="/logoCliqurcopy.png">
                          </center>
-                          <div style="margin-top: -20%">
-                          <p1 class="thin-title">An Engaging Classroom Experience</p1><br><br>
-                          <div class="row button-group">
-                          <div class="col-md-offset-2 col-md-8">
-                            <div class="row">
-                            <center>
-                           <div id="errorMSG-ONE" style="font-size: 24px;color:red;opacity:0"></div>
-                            <div class="col-md-8" data-toggle="tooltip" data-placement="top" title="Enter the session ID your instructor provided to you and click 'Join Session'">
-                                <input style="font-size: 24px;width: 60%" class="form-control student-input" id="codeInput" type="text" placeholder="Enter Your Session ID">
+                         <center>
+                              <p1 class="main_header_text">Revolutionize Your Classroom Experience</p1>
+                          </center>
+                         <div class="row"> 
+                            <div class="main_input_container">
+                              <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-xs-offset-1 col-xs-10 col-xs-offset-1 global_no_padding">
+
+                                <div class="row">
+                                                     <div id="errorMSG-ONE" class="main_errormsg_text col-md-12 col-xs-12">
+                                                     </div>
+
+                                        <div class="col-md-12 col-xs-12" data-toggle="tooltip" data-placement="top" title="Enter the session ID your instructor provided to you and click 'Join Session'">
+                                              <input class="form-control main_joinsession_input" type="text" placeholder="Enter Your Session ID">
+                                        </div>
+                                </div>
                               </div>
-                              <div class="col-xs-6">
-                              <div data-toggle="tooltip" data-target="#joinSessionBtn" data-placement="top" title="Join a session to ask questions, voice your opinion and actively participate in class">
-                              <br>
-                                <button class="btn btn-default" data-toggle="modal" data-target="#joinSession" style="color:white;width:120px;background-color: #B31D30;border-color: #B31D30;padding:20px;font-family: Cabin;font-size:18px" id="joinSessionBtn">Join<br>Session</button> 
-                              </div>
-                              </div>
-                              <div class="col-xs-6">
-                              <div data-toggle="tooltip" data-target="#joinSessionBtn" data-placement="top" title="Quickly join a public view to see what is going on!">
-                              <br>
-                               <button class="btn btn-default" style="color:white;width:120px;padding:20px;background-color: #ECAD24;border-color: #ECAD24;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Spectate<br>Session</button>
-                               </div>
-                               </div>
-                               </center>
-                            </div>
-                            <br />
-                            <div class="row">
-								
-                              <div class="col-md-12" data-toggle="tooltip" data-placement="top" title="Generate a session to make classroom interactions easy, efficient, and simple">
-                                <button class="btn btn-default btn-fluid" data-toggle="modal" style="color:white;background-color: #2875B8;border-color: #2875B8;font-family: Cabin;font-size:18px" data-target="#createSession" id = "createSessionBtn">Instructor? Create a Session</button>
-                              </div>
-                            </div>
-                            </div>
+
+                                <div class="main_customgroup_buttom">
+                                        <div class="main_left_button">
+                                            <div data-toggle="tooltip" data-target="#joinSessionBtn" data-placement="top" title="Join a session to ask questions, voice your opinion and actively participate in class">
+                                              <button class="btn main_join_button" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join<br>Session</button> 
+                                            </div>
+                                        </div>
+
+                                        <div class="main_right_button">
+                                            <div data-toggle="tooltip" data-target="#joinSessionBtn" data-placement="top" title="Quickly join a public view to see what is going on!">
+                                               <button class="btn main_spectate_button" id="joinPublicViewBtn">Spectate<br>Session
+                                               </button>
+                                             </div>
+                                        </div>
+                                  </div>
+
+                                <div class="row">
+                                  <div class="col-md-offset-2 col-md-12 col-md-offset-2 col-xs-12" data-toggle="tooltip" data-placement="top" title="Generate a session to make classroom interactions easy, efficient, and simple">
+                                    <button class="btn main_create_button" data-toggle="modal"  data-target="#createSession" id = "createSessionBtn">Instructor? Create a Session</button>
+                                  </div>
+                                </div>
+                          </div>
                         </div>
-                        </div>
-                      </div>
-                   </div>
-                </div>
             </section>
 
 
@@ -132,122 +130,4 @@
 </div>
 
 
-          {{else}}
-            <section class="main_style_section">
-                <div class="container-fluid demo">
-                   <div class="content">
-                      <div id="large-header" class="large-header">
-                         <center>
-                         <img src="/logoCliqurcopy.png" width="45%" style="padding: 0px;margin-top:48px;">
-                         </center><br>
-                          <div style="margin-top: -10%">
-                          <p1 class="thin-title">An Engaging Classroom Experience</p1>
-                          <div class="row button-group">
-                          <div class="col-md-offset-2 col-md-8">
-                            <div class="row">
-                           <div id="errorMSG-ONE" style="font-size: 24px;color:red;opacity:0"></div>
-                              <div class="col-md-8" data-toggle="tooltip" data-placement="top" title="Enter here the session ID your instructor provided to you and click join session!">
-                                <input class="form-control student-input" id="codeInput" type="text" placeholder="Enter Your Session ID">
-                              </div>
-                              <div class="col-md-2">
-                              <div data-toggle="tooltip" data-target="#joinSessionBtn" data-placement="top" title="Cliqur allows you to create quick, on the fly, virtual sessions to make classroom interactions easy, efficient, and simple.">
-                                <button class="btn btn-default" data-toggle="modal" data-target="#joinSession" style="color:white;width:120px;background-color: #B31D30;border-color: #B31D30;padding:20px;font-family: Cabin;font-size:18px" id="joinSessionBtn">Join<br>Session</button> 
-                              </div>
-                              </div>
-                              <div class="col-md-2">
-                              <div data-toggle="tooltip" data-target="#joinSessionBtn" data-placement="top" title="Quickly join a public view to see what is going on!">
-                               <button class="btn btn-default" style="color:white;width:120px;padding:20px;background-color: #ECAD24;border-color: #ECAD24;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Spectate<br>Session</button>
-                               </div>
-                               </div>
-                            </div>
-                            <hr style="border: 1px solid black">
-                            <div class="row">
-                              <div class="col-md-12" data-toggle="tooltip" data-placement="top" title="Students have the ability to ask questions, voice their opinion, and enjoy a virtual classroom. Cliqur also replaces the physical clicker in class with a modern, online 'Clicker' curated to both the instructor and the student.">
-                                <button class="btn btn-default btn-fluid" data-toggle="modal" style="color:white;background-color: #2875B8;border-color: #2875B8;font-family: Cabin;font-size:24px" data-target="#createSession" id = "createSessionBtn">Instructor? Create a Session</button>
-                              </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                      </div>
-                   </div>
-                </div>
-            </section>
-
-
-
-<div class="modal fade join-panel" id="joinSession" tabindex="-1" role="dialog" aria-labelledby="joinSession">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Join a Session: {{toJoinSession}}</h4>
-      </div>
-      <div class="modal-body">
-        <form id="toJoinForm">
-        <div id="errorMSG-joinForm" style="font-size: 18px;color:red"></div>
-          <div class="form-group">
-            <label for="firstNameInput" class="control-label">First Name:</label>
-            <input type="text" class="form-control" id="firstNameInput">
-          </div>
-          <div class="form-group">
-            <label for="lastNameInput" class="control-label">Last Name:</label>
-            <input type="text" class="form-control" id="lastNameInput">
-          </div>
-          <div class="form-group">
-            <label for="studentId" class="control-label">Student ID No.:</label>
-            <input type="text" class="form-control" id="studentId">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-modal" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn-modal" onclick='$("#toJoinForm").trigger("submit")'>Continue</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="createSession" tabindex="-1" role="dialog" aria-labelledby="createSession">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Create a Session</h4>
-      </div>
-      <div class="modal-body">
-        <form id="createSessionForm">
-            <div id="errorMSG-createSession" style="font-size: 18px;color:red"></div>
-          <div class="form-group">
-            <label for="firstNameInput2" class="control-label">First Name:</label>
-            <input type="text" class="form-control" id="firstNameInput2">
-          </div>
-          <div class="form-group">
-            <label for="lastNameInput2" class="control-label">Last Name:</label>
-            <input type="text" class="form-control" id="lastNameInput2">
-          </div>
-          <div class="form-group">
-            <label for="classNameInput2" class="control-label">Class Name:</label>
-            <input type="text" class="form-control" id="classNameInput2">
-          </div>
-          <div class="form-group">
-            <label for="inputPassword" class="control-label">Passcode (Optional):</label>
-            <br />
-              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
-              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
-              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
-              <input style="float:left;" type="password" class="form-control inputPasswordTs" maxlength="1">
-              <br />
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-modal" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn-modal" onclick='$("#createSessionForm").trigger("submit")'>Continue</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-{{/if}}
 </template>
