@@ -99,6 +99,7 @@
 .smallcred {
 	font-size: 13px;
 	color: black;
+	padding-left: 2.8%;
 }
 
 
@@ -174,8 +175,9 @@
 	.login-name {
 		margin-top: 1.5%;
 	}
-	.smallcred {
-		
+	.left {
+		position: relative;
+		left: 15px;
 	}
 	
 }
