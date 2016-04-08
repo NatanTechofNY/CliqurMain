@@ -39,17 +39,6 @@
 	background-color: white;
 	height: 100% !important;
 }
-#joinSessionBtn {
-	width: 100%;
-}
-#createSessionBtn {
-	width: 100%;
-}
-#codeInput {
-	border-radius: 0px;
-	font-size: 13px;
-	padding-left: 4%;
-}
 .move-right {
     left: 10vh;
 }
