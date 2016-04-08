@@ -4,41 +4,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Cliqur</title>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cabin">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
 	  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
 
 
 <template name="indexItem">
-                  <section class="main_style_section">
-                         <center>
-                              <img class="main_logo_img img-responsive" src="/logoCliqurcopy.png">
-                         </center>
-                         <center class="main_center_text">
-                              <p1 class="main_header_text">Revolutionize Your Classroom Experience</p1>
-                          </center>
-                         <div class="row"> 
-                            <div class="main_input_container">
-                                  <div id="errorMSG-ONE" class="main_errormsg_text">
-                                  </div>
-                                        <div data-toggle="tooltip" data-placement="top" title="Enter the session ID your instructor provided to you and click 'Join Session'">
-                                              <input class="form-control main_joinsession_input" type="text" placeholder="Enter Your Session ID" id="codeInput">
-                                        </div>
-
-                                <div class="main_customgroup_button">
-                                              <button class="main_all_button main_join_button main_left_button" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Session</button> 
-
-                                               <button class="main_all_button main_spectate_button main_right_button" id="joinPublicViewBtn">Spectate Session
-                                               </button>
-                                  </div>
-                                  <div class="main_blockbutton_container">
-                                    <button class="main_all_button main_create_button" data-toggle="modal"  data-target="#createSession" id = "createSessionBtn">Instructor? Create a Session</button>
-                                  </div>
-                          </div>
-                        </div>
-            </section>
-
+    <section class="">
+      <center>
+        <img class="main_logo_img img-responsive" src="/logoCliqurcopy.png">
+      </center>
+      <div class="row index_input_container">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+          <p class="index_headline_text">Revolutionize Your Classroom Experience</p>
+        </div>
+        <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
+          <div id="errorMSG-ONE" class="main_errormsg_text"></div>
+        </div>
+        <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
+          <input class="form-control index_id_input" type="text" placeholder="Enter Your Session ID" id="codeInput">
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+            <button class="index_join_btn" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Session</button>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+          <button class="index_spectate_btn" id="joinPublicViewBtn">Spectate Session</button>
+        </div>
+        <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
+            <button class="index_create_btn" data-toggle="modal" data-target="#createSession" id="createSessionBtn">Instructor? Create a Session</button>        
+        </div>
+      </div>
+    </section>  
 
 
 <div class="modal fade join-panel" id="joinSession" tabindex="-1" role="dialog" aria-labelledby="joinSession">
