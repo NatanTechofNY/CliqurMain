@@ -103,36 +103,8 @@
 		float: right;
 		padding-left: 5px;
 	}
-.navbar-brand {
-	color: black;
-	font-family: Roboto;
-}
-.exit {
-	font-family: Roboto;
-	font-size: 14px;
-	cursor: pointer;
-	color: #FF7043;
-	border: 1px solid #FF7043;
-	border-radius: 2px;
-	background-color: white;
-	font-size: 14px;
-	height: 40px !important;
-	width: 100px !important;
-}
-.login-name {
-	font-family: Roboto;
-	width: 15%;
-}
-.cred {
-	font-family: Roboto;
-	font-size: 15px; 
-	color: #263238;
-}
-.smallcred {
-	font-size: 13px;
-	color: black;
-	padding-left: 2.8%;
-}
+
+
 
 
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
@@ -195,26 +167,7 @@
 		border-color: #2875B8;
 	}
 
-/* Rabeea needs to clean this up */
-	.navbar-brand {
-		margin-top: 0%;
-		margin-left: 0.5% !important;
-	}
-	.exit {
-		color: black;
-		margin-top: 3px;
-		margin-top: 0.3%;
-	}
-	
-	.login-name {
-		margin-top: 1.5%;
-	}
-	.left {
-		position: relative;
-		left: 15px;
-	}
-	
-}
+
 
 /* For screen size 1024 - 1440 px, for 15-17 inch laptop/desktops */
 
@@ -489,7 +442,59 @@
 
 
 
+}
 
 
 
+
+
+/* Rabeea needs to clean this up */
+.navbar-brand {
+	color: black;
+	font-family: Roboto;
+}
+.exit {
+	font-family: Roboto;
+	font-size: 14px;
+	cursor: pointer;
+	color: #FF7043;
+	border: 1px solid #FF7043;
+	border-radius: 2px;
+	background-color: white;
+	font-size: 14px;
+	height: 40px !important;
+	width: 100px !important;
+}
+.login-name {
+	font-family: Roboto;
+	width: 15%;
+}
+.cred {
+	font-family: Roboto;
+	font-size: 15px; 
+	color: #263238;
+}
+.smallcred {
+	font-size: 13px;
+	color: black;
+	padding-left: 2.8%;
+}
+	.navbar-brand {
+		margin-top: 0%;
+		margin-left: 0.5% !important;
+	}
+	.exit {
+		color: black;
+		margin-top: 3px;
+		margin-top: 0.3%;
+	}
+	
+	.login-name {
+		margin-top: 1.5%;
+	}
+	.left {
+		position: relative;
+		left: 15px;
+	}
+	
 }
