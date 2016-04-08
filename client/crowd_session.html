@@ -1,17 +1,19 @@
 <template name="crowd_session">
     <nav class="navbar">
       <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Cliqur Students | Session ID: {{sessionId}}</a>
-            <buttom class="btn btn-danger btn-lg navbar-right exit" style="z-index:1;" id="endssn">Exit Session</buttom>
-            <p id = "login-name" class="navbar-right">Signed in as {{userName}}</p>
+          <a class="navbar-brand">
+			  Cliqur <span> Students</span> | <span class = "cred">Session ID: {{sessionId}}</span></a>
+		  
+            <button class="navbar-right btn-danger exit" style="z-index:1" id="endssn">Exit Session</button>
+            <p class="navbar-right login-name">Signed in as {{userName}}</p>
             <label id="status" class="navbar-text navbar-right"></label>
-
       </div>
+			<left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: {{inst}} </p> </left>
+		
     </nav>
 
 <div style = "overflow: hidden" class="container box">
-<div class="jumbotron" style="background-color:rgba(0,0,0,0.7);height:40%;">
+<div class="jumbotron" style="border-color: #263238 ;height:40%;">
   <div class="row">
     <div class="col-md-12">
         <center>
@@ -60,9 +62,7 @@
    </div>
 </div>
 <center>
-<h1>
-Class: {{class}} | Instructor: {{inst}} 
-</h1>
+
 </center>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 </template>
