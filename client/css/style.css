@@ -200,9 +200,6 @@
    margin: 0 !important;
    border-radius: 0px;
 }
-body {
-  overflow-x: hidden;
-}
 #pinDiv {
   z-index: 9997;
   background-color: rgba(0,0,0, 0.9);
@@ -345,9 +342,7 @@ input[type=password] {
 
 
     @media screen and (min-width: 768px) and (max-width: 1024px) {
-        body {
-            position: fixed;
-        }
+
         .well {
     left: 10vh;
     margin-top: 20px;
