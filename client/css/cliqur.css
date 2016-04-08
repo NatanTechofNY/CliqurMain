@@ -29,33 +29,60 @@
 		font-size: 22px;
 		opacity: 0;
 	}
-	.main_join_button {
-		color:white;
-		width:120px;
-		background-color: #B31D30;
-		border-color: #B31D30;
-		padding:20px;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:18px;
-		width: inherit;
+	.main_all_button {
+		height: 77px;
+		font-size: 14px;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		padding: 10px;
+		font-weight: 200;
+		border-radius: 4px;
+		border-width: 3px;
+		border-style: solid;
 	}
+	.main_join_button {
+			color: #b31d30;
+			background-color: #fff;
+			border-color: #B31D30;
+			width: 50%;
+			float: left;
+			padding-right: 5px;
+		}
 	.main_spectate_button {
-		color:white;
-		width:120px;
-		padding:20px;
-		background-color: #ECAD24;
+		color:#ecad24;
+		background-color: #fff;
 		border-color: #ECAD24;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:18px;
-		width: inherit;
+		width: 50%;
+		float: right;
+		padding-left: 5px;
+
 	}
 	.main_create_button {
-		color:white;
-		background-color: #2875B8;
+		color: #2875b8;
+		background-color: #fff;
 		border-color: #2875B8;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:18px;
-		width: inherit;
+	}
+
+	.main_continue_button {
+		color: #00A896;
+		background-color: #fff;
+		border-color: #00A896;
+		border-style: solid;
+		border-width: 3px;
+		border-radius: 3px;
+		width: 40%;
+		padding: 10px;
+		margin-left: 20px;
+	}
+	.main_close_button {
+		color: #D90429;
+		background-color: #fff;
+		border-color: #D90429;
+		border-style: solid;
+		border-width: 3px;
+		border-radius: 3px;
+		width: 40%;
+		padding: 10px;
+		margin-right: 20px;
 	}
 	.global_no_padding {
 		padding: 0;
@@ -63,13 +90,18 @@
 	.global_no_margin {
 		margin: 0;
 	}
+	.global_no_padding_right {
+		padding-right: 0;
+	}
 	.main_left_button {
 		width: 50%;
 		float: left;
+		padding-right: 5px;
 	}
 	.main_right_button {
 		width: 50%;
 		float: right;
+		padding-left: 5px;
 	}
 .navbar-brand {
 	color: black;
@@ -132,46 +164,48 @@
 		.main_input_container {
 		width: 100%;
 	}
-	.main_joinsession_input {
-	font-size: 18px;
-    width: 100%;
-    height: 70px;
-	border: 1px solid #BDBDBD;
-	resize: none;
-	margin-bottom: 20px;
-}
-.main_join_button {
-		padding: 10px;
-		color:white;
-		background-color: #B31D30;
-		border-color: #B31D30;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		height: 77px;
-		width: inherit;
+		.main_joinsession_input {
+		font-size: 18px;
+	    width: 20%;
+	    height: 70px;
+		border: 2px solid #BDBDBD;
+		resize: none;
+		margin-bottom: 20px;
+		margin-left: 1030px;
+		margin-right: 1030px;
+	}
+	.main_all_button {
+		height: 65px;
+		font-size: 14px;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		margin: 10px;
 		font-weight: 200;
 	}
+	.main_join_button {
+		margin-left: 1033px;
+		width: 9%;
+		color: #b31d30;
+		background-color: #fff;
+		border-color: #B31D30;
+	}
 	.main_spectate_button {
-		padding: 10px;
-		color:white;
-		background-color: #ECAD24;
+		margin-right: 1020px;
+		width: 9%;
+		color:#ecad24;
+		background-color: #fff;
 		border-color: #ECAD24;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: 100%;
-		height: 77px;
-		font-weight: 200;
 
 	}
 	.main_create_button {
-		color:white;
-		background-color: #2875B8;
+		margin-left: 1035px;
+		margin-right: 1035px;
+		width: 20%;
+		color: #2875b8;
+		background-color: #fff;
 		border-color: #2875B8;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: inherit;
-		font-weight: 200;
 	}
+
+/* Rabeea needs to clean this up */
 	.navbar-brand {
 		margin-top: 0%;
 		margin-left: 0.5% !important;
@@ -193,14 +227,14 @@
 	}
 	
 }
+
 /* For screen size 1024 - 1440 px, for 15-17 inch laptop/desktops */
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
 
 	.main_logo_img {
-		padding: 0px;
-		margin-top: 48px;
-		width: 70%;
+		width: 50%
+		height: 50%;
 	}
 
 		.main_header_text {
@@ -210,49 +244,51 @@
 	.main_center_text {
 		margin-top: 40px;
 	}
-	.main_input_container {
+		.main_input_container {
 		width: 100%;
 	}
-	.main_joinsession_input {
-	font-size: 18px;
-    width: 100%;
-    height: 70px;
-	border: 1px solid #BDBDBD;
-	resize: none;
-	margin-bottom: 30px;
-}
-.main_join_button {
-		padding: 10px;
-		color:white;
-		background-color: #B31D30;
-		border-color: #B31D30;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		height: 77px;
-		width: inherit;
+		.main_joinsession_input {
+		font-size: 18px;
+	    width: 31%;
+	    height: 70px;
+		border: 2px solid #BDBDBD;
+		resize: none;
+		margin-bottom: 20px;
+		margin-left: 472px;
+		margin-right: 472px;
+	}
+	.main_all_button {
+		height: 65px;
+		font-size: 14px;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		margin: 10px;
 		font-weight: 200;
+	}
+	.main_join_button {
+		margin-left: 472px;
+		width: 14%;
+		color: #b31d30;
+		background-color: #fff;
+		border-color: #B31D30;
 	}
 	.main_spectate_button {
-		padding: 10px;
-		color:white;
-		background-color: #ECAD24;
+		margin-right: 472px;
+		width: 14%;
+		color:#ecad24;
+		background-color: #fff;
 		border-color: #ECAD24;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: 100%;
-		height: 77px;
-		font-weight: 200;
 
 	}
 	.main_create_button {
-		color:white;
-		background-color: #2875B8;
+		margin-left: 472px;
+		margin-right: 472px;
+		width: 31%;
+		color: #2875b8;
+		background-color: #fff;
 		border-color: #2875B8;
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: 100%;
-		font-weight: 200;
 	}
+
+
 
 
 
@@ -268,60 +304,60 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
 		.main_logo_img {
-			padding: 0px;
-			margin-top: 48px;
-			width: 60%;
+			width: 100%
+			height:auto;
 		}
 
 			.main_header_text {
 		   font-size: 28px;
-		   top: 40%;
+		   top: 60%;
 		   left: 50%;
 		}
 
 		.main_input_container {
-			width: 100%;
-		}
+		width: 100%;
+	}
 		.main_joinsession_input {
 		font-size: 18px;
-	    width: 100%;
+	    width: 40%;
 	    height: 70px;
-		border: 1px solid #BDBDBD;
+		border: 2px solid #BDBDBD;
 		resize: none;
 		margin-bottom: 20px;
+		margin-left: 310px;
+		margin-right: 310px;
+	}
+	.main_all_button {
+		height: 65px;
+		font-size: 14px;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		margin: 10px;
+		font-weight: 200;
 	}
 	.main_join_button {
-		padding: 10px;
-		color:white;
-		background-color: #B31D30;
+		margin-left: 305px;
+		width: 18%;
+		color: #b31d30;
+		background-color: #fff;
 		border-color: #B31D30;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		height: 77px;
-		width: inherit;
-		font-weight: 200;
 	}
 	.main_spectate_button {
-		padding: 10px;
-		color:white;
-		background-color: #ECAD24;
+		margin-right: 305px;
+		width: 18%;
+		color:#ecad24;
+		background-color: #fff;
 		border-color: #ECAD24;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: 100%;
-		height: 77px;
-		font-weight: 200;
 
 	}
 	.main_create_button {
-		color:white;
-		background-color: #2875B8;
+		margin-left: 310px;
+		margin-right: 310px;
+		width: 40%;
+		color: #2875b8;
+		background-color: #fff;
 		border-color: #2875B8;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: inherit;
-		font-weight: 200;
 	}
+
 
 
 
@@ -336,11 +372,11 @@
 @media screen and (min-width: 426px) and (max-width: 768px) {
 
 	.main_logo_img {
-			padding: 0px;
-			margin-bottom: 30px;
-			margin-top: 35px;
-			width: 60%;
-		}
+		padding: 0px;
+		margin-bottom: 30px;
+		margin-top: 35px;
+		width: 60%;
+	}
 		.main_header_text {
 		margin-top: 5px;
 		top: 45%;
@@ -352,45 +388,45 @@
 		.main_input_container {
 		width: 100%;
 	}
-	.main_joinsession_input {
-	font-size: 18px;
-    width: 100%;
-    height: 70px;
-	border: 1px solid #BDBDBD;
-	resize: none;
-	margin-bottom: 20px;
+		.main_joinsession_input {
+		font-size: 18px;
+	    width: 86%;
+	    height: 70px;
+		border: 2px solid #BDBDBD;
+		resize: none;
+		margin-bottom: 20px;
+		margin-left: 30px;
+		margin-right: 30px;
 	}
-.main_join_button {
-		padding: 10px;
-		color:white;
-		background-color: #B31D30;
-		border-color: #B31D30;
+	.main_all_button {
+		height: 65px;
+		font-size: 14px;
 		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		height: 77px;
-		width: inherit;
+		margin: 10px;
 		font-weight: 200;
+	}
+	.main_join_button {
+		margin-left: 30px;
+		width: 38%;
+		color: #b31d30;
+		background-color: #fff;
+		border-color: #B31D30;
 	}
 	.main_spectate_button {
-		padding: 10px;
-		color:white;
-		background-color: #ECAD24;
+		margin-right: 30px;
+		width: 38%;
+		color:#ecad24;
+		background-color: #fff;
 		border-color: #ECAD24;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: 100%;
-		height: 77px;
-		font-weight: 200;
 
 	}
 	.main_create_button {
-		color:white;
-		background-color: #2875B8;
+		margin-left: 30px;
+		margin-right: 30px;
+		width: 88%;
+		color: #2875b8;
+		background-color: #fff;
 		border-color: #2875B8;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: inherit;
-		font-weight: 200;
 	}
 
 
@@ -415,51 +451,50 @@
 	}
 	.main_header_text {
 		margin-top: 50px;
-	   font-size: 16px;
-	   text-align: center;
+		font-size: 16px;
+		text-align: center;
 	}
 	.main_input_container {
 		width: 100%;
 	}
 	.main_joinsession_input {
-	font-size: 18px;
-    width: 100%;
-    height: 70px;
-	border: 1px solid #BDBDBD;
-	resize: none;
-	margin-bottom: 20px;
-}
-.main_join_button {
-		padding: 10px;
-		color:white;
-		background-color: #B31D30;
-		border-color: #B31D30;
+		font-size: 18px;
+	    width: 95%;
+	    height: 70px;
+		border: 2px solid #BDBDBD;
+		resize: none;
+		margin-bottom: 20px;
+		margin-left: 10px;
+	}
+	.main_all_button {
+		height: 65px;
+		font-size: 14px;
 		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		height: 77px;
-		width: inherit;
+		margin: 10px; 
 		font-weight: 200;
+	}
+	.main_customgroup_button {
+		display: inline;
+	}
+	.main_join_button {
+		width: 43%;
+		color: #b31d30;
+		background-color: #fff;
+		border-color: #B31D30;
+		margin-right: 5px;
 	}
 	.main_spectate_button {
-		padding: 10px;
-		color:white;
-		background-color: #ECAD24;
+		width: 43%;
+		color:#ecad24;
+		background-color: #fff;
 		border-color: #ECAD24;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: 100%;
-		height: 77px;
-		font-weight: 200;
-
+		margin-left: 5px;
 	}
 	.main_create_button {
-		color:white;
-		background-color: #2875B8;
+		width: 94%;
+		color: #2875b8;
+		background-color: #fff;
 		border-color: #2875B8;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size:14px;
-		width: inherit;
-		font-weight: 200;
 	}
 
 
