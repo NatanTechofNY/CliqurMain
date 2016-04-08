@@ -64,6 +64,9 @@
 	.global_no_padding_right {
 		padding-right: 0;
 	}
+	.global_no_padding_left {
+		padding-left: 0;
+	}
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
 
 @media screen and (min-width: 1440px) and (max-width: 2560px) {
