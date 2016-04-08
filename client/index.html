@@ -23,10 +23,10 @@
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
           <input class="form-control index_id_input" type="text" placeholder="Enter Your Session ID" id="codeInput">
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_right">
             <button class="index_join_btn" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Session</button>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_left">
           <button class="index_spectate_btn" id="joinPublicViewBtn">Spectate Session</button>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
@@ -61,8 +61,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-modal" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn-modal" onclick='$("#toJoinForm").trigger("submit")'>Continue</button>
+        <button type="button" class="index_close_btn" data-dismiss="modal">Close</button>
+        <button type="submit" class="index_continue_btn" onclick='$("#toJoinForm").trigger("submit")'>Continue</button>
       </div>
     </div>
   </div>
@@ -101,8 +101,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-modal main_close_button" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn-modal main_continue_button" onclick='$("#createSessionForm").trigger("submit")'>Continue</button>
+        <button type="button" class="btn-modal index_close_btn" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn-modal index_continue_btn" onclick='$("#createSessionForm").trigger("submit")'>Continue</button>
       </div>
     </div>
   </div>
