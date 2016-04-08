@@ -82,17 +82,83 @@ if (Meteor.isClient) {
             Meteor.call('resetClickerData', {sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId}, function (e, res) {
               if (e)
                 alert(e.error);
-              else{
-                alert('Polls reset!');
-              };
             });
           };
         },
         'focus #autoSelectrLoc': function(e) {
           setTimeout(function() {$('#autoSelectrLoc').select();}, 12);
+        },
+        'submit #customQuestionSubmit': function(e) {
+          e.preventDefault();
+          var q = $('input[name="creatorQuestion"]').val().trim();
+          if (q && q.length) {
+            q = q.replace(/&/g, '&amp;').replace(/</g, '&#60;').replace(/>/g, '&#62;').replace(/\n\s*\n/g, '\n\n').replace(/\n/g, '<br>');
+            var parentSessionId = Session.get('userSessItem').sessionId;
+            var authId = Session.get('userSessItem').userId;
+            var obj = {
+              "sessionId": parentSessionId,
+              "userId": authId,
+              "body": q
+            };
+            Meteor.call('sendQuestion', obj, function(e, d) {
+              if (e) {
+                alert(e.error);
+              }
+              else {
+                $('input[name="creatorQuestion"]').val('');
+                Meteor.call('toggleQuestion', {target: true, questionId: d, sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId}, function (err, res) {
+                  if (err) {
+                    alert(err.error);
+                  } else
+                    alert("Question has been publicly shared.");
+                });
+              }
+            });
+          };
+          
+        },
+        'click #timerSetBtn': function() {
+          if ($('input[name="timeSet60"]').is(':checked') &&  $('input[name="timeSet"]').val().length) return alert('Please select only one of the two options');
+          var timingCheck = $('input[name="timeSet60"]').is(':checked')? 60: $('input[name="timeSet"]').val();
+          if (timingCheck && timingCheck.toString().length) {
+            var obj = {
+              "sessionId": Session.get('userSessItem').sessionId,
+              "userId": Session.get('userSessItem').userId,
+              "maxSecs": parseInt(timingCheck)
+            };
+            Meteor.call('setTiming', obj, function (error, result) {
+              $('input[name="timeSet60"]').attr('checked', false);
+              $('input[name="timeSet"]').val('');
+              if (error)
+                alert(error.error);
+            });
+          }
+        },
+        'click #timerEndBtn': function() {
+          var obj = {
+            "sessionId": Session.get('userSessItem').sessionId,
+            "userId": Session.get('userSessItem').userId,
+            "maxSecs": 1
+          };
+          Meteor.call('setTiming', obj, function (error, result) {
+            $('input[name="timeSet60"]').attr('checked', false);
+            $('input[name="timeSet"]').val('');
+            if (error)
+              alert(error.error);
+          });
         }
     });
     Template.create_session.helpers({
+      pollTime: function() {
+        var thisTime = Session.get('time');
+        var sess = Sessions.findOne({"sessionId": Router.current().params.sessionId});
+        if ((thisTime) - new Date(sess.clickerData.countDownSetAt).getTime() > (sess.clickerData.maxSeconds*1000) || !sess.clickerData.maxSeconds) {
+          return false;
+        }
+        else{
+          return parseInt(sess.clickerData.maxSeconds - ((thisTime - new Date(sess.clickerData.countDownSetAt).getTime())/1000))+"s";
+        };
+      },
     	sessionId: function () {
     		return Router.current().params.sessionId;
     	},

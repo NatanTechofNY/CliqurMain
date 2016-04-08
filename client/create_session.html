@@ -21,29 +21,37 @@ body {
 <div class="row">
 <div class="instructorOwnQuestion col-md-offset-3">
 <h1>Publish your own question</h1>
-            <form>
+            <form id="customQuestionSubmit">
             <div class="row">
             <div class="col-md-6">
-        <input type="text" class="form-control">
-        <center><br>
+        <input type="text" name="creatorQuestion" class="form-control">
+        <hr />
+        <center>
+          {{#if pollTime}}
+            <a href="#" id="timerEndBtn">Close polls</a>
+            <p>Time: {{pollTime}}</p>
+          {{else}}
+                <h1>Open polls</h1>
                 <label>
-                  <input type="radio" name="optionsRadios" class="optionsRadios">
+                  <input type="checkbox" name="timeSet60" value="60" class="optionsRadios">
                   60 sec
                 </label> or 
                 <label>
-                  <input type="text" placeholder="Set a custom time (seconds)" style="width:200px">
+                  <input type="number" name="timeSet" placeholder="Set a custom time (seconds)" style="width:200px" min="1" max="600">
                   </label>
-                </center>
+                <a href="#" style="display:block;" id="timerSetBtn">Set timer</a>
+            {{/if}}
+          </center>
         </div>
         <div class="col-md-6">
-        <button class="btn btn-success" style="color:white;width:120px;padding:20px;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Publish!</button>
+        <button type="submit" class="btn btn-success" style="color:white;width:120px;padding:9px;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Publish!</button>
         </div>
         </div>
         </form>
 <hr style="width:90%">
 <h1>Student asked questions</h1>
 <p>Publish the questions that matter most.</p>
-<div style="height:300px;overflow:auto;padding-left: 10px;padding-top: 10px">  
+<div style="padding-left: 10px;padding-top: 10px;margin-bottom:120px;">  
             {{#each questionItem}}
               <div class="radio" style="font-size: 18px">
                 <label>

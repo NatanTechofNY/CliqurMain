@@ -1,13 +1,5 @@
 <template name="publicview">
     <section>
-    <style>
-    * {
-    font-family: Roboto
-    }
-    p {
-      color:black;
-    }
-    </style>
       <div class="container-fluid">
           <div class="col-md-12 padding-top">
             <div class="panel panel-default">
@@ -27,7 +19,7 @@
                   <hr>
               {{#if pushedQuestion.body}}
               <center>
-              <h1>Poll</h1>
+              <h1>Poll | {{#unless eq pollTime '0s'}}Time: {{pollTime}}{{else}} closed{{/unless}}</h1>
               </center>
               <div class="row">
               <div class="col-md-7">
