@@ -135,11 +135,6 @@
     position: relative;
     padding-bottom: 20px;
 }
-.student-qa-button {
-    width: 100%;
-    height: 50px;
-	border-radius: 2px !important;
-}
 
 .student-response-button {
     width: 100%;

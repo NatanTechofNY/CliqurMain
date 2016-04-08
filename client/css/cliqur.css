@@ -1,8 +1,8 @@
 /* Global view goes here, everything that does not effect margin on each device, such as color scheme, background color, and fonts */
 	
-
+	
 	body {
-		font-family: "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		background-color: #fff;
 	    width: 100%;
 	    height: 100%;
@@ -111,8 +111,8 @@
 	font-family: Roboto;
 	font-size: 14px;
 	cursor: pointer;
-	color: #FF7043;
-	border: 1px solid #FF7043;
+	color: #E53935;
+	border: 1px solid #E53935;
 	border-radius: 2px;
 	background-color: white;
 	font-size: 14px;
@@ -133,7 +133,7 @@
 	color: black;
 	padding-left: 2.8%;
 }
-.jumbotron {
+.student-view-jumbotron {
 	background-color: white;
 	color: black;
 	border: 2px solid #263238;
@@ -142,6 +142,11 @@
 	font-family: Roboto;
 	color: black;
 	font-size: 14px;
+}
+.student-qa-button {
+    width: 100%;
+    height: 50px;
+	border-radius: 2px !important;
 }
 
 
@@ -205,14 +210,9 @@
 		border-color: #2875B8;
 	}
 
-/* Rabeea needs to clean this up */
 	.navbar-brand {
 		margin-top: 0%;
 		margin-left: 0.5% !important;
-	}
-	.exit {
-		margin-top: 3px;
-		margin-top: 0.3%;
 	}
 	
 	.login-name {
@@ -222,7 +222,7 @@
 		position: relative;
 		left: 15px;
 	}
-	.jumbotron {
+	.student-view-jumbotron {
 		margin-top: -2%;
 	}
 	
