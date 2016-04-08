@@ -87,6 +87,16 @@ if (Meteor.isClient) {
         return sr && sr.fullName;
       }
       else return "No public questions to display";
+    },
+    pollTime: function() {
+      var thisTime = Session.get('time');
+      var sess = Sessions.findOne({"sessionId": Router.current().params.sessionId});
+      if ((thisTime) - new Date(sess.clickerData.countDownSetAt).getTime() > (sess.clickerData.maxSeconds*1000) || !sess.clickerData.maxSeconds) {
+        return false;
+      }
+      else{
+        return parseInt(sess.clickerData.maxSeconds - ((thisTime - new Date(sess.clickerData.countDownSetAt).getTime())/1000))+"s";
+      };
     }
   });
 };
