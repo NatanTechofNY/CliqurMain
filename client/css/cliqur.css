@@ -11,6 +11,14 @@
 		text-align: center;
 		margin: 10px;
 		padding-top: 50px; 
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 700;
+		letter-spacing: 2px;
+		font-size: 18px;
+		margin-bottom: 50px;
+	}
+	.index_input_container {
+		margin-top: 30px;
 	}
 	.index_id_input {
 		margin: 12px;
@@ -57,7 +65,30 @@
 			display: block;
 
 	}
-
+	.index_close_btn {
+		color: #b31d30;
+			background-color: #fff;
+			font-size: 14px;
+			margin: 12px;
+			padding: 15px;
+			border: 3px solid #b31d30;
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+			height: 50px;
+	}
+	.index_continue_btn {
+		color: #02C39A;
+			background-color: #fff;
+			font-size: 14px;
+			margin: 12px;
+			padding: 15px;
+			border: 3px solid #02C39A;
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+			height: 50px;
+	}
 
 
 
@@ -148,63 +179,15 @@
 
 @media screen and (min-width: 1440px) and (max-width: 2560px) {
 
-	.main_logo_img {
-		padding: 0px;
-		margin-top: 48px;
-		width: 60%;
-	}
+	
 
-		.main_header_text {
-		margin-top: 5px;
-	   font-size: 38px;
-	   left: 50%;
-	}
+	
 
-		.main_input_container {
-		width: 100%;
-	}
-		.main_joinsession_input {
-		font-size: 18px;
-	    width: 20%;
-	    height: 70px;
-		border: 2px solid #BDBDBD;
-		resize: none;
-		margin-bottom: 20px;
-		margin-left: 1030px;
-		margin-right: 1030px;
-	}
-	.main_all_button {
-		height: 65px;
-		font-size: 14px;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		margin: 10px;
-		font-weight: 200;
-	}
-	.main_join_button {
-		margin-left: 1033px;
-		width: 9%;
-		color: #b31d30;
-		background-color: #fff;
-		border-color: #B31D30;
-	}
-	.main_spectate_button {
-		margin-right: 1020px;
-		width: 9%;
-		color:#ecad24;
-		background-color: #fff;
-		border-color: #ECAD24;
+}
 
-	}
-	.main_create_button {
-		margin-left: 1035px;
-		margin-right: 1035px;
-		width: 20%;
-		color: #2875b8;
-		background-color: #fff;
-		border-color: #2875B8;
-	}
 
-	.navbar-brand {
+/*Rabeea styles goes under here */
+.navbar-brand {
 		margin-top: 0%;
 		margin-left: 0.5% !important;
 	}
@@ -219,5 +202,3 @@
 	.student-view-jumbotron {
 		margin-top: -2%;
 	}
-
-}
