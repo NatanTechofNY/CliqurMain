@@ -101,6 +101,16 @@
 	color: black;
 	padding-left: 2.8%;
 }
+.jumbotron {
+	background-color: white;
+	color: black;
+	border: 2px solid #263238;
+}
+.display-question {
+	font-family: Roboto;
+	color: black;
+	font-size: 14px;
+}
 
 
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
@@ -167,7 +177,6 @@
 		margin-left: 0.5% !important;
 	}
 	.exit {
-		color: black;
 		margin-top: 3px;
 		margin-top: 0.3%;
 	}
@@ -178,6 +187,9 @@
 	.left {
 		position: relative;
 		left: 15px;
+	}
+	.jumbotron {
+		margin-top: -2%;
 	}
 	
 }

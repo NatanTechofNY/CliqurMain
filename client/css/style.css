@@ -114,14 +114,10 @@
     height: 100px;
 }
 
-.container-box, .jumbotron {
+.container-box {
 	margin-top: 3% !important;
 }
-.jumbotron {
-	height: 10% !important;
-	background-color: #263238;
-	opacity: 0.5;
-}
+
 .display-question {
 	font-size: 18px;
 	color: black;
