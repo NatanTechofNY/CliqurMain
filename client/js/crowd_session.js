@@ -86,7 +86,7 @@ if (Meteor.isClient) {
         var sr = Users.findOne({"_id": Questions.findOne({isPublic: true}).authorId});
         return sr && sr.fullName;
       }
-      else return "No public questions to display";
+      else return "No public questions";
     },
     pollTime: function() {
       var thisTime = Session.get('time');

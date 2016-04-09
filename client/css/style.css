@@ -136,17 +136,6 @@
     padding-bottom: 20px;
 }
 
-.student-response-button {
-    width: 100%;
-	color: #263238;
-	border-radius: 2px;
-	border: 1.5px solid #FF7043;
-	background:none;
-	background-color: transparent; 
-}
-.student-response-button:hover {
-	background-color: #FF7043;
-}
 .mc {
 	margin-top: 1.5%;
 	background-color: #263238;

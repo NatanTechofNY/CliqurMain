@@ -13,11 +13,11 @@
     </nav>
 
 <div style = "overflow: hidden" class="container box">
-<div class="jumbotron student-view-jumbotron" style="border-color: #263238 ;height:40%;">
+<div class="jumbotron student-view-jumbotron">
   <div class="row">
     <div class="col-md-12">
         <center>
-          <h2 class="display-question">{{latestQuestion.body}} <span>&ndash; {{authorName}}</span></h2>
+          <h2 class="student-display-question">{{latestQuestion.body}} <span>&ndash; {{authorName}}</span></h2>
         </center>
       </div>
     </div>
@@ -29,13 +29,13 @@
             <textarea class="student-input" type="text" name="questionInput" placeholder="Enter your question here..."></textarea>
             <div class="row qa-button-group">
               <div class="col-md-6">
-                <button id="sendQuestionBtn" class="btn student-qa-button student-response-button">
-                  Send question
+                <button id="sendQuestionBtn" class="btn student-qa-button hvr-grow student-send-btn">
+                  SEND
                 </button>
               </div>
               <div class="col-md-6">
-                <button id="clearQuestionBtn" class="btn student-response-button student-qa-button">
-                  Clear
+                <button id="clearQuestionBtn" class="btn student-qa-button hvr-grow student-clear-btn">
+                  CLEAR
                 </button>
               </div>
             </div>

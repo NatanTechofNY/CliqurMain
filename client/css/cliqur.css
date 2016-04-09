@@ -91,6 +91,78 @@
 			height: 50px;
 	}
 
+	/*THESE ARE ON ALL THE PAGES, DONT TOUCH */
+	.navbar-brand {
+		color: black;
+		font-family: Roboto;
+	}
+	.exit {
+		font-family: Roboto;
+		font-size: 14px;
+		cursor: pointer;
+		color: #E53935;
+		border: 1px solid #E53935;
+		border-radius: 2px;
+		background-color: white;
+		font-size: 14px;
+		height: 40px !important;
+		width: 100px !important;
+	}
+
+	.login-name {
+		font-family: Roboto;
+		width: 30%;
+		margin-top: 1%;
+		text-align: right;
+		padding-right: 0.7%;
+	}
+	.cred {
+		font-family: Roboto;
+		font-size: 15px; 
+		color: #263238;
+	}
+	.smallcred {
+		font-size: 13px;
+		color: black;
+		padding-left: 2.8%;
+	}
+	/*student view css */
+	.student-view-jumbotron {
+		background-color: white;
+		color: black;
+		border: 2px solid #263238;
+		height:40%;
+	}
+	.student-display-question {
+		font-family: Roboto;
+		color: black;
+		font-size: 18px;
+	}
+	.student-qa-button {
+		width: 100%;
+		height: 50px;
+		border-radius: 2px !important;
+		background-color: white;
+		font-family: Roboto;
+		font-size: 14px;
+		color: #263238;
+	}
+	.student-send-btn {
+		border: 2px solid #2875B8;
+	}
+	.student-clear-btn {
+		border: 2px solid #DD4A3B;
+	}
+
+	.student-response-button {
+		width: 100%;
+		color: #263238;
+		border-radius: 2px;
+		border: 1.5px solid #FF7043;
+		background:none;
+		background-color: transparent; 
+	}
+
 		.hvr-grow {
 	  display: inline-block;
 	  vertical-align: middle;
@@ -275,6 +347,96 @@
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
+/* student view hvr bounce right */
+.hvr-bounce-to-right-clear {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-right-clear:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #DD4A3B;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-right-clear:hover, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:active {
+  color: #fff;
+}
+.hvr-bounce-to-right-clear:hover:before, .hvr-bounce-to-right:focus:before, .hvr-bounce-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+/* student view bounce right */
+.hvr-bounce-to-right-send {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-right-send:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2875B8;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-right-send:hover, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:active {
+  color: #fff;
+}
+.hvr-bounce-to-right-send:hover:before, .hvr-bounce-to-right:focus:before, .hvr-bounce-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
 	.global_no_padding_right {
 		padding-right: 0;
 	}
@@ -291,6 +453,25 @@
 /* For screen size 1024 - 1440 px, for 15-17 inch laptop/desktops */
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
+	
+	.navbar-brand {
+		margin-top: 0%;
+		margin-left: 0% !important;
+	}
+	
+	.login-name {
+		margin-top: 1%;
+	}
+	.left {
+		position: relative;
+		left: 1%;
+	}
+	.student-view-jumbotron {
+		margin-top: 1.5%;
+	}
+
+	
+
 
 	}
 /* For screen size 768 - 1024 px, for smaller laptops */
@@ -311,51 +492,6 @@
 
 
 
-.navbar-brand {
-	color: black;
-	font-family: Roboto;
-}
-.exit {
-	font-family: Roboto;
-	font-size: 14px;
-	cursor: pointer;
-	color: #E53935;
-	border: 1px solid #E53935;
-	border-radius: 2px;
-	background-color: white;
-	font-size: 14px;
-	height: 40px !important;
-	width: 100px !important;
-}
-.login-name {
-	font-family: Roboto;
-	width: 15%;
-}
-.cred {
-	font-family: Roboto;
-	font-size: 15px; 
-	color: #263238;
-}
-.smallcred {
-	font-size: 13px;
-	color: black;
-	padding-left: 2.8%;
-}
-.student-view-jumbotron {
-	background-color: white;
-	color: black;
-	border: 2px solid #263238;
-}
-.display-question {
-	font-family: Roboto;
-	color: black;
-	font-size: 14px;
-}
-.student-qa-button {
-    width: 100%;
-    height: 50px;
-	border-radius: 2px !important;
-}
 
 
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
@@ -367,21 +503,3 @@
 	
 
 }
-
-
-/*Rabeea styles goes under here */
-.navbar-brand {
-		margin-top: 0%;
-		margin-left: 0.5% !important;
-	}
-	
-	.login-name {
-		margin-top: 1.5%;
-	}
-	.left {
-		position: relative;
-		left: 15px;
-	}
-	.student-view-jumbotron {
-		margin-top: -2%;
-	}
