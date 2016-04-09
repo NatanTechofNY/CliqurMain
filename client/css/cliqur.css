@@ -16,7 +16,7 @@
 		font-weight: 700;
 		letter-spacing: 2px;
 		font-size: 18px;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 	}
 	.index_input_container {
 		margin-top: 30px;
@@ -275,12 +275,50 @@
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
+
+/* Underline From Left */
+.hvr-underline-from-left {
+  display: block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #333;
+  height: 4px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+  right: 0;
+}
+
+
 	.global_no_padding_right {
 		padding-right: 0;
 	}
 	.global_no_padding_left {
 		padding-left: 0;
 	}
+	.table th {
+		padding: 15px 100px 15px 100px;
+		text-align: center;
+	}
+
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
 
 @media screen and (min-width: 1440px) and (max-width: 2560px) {
