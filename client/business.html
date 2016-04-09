@@ -8,29 +8,29 @@
 </head>
 
 
-<template name="indexItem">
+<template name="businessPage">
     <section class="">
       <center>
         <img class="main_logo_img img-responsive" src="/logoCliqurcopy.png">
       </center>
       <div class="row index_input_container">
         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-          <p class="index_headline_text">Revolutionize Your Classroom Experience</p>
+          <p class="index_headline_text">Business Conferencing Done Right</p>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
           <div id="errorMSG-ONE" class="main_errormsg_text"></div>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-          <input class="form-control index_id_input hvr-underline-from-left" type="text" placeholder="Enter Your Session ID" id="codeInput">
+          <input class="form-control index_id_input hvr-underline-from-left" type="text" placeholder="Enter an Event ID" id="codeInput">
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_right">
-            <button class="index_join_btn hvr-grow" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Session</button>
+            <button class="index_join_btn hvr-grow" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Event</button>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_left">
-          <button class="index_spectate_btn hvr-grow" id="joinPublicViewBtn">Spectate Session</button>
+          <button class="index_spectate_btn hvr-grow" id="joinPublicViewBtn">Spectate Event</button>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-            <button class="index_create_btn hvr-bob" data-toggle="modal" data-target="#createSession" id="createSessionBtn">Instructor? Create a Session</button>        
+            <button class="index_create_btn hvr-bob" data-toggle="modal" data-target="#createSession" id="createSessionBtn">Hosting an Event? Create an Event ID</button>        
         </div>
       </div>
     </section>  
@@ -41,7 +41,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Join a Session: {{toJoinSession}}</h4>
+        <h4 class="modal-title" id="exampleModalLabel">Join an Event: {{toJoinSession}}</h4>
       </div>
       <div class="modal-body">
         <form id="toJoinForm">
@@ -55,8 +55,9 @@
             <input type="text" style="font-size: 24px;" class="form-control" id="lastNameInput">
           </div>
           <div class="form-group">
-            <label for="studentId" class="control-label">Student ID No.</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="studentId">
+            <label for="verificationCode" class="control-label">Verification Code</label>
+            <input type="text" style="font-size: 24px;" class="form-control" id="verificationCode">
+            <small>Provided by your host</small>
           </div>
         </form>
       </div>
@@ -72,22 +73,27 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Create a Session</h4>
+        <h4 class="modal-title" id="exampleModalLabel">Create an Event</h4>
       </div>
       <div class="modal-body">
-        <form id="createSessionForm">
+        <form id="createSessionFormBus">
             <div id="errorMSG-createSession" style="font-size: 18px;color:red"></div>
           <div class="form-group">
-            <label for="firstNameInput2" class="control-label">First Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="firstNameInput2">
+            <label for="companyName" class="control-label">Company Name</label>
+            <input type="text" style="font-size: 24px;" class="form-control" id="companyName">
           </div>
           <div class="form-group">
-            <label for="lastNameInput2" class="control-label">Last Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="lastNameInput2">
+            <label for="typeOfEvent" class="control-label">Type of Event</label>
+              <select class="form-control" id="typeOfEvent">
+                <option>Conference</option>
+                <option>Orientation</option>
+                <option>Speaking</option>
+              </select>
           </div>
           <div class="form-group">
-            <label for="classNameInput2" class="control-label">Class Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="classNameInput2">
+            <label for="attendees" class="control-label">Attendees</label>
+            <input type="text" style="font-size: 24px;" class="form-control" id="attendees">
+            <small>Please provide us with the expected amount of registered attendees.</small>
           </div>
           <div class="form-group">
             <label for="inputPassword" class="control-label">Passcode (Optional)</label>
@@ -98,6 +104,7 @@
               <input style="float:left;font-size: 24px;" type="password" class="form-control inputPasswordTs" maxlength="1">
               <br />
           </div>
+          <br>
         </form>
       </div>
       <div class="modal-footer">
