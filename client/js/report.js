@@ -6,5 +6,10 @@ if (Meteor.isClient) {
 		usr: function () {
 			return this.valueOf();
 		}
+		
+
 	});
+
 };
+
+
