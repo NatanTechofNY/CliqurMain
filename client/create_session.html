@@ -4,47 +4,205 @@
   <title>Admin | Cliqur</title>
 
 
-<!--
 <div id="mySidenav" class="create_sidemenu_nav">
   <a href="javascript:void(0)" class="create_closeNav_style" id="create_closeNav_btn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  
 </div>
 
 
 <div id="create_id_body" class="create_body_div">
  
 
-<nav class="navbar navbar-default navbar-fixed-top" style="z-index: 0;">
-   <div class="container">
-      <div class="navbar-header"> 
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" aria-expanded="false"> 
-          <span class="sr-only">Toggle navigation</span> 
-          <span class="icon-bar"></span> 
-          <span class="icon-bar"></span> 
-          <span class="icon-bar"></span> 
-        </button> 
-        <div class="navbar-brand" href="">Cliqur | Session ID: <input readonly type="text" value="{{sessionId}}" id="autoSelectrLoc"> </div>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
-         <button type="button" class="create_attendance_btn hvr-icon-wobble-horizontal navbar-btn" id="create_triggerNav_btn">
-            Attendance
-         </button> 
+<nav class="navbar navbar-default navbar-fixed-top create_margin_nav">
+   <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+            <button type="button" class="create_attendance_btn hvr-icon-wobble-horizontal navbar-btn" id="create_triggerNav_btn">
+                  Attendance
+            </button>
+        </div>
+        <div class="col-md-1">
+             <div class="navbar-brand" href="">Cliqur | Session ID: <input readonly type="text" value="{{sessionId}}" id="autoSelectrLoc"> </div>
+        </div>
+        <div class="col-md-7">
+
+        </div>
+        <div class="col-md-1">
+          <a target="_blank" href="/d/{{sessionId}}/p">
+            <button type="button" class="create_public_btn hvr-grow navbar-btn">
+                Public View
+            </button>
+          </a>
+        </div>
+        <div class="col-md-1">
+            <button type="button" class="create_exit_btn hvr-grow navbar-btn">
+                 End Session
+            </button>
+        </div>
       </div>
    </div>
 </nav>
-fhasldkflasdjfoiasdnflkas
+  <section class="create_panel_section">
+      <div class="row">
+          <div class="col-md-6">
 
+
+
+
+
+                    <div class="panel">
+                      <div class="panel-element">
+                        <div class="element-actions">
+                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+                        </div>
+
+                        <div class="element-content">
+                          <button class="btn btn-more">
+                            <i class="fa fa-ellipsis-h icon-closed"></i>
+                            <i class="fa fa-times icon-open"></i>
+                            <i class="fa fa-heart-o icon-hearted"></i>
+                          </button>
+
+                          <div class="content-post">
+                            <div class="post-avatar"></div>
+
+                            <div class="post-content">
+                              <span class="post-title">Lorem Ipsum Dolor Sit</span>
+                              <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel-element">
+                        <div class="element-actions">
+                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+                        </div>
+
+                        <div class="element-content">
+                          <button class="btn btn-more">
+                            <i class="fa fa-ellipsis-h icon-closed"></i>
+                            <i class="fa fa-times icon-open"></i>
+                            <i class="fa fa-heart-o icon-hearted"></i>
+                          </button>
+
+                          <div class="content-post">
+                            <div class="post-avatar"></div>
+
+                            <div class="post-content">
+                              <span class="post-title">Nullam egestas neque et</span>
+                              <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel-element">
+                        <div class="element-actions">
+                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+                        </div>
+
+                        <div class="element-content">
+                          <button class="btn btn-more">
+                            <i class="fa fa-ellipsis-h icon-closed"></i>
+                            <i class="fa fa-times icon-open"></i>
+                            <i class="fa fa-heart-o icon-hearted"></i>
+                          </button>
+
+                          <div class="content-post">
+                            <div class="post-avatar"></div>
+
+                            <div class="post-content">
+                              <span class="post-title">Lorem Ipsum Dolor Sit</span>
+                              <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel-element">
+                        <div class="element-actions">
+                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+                        </div>
+
+                        <div class="element-content">
+                          <button class="btn btn-more">
+                            <i class="fa fa-ellipsis-h icon-closed"></i>
+                            <i class="fa fa-times icon-open"></i>
+                            <i class="fa fa-heart-o icon-hearted"></i>
+                          </button>
+
+                          <div class="content-post">
+                            <div class="post-avatar"></div>
+
+                            <div class="post-content">
+                              <span class="post-title">Nullam egestas neque et</span>
+                              <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel-element">
+                        <div class="element-actions">
+                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+                        </div>
+
+                        <div class="element-content">
+                          <button class="btn btn-more">
+                            <i class="fa fa-ellipsis-h icon-closed"></i>
+                            <i class="fa fa-times icon-open"></i>
+                            <i class="fa fa-heart-o icon-hearted"></i>
+                          </button>
+
+                          <div class="content-post">
+                            <div class="post-avatar"></div>
+
+                            <div class="post-content">
+                              <span class="post-title">Lorem Ipsum Dolor Sit</span>
+                              <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+          <div class="col-md-6">
+
+          </div>
+        </div>
+  </section>
   </div>
--->
 
 
 
 
 
-
+<!--
   <nav class="navbar navbar-default">
   <div class="container-fluid">
       <div class="navbar-brand" href="">Cliqur | Session ID: <input readonly type="text" value="{{sessionId}}" id="autoSelectrLoc"> </div>
