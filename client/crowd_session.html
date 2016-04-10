@@ -12,12 +12,12 @@
 		
     </nav>
 
-<div style = "overflow: hidden" class="container box">
+<div style = "overflow: hidden" class="container box student-container">
 <div class="jumbotron student-view-jumbotron">
   <div class="row">
     <div class="col-md-12">
         <center>
-          <h2 class="student-display-question">{{latestQuestion.body}} <span>&ndash; {{authorName}}</span></h2>
+          <p class="student-display-question">{{latestQuestion.body}} <span>&ndash; {{authorName}}</span></p>
         </center>
       </div>
     </div>
@@ -27,7 +27,7 @@
         <div class="col-md-offset-2 col-md-8 col-md-offset-2">
           <div class="container-fluid">
             <textarea class="student-input" type="text" name="questionInput" placeholder="Have a question? Enter it here"></textarea>
-            <div class="row qa-button-group">
+            <div class="row student-qa-button-group">
               <div class="col-md-6">
                 <button id="sendQuestionBtn" class="btn student-qa-button hvr-bounce-to-right-send student-send-btn">
                   SEND
@@ -40,23 +40,22 @@
               </div>
             </div>
             {{#if pollTime}}
-              <div class="row">
-                <h1>Time to close: {{pollTime}}</h1>
+              <div class="row student-mc-container">
+                <p class = "student-time-display">Time remaining: {{pollTime}}</p>
                 <div class="col-md-12 col-xs-12 text-center nopadding-bottom">
-                  <label class="control-label text-center response-label">Multiple Choice Response</label>
-                </div>
-                
-                <div class="col-md-3 col-xs-3">
-                  <button class="btn btn-defaul student-response-button mc" data-idx="0"><span>Recording response...</span><h2>A</h2></button>
+                 <center><p class="student-mc-title">Multiple Choice Response</p></center> 
                 </div>
                 <div class="col-md-3 col-xs-3">
-                  <button class="btn btn-defaul student-response-button mc" data-idx="1"><span>Recording response...</span><h2>B</h2></button>
+                  <button class="btn hvr-grow student-response-button" data-idx="0"><span>Recording response...</span><p class = "student-mc-text">A</p></button>
                 </div>
                 <div class="col-md-3 col-xs-3">
-                  <button class="btn btn-defaul student-response-button mc" data-idx="2"><span>Recording response...</span><h2>C</h2></button>
+                  <button class="btn hvr-grow student-response-button" data-idx="1"><span>Recording response...</span><p class = "student-mc-text">B</p></button>
                 </div>
                 <div class="col-md-3 col-xs-3">
-                  <button class="btn btn-defaul student-response-button mc" data-idx="3"><span>Recording response...</span><h2>D</h2></button>
+                  <button class="btn hvr-grow student-response-button" data-idx="2"><span>Recording response...</span><p class = "student-mc-text">C</p></button>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                  <button class="btn hvr-grow student-response-button" data-idx="3"><span>Recording response...</span><p class = "student-mc-text">D</p></button>
                 </div>
               </div>
             {{/if}}
