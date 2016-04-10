@@ -126,41 +126,13 @@
 	resize: none;
     
 }
-.qa-button-group {
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
+
 .response-area {
     top: 20vh;
     position: relative;
     padding-bottom: 20px;
 }
 
-.student-response-button {
-    width: 100%;
-	color: #263238;
-	border-radius: 2px;
-	border: 1.5px solid #FF7043;
-	background:none;
-	background-color: transparent; 
-}
-.student-response-button:hover {
-	background-color: #FF7043;
-}
-.mc {
-	margin-top: 1.5%;
-	background-color: #263238;
-	color: white;
-	border: none;
-
-}
-.mc:hover {
-	color: #FF7043;
-	background-color: #263238;
-}
-.response-label {
-	width: 100%;
-}
 
 .public-display {
     height: 82vh;
@@ -379,9 +351,6 @@ input[type=password] {
 
 /*smart phones */
 @media screen and (max-width: 480px) and (min-width: 320px) {
-body {
-            position: fixed;
-        }
         .well {
     left: 8vh;
     margin-top: 20px;
