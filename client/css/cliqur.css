@@ -30,6 +30,14 @@
 		width: 320px;
 		height: 50px;
 	}
+	.index_error_msg {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		color: red;
+		font-weight: 700;
+		letter-spacing: 2px;
+	}
 	.index_join_btn {
 			color: #b31d30;
 			background-color: #fff;
@@ -306,6 +314,104 @@
 .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
   right: 0;
 }
+/* Icon Wobble Horizontal */
+@-webkit-keyframes hvr-icon-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hvr-icon-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.hvr-icon-wobble-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  padding-right: 2.2em;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-icon-wobble-horizontal:before {
+  content: "\f061";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-wobble-horizontal:hover:before, .hvr-icon-wobble-horizontal:focus:before, .hvr-icon-wobble-horizontal:active:before {
+  -webkit-animation-name: hvr-icon-wobble-horizontal;
+  animation-name: hvr-icon-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
 
 
 	.global_no_padding_right {
@@ -317,6 +423,74 @@
 	.table th {
 		padding: 15px 100px 15px 100px;
 		text-align: center;
+	}
+
+
+
+
+	.create_body_div {
+		padding-top: 100px;
+		transition: margin-left .5s;
+	}
+		  /* The side navigation menu */
+	.create_sidemenu_nav {
+	    height: 100%; /* 100% Full-height */
+	    width: 0; /* 0 width - change this with JavaScript */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Stay on top */
+	    top: 0;
+	    left: 0;
+	    background-color: #111; /* Black*/
+	    overflow-x: hidden; /* Disable horizontal scroll */
+	    padding-top: 60px; /* Place content 60px from the top */
+	    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	}
+
+	/* The navigation menu links */
+	.create_sidemenu_nav a {
+	    padding: 8px 8px 8px 32px;
+	    text-decoration: none;
+	    font-size: 25px;
+	    color: #818181;
+	    display: block;
+	    transition: 0.3s
+	}
+
+	/* When you mouse over the navigation links, change their color */
+	.create_sidemenu_nav a:hover, .offcanvas a:focus{
+	    color: #f1f1f1;
+	}
+
+	/* Position and style the close button (top right corner) */
+	.create_closeNav_style {
+	    position: absolute;
+	    top: 0;
+	    right: 25px;
+	    font-size: 36px !important;
+	    margin-left: 50px;
+	}
+
+	.create_attendance_btn {
+			color: #FA7921;
+			background-color: #fff;
+			font-size: 14px;
+			padding: 15px;
+			font-weight: 200;
+			border: 3px solid #FA7921;
+			width: 150px;
+			margin: 10px;
+	}
+
+
+
+
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+	    .create_sidemenu_nav {padding-top: 15px;}
+	    .create_sidemenu_nav a {font-size: 18px;}
 	}
 
 /* For screen size 1440px - 2560 px, for 2K/4K displays and up*/
