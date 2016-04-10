@@ -1,4 +1,20 @@
 <template name="crowd_session">
+
+{{#if isPhone}}
+    <nav class="navbar">
+      <div class="container-fluid">
+          <a class="navbar-brand">
+        Cliqur <span> Students</span> | <span class = "cred">Session ID: {{sessionId}}</span></a>
+      
+            <button class="navbar-right btn-danger exit" style="z-index:1" id="endssn">Exit Session</button>
+            <p class="navbar-right login-name">Signed in as {{userName}}</p>
+            <label id="status" class="navbar-text navbar-right"></label>
+      </div>
+      <left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: {{inst}} </p> </left>
+    
+    </nav>
+WHAT YOU WANT TO SHOW FOR PHONE. So you can have two different navbars but they will each have different layout for phone and desktop.
+{{else}}
     <nav class="navbar">
       <div class="container-fluid">
           <a class="navbar-brand">
@@ -66,5 +82,6 @@
 <center>
 
 </center>
+{{/if}}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 </template>
