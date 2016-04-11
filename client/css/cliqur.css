@@ -101,6 +101,15 @@
 			width: 40%;
 			height: 50px;
 	}
+	.index_footer {
+		margin-top: 2%;
+	}
+	.index_footer_link {
+		display: inline-block;
+		color: #757575;
+		font-size: 12px;
+		padding-left: 20px;
+	}
 	
 
 	/*THESE ARE ON ALL THE PAGES, DONT TOUCH */
