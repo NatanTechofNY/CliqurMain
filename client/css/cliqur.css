@@ -354,7 +354,6 @@
 			border: 3px solid #FA7921;
 			width: 150px;
 			margin: 10px;
-			float: right;
 	}
 	.create_customtime_input {
 			margin: 0px 12px 12px 12px;
@@ -375,7 +374,6 @@
 			border: 3px solid #FA7921;
 			width: 150px;
 			margin: 10px;
-			float: right;
 	}
 	#overridebs .form-control {
 			height: 60px;
