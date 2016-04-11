@@ -408,6 +408,16 @@
 		overflow: scroll;
 		 height: 65vh;
 	}
+	.thankyou_gohome_btn {
+			color: #05668D;
+			background-color: #fff;
+			font-size: 14px;
+			padding: 15px;
+			font-weight: 200;
+			border: 3px solid #05668D;
+			width: 150px;
+			margin: 10px;
+	}
 /*panel styles, not ready yet */
 
 
