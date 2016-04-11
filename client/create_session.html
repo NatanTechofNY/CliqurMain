@@ -51,11 +51,11 @@
 
         <div class="col-md-6">
            
-            <button type="button" class="create_exit_btn hvr-grow navbar-btn" id="endssn"> 
+            <button type="button" class="create_exit_btn hvr-grow" id="endssn"> 
                  End Session
             </button>
             <a target="_blank" href="/d/{{sessionId}}/p">
-                <button type="button" class="create_public_btn hvr-grow navbar-btn">
+                <button type="button" class="create_public_btn hvr-grow">
                     Public View
                 </button>
             </a>
@@ -210,12 +210,9 @@
                   <div  id="overridebs" class="col-md-6">
                         <input class="create_customtime_input" name="timeSet" type="number" placeholder="Or set your own time">
                   </div>
-                  <div class="col-md-2">
-                        <button class="create_customtime_button hvr-icon-buzz-out" id="timerSetBtn">Set Timer</button>
-                  </div>
-               
-                  <div class="col-md-2">
+                  <div class="col-md-10">
                         <button id="resetPollBtn" class="create_reset_button hvr-icon-spin">Reset Poll</button>
+                        <button class="create_customtime_button hvr-icon-buzz-out" id="timerSetBtn">Set Timer</button>
                   </div>
                 {{/if}}
               </div>

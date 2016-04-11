@@ -354,8 +354,7 @@
 			border: 3px solid #FA7921;
 			width: 150px;
 			margin: 10px;
-			margin-right: auto;
-			margin-left: auto;
+			float: right;
 	}
 	.create_customtime_input {
 			margin: 0px 12px 12px 12px;
@@ -365,6 +364,7 @@
 			margin-right: auto;
 			width: 50%;
 			height: 60px;
+			background-color: #fff;
 	}
 	.create_reset_button {
 			color: #FA7921;
@@ -375,8 +375,7 @@
 			border: 3px solid #FA7921;
 			width: 150px;
 			margin: 10px;
-			margin-right: auto;
-			margin-left: auto;
+			float: right;
 	}
 	#overridebs .form-control {
 			height: 60px;
