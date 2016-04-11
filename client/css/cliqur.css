@@ -376,7 +376,7 @@
 			border: 3px solid 00A896;
 			margin-left: auto;
 			margin-right: auto;
-			width: 50%;
+			width: 100%;
 			height: 60px;
 			background-color: #fff;
 	}
@@ -403,6 +403,11 @@
 		margin: 50px 0px 50px 0px;
 	}
 
+
+	.create_question_panel {
+		overflow: scroll;
+		 height: 65vh;
+	}
 /*panel styles, not ready yet */
 
 
