@@ -212,12 +212,10 @@ if (Meteor.isClient) {
         'click #create_triggerNav_btn': function() {
           document.getElementById("mySidenav").style.width = "250px";
           document.getElementById("create_id_body").style.marginLeft = "250px";
-          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
         },
         'click #create_closeNav_btn': function() {
           document.getElementById("mySidenav").style.width = "0";
           document.getElementById("create_id_body").style.marginLeft = "0";
-          document.body.style.backgroundColor = "white";
         }
     });
     Template.create_session.helpers({
