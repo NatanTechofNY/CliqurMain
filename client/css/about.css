@@ -1,0 +1,25 @@
+* {
+	font-family: Roboto;
+}
+.about_title {
+	margin-top: 10%;
+	color: #2875B8;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+}
+.about_intro, .about_p {
+	font-size: 15px;
+}
+.about_center {
+	margin-top: 5%;
+margin-left: 13%;
+
+}
+.about_p {
+	text-align: left;
+}
+.about_princeton {
+	height: 40%;
+	width: 40%;
+}
