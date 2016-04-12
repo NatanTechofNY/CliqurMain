@@ -1,7 +1,194 @@
 <template name="create_session">
+<!--
+MOBILE VIEW PROGRESS DO NOT TOUCH
+<style>
+/* Tabs panel */
+.tabbable-panel {
+  border:1px solid #eee;
+  padding: 10px;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+}
+
+/* Default mode */
+.tabbable-line > .nav-tabs {
+  border: none;
+    margin: auto;
+    width: 60%;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #f3565d;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+</style>
+<div class="row">
+    <div class="col-md-12">
+      <div class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs" style="font-size: 36px">
+            <li class="active">
+              <a href="#tab_default_1" data-toggle="tab">
+              Class Attendance</a>
+            </li>
+            <li>
+              <a href="#tab_default_2" data-toggle="tab">
+              Questions</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active fade in" id="tab_default_1">
+              <h1>
+                Class Attendance
+              </h1>
+              <p>
+                {{#each usersList}}
+                    <li class="create_att_li" title="{{studentId}}">
+                        {{#if eq userId SessionItem.sessionOwnerId}}
+                            <b>{{fullName}}</b>
+                        {{else}}
+                            <span>{{fullName}}</span>
+                        {{/if}}
+                    </li>
+                {{/each}}
+              </p>
+              <p>
+          <button type="button" id="createAtten" class="create_generate_btn hvr-icon-hang" style="margin-bottom: 5%">
+                  Download Report
+           </button>
+              </p>
+            </div>
+            <div class="tab-pane fade" id="tab_default_2">
+            <div class="row">
+ <div class="col-md-6">
+                  <div class="panel-body create_question_panel">
+                    
+
+                    <div class="panel">
+                    {{#each questionItem}}
+                      <div class="panel-element">
+                        <div class="element-actions">
+                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+                          <button class="btn btn-action btn-heart" name="optionsRadios"  value="{{_id}}" checked="{{isPublic}}"><i class="fa fa-heart-o"></i></button>
+                        </div>
+                        <div class="element-content">
+                          <button class="btn btn-more">
+                            <i class="fa fa-ellipsis-h icon-closed"></i>
+                            <i class="fa fa-times icon-open"></i>
+                            <i class="fa fa-heart-o icon-hearted"></i>
+                          </button>
+                          <div class="content-post">
+                            <div class="post-avatar"></div>
+                            <div class="post-content">
+                              <span class="post-title">{{thisAuthorName}}</span>
+                              <p class="post-body">{{{body}}}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                  {{/each}}
+                    </div>
+
+                </div>
+                </div>
+          <div class="col-md-5">
+            <form id="customQuestionSubmit">
+              <div class="row">
+                    <div class="col-md-12 page-header create_header_text">
+                        <h2><small>Publish Your Own Question</small></h2>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="create_question_input form-control" name="creatorQuestion" placeholder="Create your own question here!">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="create_selfpublish_button hvr-bounce-to-right-publish">Publish</button>
+                    </div>
+              </div>
+              <hr class="create_margin_hr">
+              <div class="row">
+                  <div class="col-md-12 page-header create_header_text">
+                        <h2><small>Timer</small></h2>
+                  </div>
+               {{#if pollTime}}
+                      <div class="page-header create_header_text">
+                          <h1><small> Time Left: {{pollTime}} </small></h1>
+                      </div>
+                    <div class="row">
+                      <div class="col-md-2">
+                            <button id="timerEndBtn" class="create_reset_button hvr-icon-spin">Close Poll</button>
+                      </div>
+                    </div>
+               {{else}}
+                  <div id="overridebs" class="col-md-6">
+                      <select class="form-control" name="timeSet60">
+                        <option value="15">15 Seconds</option>
+                        <option value="30">30 Seconds</option>
+                        <option value="60" selected>60 Seconds</option>
+                      </select>
+                  </div>
+                  <div  id="overridebs" class="col-md-6">
+                        <input class="create_customtime_input" name="timeSet" type="number" placeholder="Or set your own time">
+                  </div>
+                  <div class="col-md-10">
+                        <button class="create_customtime_button hvr-icon-buzz-out" id="timerSetBtn">Set Timer</button>
+                        <button id="resetPollBtn" class="create_reset_button hvr-icon-spin">Reset Poll</button>
+                  </div>
+                {{/if}}
+              </div>
+            </form>
+        </div> 
+ </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <title>Admin | Cliqur</title>
-
 
 <div id="mySidenav" class="create_sidemenu_nav">
   <a href="javascript:void(0)" class="create_closeNav_style" id="create_closeNav_btn">&times;</a>
@@ -38,15 +225,14 @@
                         <input readonly class="form-control" type="text" value="{{sessionId}}" id="autoSelectrLoc">
                     </div>
                 </form>
-
-           <!--  <div class="form-group has-success has-feedback">
+    <div class="form-group has-success has-feedback">
                 <div class="input-group">
                   <span><label class="control-label">Cliqur | Session ID: </label></span>
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                   <input type="text" readonly class="form-control" id="autoSelectrLoc" value="{{sessionId}}">
                 </div>
                 <span class="fa fa-ok form-control-feedback" aria-hidden="true"></span>
-              </div> -->
+              </div> 
         </div>
 
         <div class="col-md-6">
@@ -163,7 +349,7 @@
       </div>
   </section>
   </div>
-<!--
+
   <nav class="navbar navbar-default">
   <div class="container-fluid">
       <div class="navbar-brand" href="">Cliqur | Session ID: <input readonly type="text" value="{{sessionId}}" id="autoSelectrLoc"> </div>

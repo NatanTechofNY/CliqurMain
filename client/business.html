@@ -24,13 +24,13 @@
           <input class="form-control index_id_input hvr-underline-from-left" type="text" placeholder="Enter an Event ID" id="codeInput">
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_right">
-            <button class="index_join_btn hvr-grow" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Event</button>
+            <button class="index_join_btn hvr-grow" data-toggle="modal" data-target="#joinSession" id="joinEventBtn">Join Event</button>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_left">
-          <button class="index_spectate_btn hvr-grow" id="joinPublicViewBtn">Spectate Event</button>
+          <button class="index_spectate_btn hvr-grow" id="joinPublicEvent">Spectate Event</button>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-            <button class="index_create_btn hvr-bob" data-toggle="modal" data-target="#createSession" id="createSessionBtn">Hosting an Event? Create an Event ID</button>        
+            <button class="index_create_btn hvr-bob" data-toggle="modal" data-target="#createSession" id="createEventBtn">Hosting an Event? Create an Event ID</button>        
         </div>
       </div>
     </section>  
@@ -85,9 +85,9 @@
           <div class="form-group">
             <label for="typeOfEvent" class="control-label">Type of Event</label>
               <select class="form-control" id="typeOfEvent">
-                <option>Conference</option>
-                <option>Orientation</option>
-                <option>Speaking</option>
+                <option value="Conference">Conference</option>
+                <option value="Orientation">Orientation</option>
+                <option value="Speaking">Speaking</option>
               </select>
           </div>
           <div class="form-group">
@@ -109,7 +109,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn-modal index_close_btn hvr-bounce-to-right-close" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn-modal index_continue_btn hvr-bounce-to-right-continue" onclick='$("#createSessionForm").trigger("submit")'>Continue</button>
+        <button type="submit" class="btn-modal index_continue_btn hvr-bounce-to-right-continue" onclick='$("#createSessionFormBus").trigger("submit")'>Continue</button>
       </div>
     </div>
   </div>
