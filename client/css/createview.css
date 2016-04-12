@@ -1,9 +1,17 @@
 
 
 .sessidCont{
-	margin-top: 24px;
+	margin-left: 3px;
+	margin-top: 10px;
+	padding: 7px 12px 8px 12px;
+	background-color: #FAFAFA;
+	border: 1px solid #EBEBEB;
+	border-radius: 2px;
 }
 .sessidCont>label{
+	color: #444;
+	font-weight: normal!important;
+	font-size: 13px;
 	padding-right: 9px;
 }
 
@@ -43,4 +51,9 @@
 .post-body{
 	color: #111!important;
 	font-size: 14px!important;
+}
+
+
+.specialwidth_timerset{
+	width: 180px;
 }

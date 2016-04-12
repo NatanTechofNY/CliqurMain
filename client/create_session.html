@@ -220,7 +220,7 @@ MOBILE VIEW PROGRESS DO NOT TOUCH
         <div class="col-md-4 form-group">
                 <form class="form-inline">
                     <div class="form-group navbar-text sessidCont">
-                        <label>Cliqur | Session ID: </label>
+                        <label>Session ID: </label>
                         <input readonly class="form-control" type="text" value="{{sessionId}}" id="autoSelectrLoc">
                     </div>
                 </form>
@@ -228,11 +228,11 @@ MOBILE VIEW PROGRESS DO NOT TOUCH
 
         <div class="col-md-6">
            
-            <button type="button" class="create_exit_btn hvr-grow" id="endssn"> 
+            <button type="button" class="create_exit_btn" id="endssn"> 
                  End Session
             </button>
             <a target="_blank" href="/d/{{sessionId}}/p">
-                <button type="button" class="create_public_btn hvr-grow">
+                <button type="button" class="create_public_btn">
                     Spectator View
                 </button>
             </a>
@@ -299,7 +299,7 @@ MOBILE VIEW PROGRESS DO NOT TOUCH
                         <textarea type="text" class="create_question_input form-control" name="creatorQuestion" placeholder="Create your own question here!"></textarea>
                     </div>
                     <div class="col-md-3">
-                        <button type="submit" class="create_selfpublish_button hvr-bounce-to-right-publish">Publish</button>
+                        <button type="submit" class="create_selfpublish_button">Publish</button>
                     </div>
               </div>
               <hr class="create_margin_hr">
@@ -317,15 +317,15 @@ MOBILE VIEW PROGRESS DO NOT TOUCH
                       </div>
                     </div>
                {{else}}
-                  <div id="overridebs" class="col-md-6">
-                      <select class="form-control" name="timeSet60">
-                        <option value="15">15 Seconds</option>
-                        <option value="30">30 Seconds</option>
-                        <option value="60" selected>60 Seconds</option>
+                  <div id="overridebs" class="col-md-6 specialwidth_timerset">
+                      <select class="form-control" style="text-align:center;" name="timeSet60">
+                        <option value="15">15s</option>
+                        <option value="30">30s</option>
+                        <option value="60" selected>60s</option>
                       </select>
                   </div>
-                  <div  id="overridebs" class="col-md-6">
-                        <input class="create_customtime_input" name="timeSet" type="number" placeholder="Or set your own time">
+                  <div  id="overridebs" class="col-md-6 specialwidth_timerset global_no_padding_left">
+                        <input class="create_customtime_input" name="timeSet" type="number" placeholder="Custom time">
                   </div>
                   <div class="col-md-10">
                         <button class="create_customtime_button hvr-icon-buzz-out" id="timerSetBtn">Set Timer</button>

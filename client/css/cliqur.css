@@ -27,7 +27,7 @@
 	.index_id_input {
 		margin: 12px;
 		padding: 15px;
-		border: 3px solid 00A896;
+		border: 2px solid 00A896;
 		margin-left: auto;
 		margin-right: auto;
 		width: 320px;
@@ -47,7 +47,7 @@
 			font-size: 14px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #b31d30;
+			border: 2px solid #b31d30;
 			width: 150px;
 			margin: 10px;
 			float: right;
@@ -58,7 +58,7 @@
 			font-size: 14px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #FA7921;
+			border: 2px solid #FA7921;
 			width: 150px;
 			margin: 10px;
 			float: left;
@@ -69,7 +69,7 @@
 			font-size: 14px;
 			margin: 12px;
 			padding: 15px;
-			border: 3px solid #05668D;
+			border: 2px solid #05668D;
 			margin-left: auto;
 			margin-right: auto;
 			width: 320px;
@@ -83,7 +83,7 @@
 			font-size: 14px;
 			margin: 12px;
 			padding: 15px;
-			border: 3px solid #b31d30;
+			border: 2px solid #b31d30;
 			margin-left: auto;
 			margin-right: auto;
 			width: 40%;
@@ -95,7 +95,7 @@
 			font-size: 14px;
 			margin: 12px;
 			padding: 15px;
-			border: 3px solid #02C39A;
+			border: 2px solid #02C39A;
 			margin-left: auto;
 			margin-right: auto;
 			width: 40%;
@@ -277,23 +277,47 @@
 	    margin-left: 50px;
 	}
 
+	.create_customtime_button, .create_reset_button, .create_attendance_btn{
+		background-color: rgba(242, 231, 223, 0.36);
+		border-radius: 2px;
+			-webkit-transition: background .3s, opacity .3s;
+			   -moz-transition: background .3s, opacity .3s;
+			    -ms-transition: background .3s, opacity .3s;
+			     -o-transition: background .3s, opacity .3s;
+			        transition: background .3s, opacity .3s;
+	}
 	.create_attendance_btn {
 			color: #FA7921;
-			background-color: #fff;
-			font-size: 14px;
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #FA7921;
+			border: 1px solid #FA7921;
 			width: 150px;
 			margin: 10px;
 	}
+	.create_attendance_btn:hover, .create_customtime_button:hover, .create_reset_button:hover{
+		background-color: rgba(242, 231, 223, 0.1);
+		opacity: 0.84;
+	}
+	.create_generate_btn, .create_public_btn, .create_selfpublish_button{
+		background-color: rgba(220, 225, 227, 0.36);
+		border-radius: 2px;
+			-webkit-transition: background .3s, opacity .3s;
+			   -moz-transition: background .3s, opacity .3s;
+			    -ms-transition: background .3s, opacity .3s;
+			     -o-transition: background .3s, opacity .3s;
+			        transition: background .3s, opacity .3s;
+	}
+	.create_generate_btn:hover, .create_public_btn:hover, .create_selfpublish_button:hover{
+		background-color: rgba(220, 225, 227, 0.1);
+		opacity: 0.84;
+	}
 	.create_generate_btn {
 			color: #05668D;
-			background-color: #fff;
-			font-size: 14px;
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #05668D;
+			border: 1px solid #05668D;
 			width: 170px;
 			margin: 10px;
 			text-decoration: none;
@@ -301,11 +325,10 @@
 	}
 	.create_public_btn {
 			color: #05668D;
-			background-color: #fff;
-			font-size: 14px;
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #05668D;
+			border: 1px solid #05668D;
 			width: 150px;
 			margin: 10px;
 			text-decoration: none;
@@ -313,14 +336,24 @@
 	}
 	.create_exit_btn {
 			color: #b31d30;
-			background-color: #fff;
-			font-size: 14px;
+			background-color: rgba(232, 211, 214, 0.36);
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #b31d30;
+			border: 1px solid #b31d30;
 			width: 150px;
 			margin: 10px;
 			float: right;
+			border-radius: 3px;
+			-webkit-transition: background .3s, opacity .3s;
+			   -moz-transition: background .3s, opacity .3s;
+			    -ms-transition: background .3s, opacity .3s;
+			     -o-transition: background .3s, opacity .3s;
+			        transition: background .3s, opacity .3s;
+	}
+	.create_exit_btn:hover{
+		opacity: 0.84;
+		background-color: rgba(232, 211, 214, 0.1);
 	}
 	.create_id_input {
 		font-weight: 800;
@@ -339,7 +372,7 @@
 	.create_question_input {
 			margin: 12px;
 			padding: 15px;
-			border: 3px solid 00A896;
+			border: 2px solid 00A896;
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 100%;
@@ -348,13 +381,13 @@
 	}
 	.create_selfpublish_button {
 			color: #05668D;
-			background-color: #fff;
-			font-size: 14px;
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #05668D;
+			border: 1px solid #05668D;
 			width: 150px;
 			margin: 10px;
+			margin-top: 13px;
 			text-decoration: none;	
 			vertical-align: middle;
 	}
@@ -365,33 +398,32 @@
 	}
 	.create_customtime_button {
 			color: #FA7921;
-			background-color: #fff;
-			font-size: 14px;
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #FA7921;
+			border: 1px solid #FA7921;
 			width: 150px;
 			margin: 10px;
-	}
-	.create_customtime_input {
-			margin: 0px 12px 12px 12px;
-			padding: 15px;
-			border: 3px solid 00A896;
-			margin-left: auto;
-			margin-right: auto;
-			width: 100%;
-			height: 60px;
-			background-color: #fff;
+			margin-left: 0;
 	}
 	.create_reset_button {
 			color: #FA7921;
-			background-color: #fff;
-			font-size: 14px;
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #FA7921;
-			width: 150px;
-			margin: 10px;
+			border: 1px solid #FA7921;
+			width: 165px;
+			margin: 10px; margin-left: 3px;
+	}
+	.create_customtime_input {
+			margin: 0px 12px 12px 0;
+			padding: 15px;
+			border: 1px solid #C4CACC;
+			width: 100%;
+			height: 60px;
+			background-color: #fff;
+			font-size: 14px!important;
+			box-shadow: inset 0px 1px 6px -3px #CCC;
 	}
 	#overridebs .form-control {
 			height: 60px;
@@ -410,14 +442,15 @@
 	.create_question_panel {
 		overflow: scroll;
 		 height: 65vh;
+		 padding: 6px;
 	}
 	.thankyou_gohome_btn {
 			color: #05668D;
 			background-color: #fff;
-			font-size: 14px;
+			font-size: 13px;
 			padding: 15px;
 			font-weight: 200;
-			border: 3px solid #05668D;
+			border: 2px solid #05668D;
 			width: 150px;
 			margin: 10px;
 	}
@@ -472,7 +505,9 @@ h1 {
 .panel {
   max-width: 450px;
   margin: 0 auto;
-  padding: 30px 20px;
+}
+.panel.panel-default{
+	padding: 18px 12px;
 }
 .panel .panel-element {
   position: relative;
@@ -547,7 +582,7 @@ h1 {
 .panel .panel-element .element-actions .btn-action {
   display: inline-block;
   width: 45px;
-  height: 45px;
+  padding: 12px;
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;

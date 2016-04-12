@@ -188,7 +188,8 @@ if (Meteor.isClient) {
             var obj = {
               "sessionId": Session.get('userSessItem').sessionId,
               "userId": Session.get('userSessItem').userId,
-              "maxSecs": parseInt(timingCheck)
+              "maxSecs": parseInt(timingCheck),
+              "thisTime": new Date()
             };
             Meteor.call('setTiming', obj, function (error, result) {
               $('input[name="timeSet"]').val('');
@@ -200,7 +201,8 @@ if (Meteor.isClient) {
           var obj = {
             "sessionId": Session.get('userSessItem').sessionId,
             "userId": Session.get('userSessItem').userId,
-            "maxSecs": 1
+            "maxSecs": 1,
+            "thisTime": new Date()
           };
           Meteor.call('setTiming', obj, function (error, result) {
             $('input[name="timeSet60"]').attr('checked', false);
