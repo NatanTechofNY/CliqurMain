@@ -1,7 +1,7 @@
 <template name="crowd_session">
 
 {{#if isPhone}}
-    <nav class="navbar">
+    <nav class="navbar creatview_navbar">
       <div class="container-fluid">
           <a class="navbar-brand">
         Cliqur <span> Students</span> | <span class = "cred">Session ID: {{sessionId}}</span></a>
@@ -29,6 +29,7 @@ WHAT YOU WANT TO SHOW FOR PHONE. So you can have two different navbars but they 
     </nav>
 
 <div style = "overflow: hidden" class="container box student-container">
+  <br /> <br />
 <div class="jumbotron student-view-jumbotron">
   <div class="row">
     <div class="col-md-12">
@@ -38,20 +39,20 @@ WHAT YOU WANT TO SHOW FOR PHONE. So you can have two different navbars but they 
       </div>
     </div>
   </div>
-
+  <hr />
        <div class="row">
-        <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+        <!-- <div class="col-md-offset-2 col-md-8 col-md-offset-2"> -->
           <div class="container-fluid">
-            <textarea class="student-input" type="text" name="questionInput" placeholder="Have a question? Enter it here"></textarea>
+            <textarea class="student-input create_view_input" type="text" name="questionInput" placeholder="Have a question? Enter it here"></textarea>
             <div class="row student-qa-button-group">
-              <div class="col-md-6">
-                <button id="sendQuestionBtn" class="btn student-qa-button hvr-bounce-to-right-send student-send-btn">
-                  SEND
+              <div class="col-md-6" style="width:60%;">
+                <button id="sendQuestionBtn" class="btn student-qa-button student-send-btn">
+                  Send
                 </button>
               </div>
-              <div class="col-md-6">
-                <button id="clearQuestionBtn" class="btn student-qa-button hvr-bounce-to-right-clear student-clear-btn">
-                  CLEAR
+              <div class="col-md-6" style="width:40%;">
+                <button id="clearQuestionBtn" class="btn student-qa-button student-clear-btn">
+                  Clear
                 </button>
               </div>
             </div>
@@ -76,7 +77,7 @@ WHAT YOU WANT TO SHOW FOR PHONE. So you can have two different navbars but they 
               </div>
             {{/if}}
           </div>
-      </div>
+      <!-- </div> -->
    </div>
 </div>
 <center>

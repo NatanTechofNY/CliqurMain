@@ -11,7 +11,7 @@ if (Meteor.isClient) {
 			if(typeof classCode !== 'string' || classCode.length !== 6){
 				Session.set('toJoinSession', '');
 				if(tempRet) {tempRet = undefined;return false;};
-				$('#errorMSG-ONE')[0].innerHTML = "Session ID must be 6 characters long.", $("#errorMSG-ONE").css({ opacity: 1 }), $('#errorMSG-ONE').fadeTo(2400, 0);
+				$('#errorMSG-ONE')[0].innerHTML = "Session ID must be 6 characters long.", $("#errorMSG-ONE").css({ opacity: 1 }), setTimeout(function () {$("#errorMSG-ONE").css({ opacity: 0 })}, 1800);
 				e.preventDefault();
 				e.stopPropagation();
 				return false;
@@ -19,7 +19,7 @@ if (Meteor.isClient) {
 			else if (!regCheck.test(classCode)) {
 				Session.set('toJoinSession', '');
 				if(tempRet) {tempRet = undefined;return false;};
-				$('#errorMSG-ONE')[0].innerHTML = "Invalid session ID.", $("#errorMSG-ONE").css({ opacity: 1 }), $('#errorMSG-ONE').fadeTo(2400, 0);
+				$('#errorMSG-ONE')[0].innerHTML = "Invalid session ID.", $("#errorMSG-ONE").css({ opacity: 1 }), setTimeout(function () {$("#errorMSG-ONE").css({ opacity: 0 })}, 1800);
 				e.preventDefault();
 				e.stopPropagation();
 				return false;
@@ -33,14 +33,14 @@ if (Meteor.isClient) {
 			var regCheck = /^[a-z0-9]+$/i;
 			if(typeof classCode !== 'string' || classCode.length !== 6){
 				if(tempRet) {tempRet = undefined;return false;};
-				$('#errorMSG-ONE')[0].innerHTML = "Session ID must be 6 characters long.", $("#errorMSG-ONE").css({ opacity: 1 }), $('#errorMSG-ONE').fadeTo(2400, 0);
+				$('#errorMSG-ONE')[0].innerHTML = "Session ID must be 6 characters long.", $("#errorMSG-ONE").css({ opacity: 1 }), setTimeout(function () {$("#errorMSG-ONE").css({ opacity: 0 })}, 1800);
 				e.preventDefault();
 				e.stopPropagation();
 				return false;
 			}
 			else if (!regCheck.test(classCode)) {
 				if(tempRet) {tempRet = undefined;return false;};
-				$('#errorMSG-ONE')[0].innerHTML = "Invalid session ID.", $("#errorMSG-ONE").css({ opacity: 1 }), $('#errorMSG-ONE').fadeTo(2400, 0);
+				$('#errorMSG-ONE')[0].innerHTML = "Invalid session ID.", $("#errorMSG-ONE").css({ opacity: 1 }), setTimeout(function () {$("#errorMSG-ONE").css({ opacity: 0 })}, 1800);
 				e.preventDefault();
 				e.stopPropagation();
 				return false;
@@ -72,9 +72,9 @@ if (Meteor.isClient) {
 			var stdntId = $('#studentId').val();
 			var regCheckName = /^\d+$/;
 			if(regCheckName.test(fname) || regCheckName.test(lname) || fname.length < 1 || lname.length < 1)
-				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid name.", $("#errorMSG-joinForm").show(), $('#errorMSG-joinForm').fadeOut(2400);
+				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid name.", $("#errorMSG-joinForm").css('opacity', 1);
 			else if (stdntId.length < 2)
-				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid student ID.", $("#errorMSG-joinForm").show(), $('#errorMSG-joinForm').fadeOut(2400);
+				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid student ID.", $("#errorMSG-joinForm").css('opacity', 1);
 
 
 			function tempEndCall(datter) {
@@ -106,7 +106,7 @@ if (Meteor.isClient) {
 				else{
 					if(rs) {
 						$('#joinSession, .modal-backdrop').hide();
-						$('body').before('<div id="pinDiv"><center><form id="pinForm"><h3 id="pinTitle">Session is pin protected. Enter four-digit pin # to continue</h3><input type="password" name="pinpw"  maxlength="1" /><input type="password" name="pinpw"  maxlength="1" /><input type="password" name="pinpw" maxlength="1" /><input type="password" name="pinpw"  maxlength="1" /><br><br><button class="btn btn-default">Submit</button></form></center></div>');
+						$('body').before('<div id="pinDiv"><center><form id="pinForm"><h3 id="pinTitle">Session is pin protected. Enter four-digit pin # to continue</h3><input type="password" name="pinpw"  maxlength="1" /><input type="password" name="pinpw"  maxlength="1" /><input type="password" name="pinpw" maxlength="1" /><input type="password" name="pinpw"  maxlength="1" /><br><br><button class="btn btn-default pw_submit_btn_indx">&#8594;</button></form></center></div>');
 						$('input[name="pinpw"]').keyup(function() {
 							if($(this).val().length >= 1) {
 						      var input_flds = $(this).closest('form').find(':input[name="pinpw"]');
@@ -144,12 +144,12 @@ if (Meteor.isClient) {
 
 			var regCheck = /^\d+$/;
 			if(regCheck.test(fname) || regCheck.test(lname) || fname.length < 2 || lname.length < 2)
-				return $('#errorMSG-createSession')[0].innerHTML = "Please enter a valid name.", $("#errorMSG-createSession").show(), $('#errorMSG-createSession').fadeOut(2400);
+				return $('#errorMSG-createSession')[0].innerHTML = "Please enter a valid name.", $("#errorMSG-createSession").css('opacity', 1);
 			else if (className.length < 2)
-				return $('#errorMSG-createSession')[0].innerHTML = "Class name must be longer than two characters.", $("#errorMSG-createSession").show(), $('#errorMSG-createSession').fadeOut(2400);
+				return $('#errorMSG-createSession')[0].innerHTML = "Class name must be longer than two characters.", $("#errorMSG-createSession").css('opacity', 1);
 			else if(pin.length) {
 				if(!regCheck.test(pin) && pin.length != 4)
-				return $('#errorMSG-createSession')[0].innerHTML = "Pin can only be 4 digits.", $("#errorMSG-createSession").show(), $('#errorMSG-createSession').fadeOut(2400);
+				return $('#errorMSG-createSession')[0].innerHTML = "Pin can only be 4 digits.", $("#errorMSG-createSession").css('opacity', 1);
 			}
 
 			Meteor.call("addUser", {

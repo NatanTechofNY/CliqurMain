@@ -15,29 +15,30 @@
       </center>
       <div class="row index_input_container">
         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-          <p class="index_headline_text">Revolutionize Your Classroom Experience</p>
+          <br />
+          <p class="index_headline_text">Engaging Classroom Experiences</p>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-          <div id="errorMSG-ONE" class="index_error_msg"></div>
+          <div id="errorMSG-ONE" class="index_error_msg">This is a test</div>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-          <input class="form-control index_id_input hvr-underline-from-left" type="text" placeholder="Enter Your Session ID" id="codeInput">
+          <input class="form-control index_id_input hvr-underline-from-left" type="text" placeholder="Enter Session ID" id="codeInput">
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_right">
-            <button class="index_join_btn hvr-grow" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Session</button>
+            <button class="index_join_btn" data-toggle="modal" data-target="#joinSession" id="joinSessionBtn">Join Session</button>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 global_no_padding_left">
-          <button class="index_spectate_btn hvr-grow" id="joinPublicViewBtn">Spectate Session</button>
+          <button class="index_spectate_btn" id="joinPublicViewBtn">Spectate Session</button>
         </div>
         <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
-            <button class="index_create_btn hvr-bob" data-toggle="modal" data-target="#createSession" id="createSessionBtn">Instructor? Create a Session</button>        
+            <button class="index_create_btn" data-toggle="modal" data-target="#createSession" id="createSessionBtn">Instructor? Create a Session</button>        
         </div>
       </div>
-		<div class = "index_footer">
+		<div class="index_footer">
 			<center>
-				<p class = "index_footer_link">About Us</p>
-				<p class = "index_footer_link">Contact Us</p>
-				<p class = "index_footer_link">&copy; 2016 Cliqur</p>
+				<p class="index_footer_link"><a href="/about">About</a></p>
+				<p class="index_footer_link"><a href="/contact">Contact</a></p>
+				<p class="index_footer_link">&copy; 2016 Cliqur</p>
 			</center>
 		</div>
     </section>  
@@ -52,7 +53,7 @@
       </div>
       <div class="modal-body">
         <form id="toJoinForm">
-        <div id="errorMSG-joinForm" style="font-size: 18px;color:red"></div>
+        <div id="errorMSG-joinForm" style="display:block;font-size: 18px;color:red"></div>
           <div class="form-group">
             <label for="firstNameInput" class="control-label">First Name</label>
             <input type="text" style="font-size: 24px;" class="form-control" id="firstNameInput">
@@ -68,8 +69,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="index_close_btn hvr-bounce-to-right-close student-close" data-dismiss="modal">Close</button>
-        <button type="submit" class="index_continue_btn hvr-bounce-to-right-continue" onclick='$("#toJoinForm").trigger("submit")'>Continue</button>
+        <button type="button" class="btn-modal index_close_btn hvr-bounce-to-right-close student-close" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn-modal index_continue_btn hvr-bounce-to-right-continue" onclick='$("#toJoinForm").trigger("submit")'>Continue</button>
       </div>
     </div>
   </div>
@@ -83,7 +84,7 @@
       </div>
       <div class="modal-body">
         <form id="createSessionForm">
-            <div id="errorMSG-createSession" style="font-size: 18px;color:red"></div>
+            <div id="errorMSG-createSession" style="display:block;font-size: 18px;color:red"></div>
           <div class="form-group">
             <label for="firstNameInput2" class="control-label">First Name</label>
             <input type="text" style="font-size: 24px;" class="form-control" id="firstNameInput2">

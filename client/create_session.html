@@ -10,15 +10,15 @@
         <h2><small>Class Attendance</small></h2>
         <hr>
       </div>
-                {{#each usersList}}
-                    <li class="create_att_li" title="{{studentId}}">
-                        {{#if eq userId SessionItem.sessionOwnerId}}
-                            <b>{{fullName}}</b>
-                        {{else}}
-                            <span>{{fullName}}</span>
-                        {{/if}}
-                    </li>
-                {{/each}}
+      {{#each usersList}}
+          <li class="create_att_li" title="{{studentId}}">
+              {{#if eq userId SessionItem.sessionOwnerId}}
+                  <b>{{fullName}}</b>
+              {{else}}
+                  <span>{{fullName}}</span>
+              {{/if}}
+          </li>
+      {{/each}}
   </ol>
 </div>
 
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-4 form-group">
                 <form class="form-inline">
-                    <div class="form-group navbar-text">
+                    <div class="form-group navbar-text sessidCont">
                         <label>Cliqur | Session ID: </label>
                         <input readonly class="form-control" type="text" value="{{sessionId}}" id="autoSelectrLoc">
                     </div>
@@ -56,7 +56,7 @@
             </button>
             <a target="_blank" href="/d/{{sessionId}}/p">
                 <button type="button" class="create_public_btn hvr-grow">
-                    Public View
+                    Spectator View
                 </button>
             </a>
            <button type="button" id="createAtten" class="create_generate_btn hvr-icon-hang">
@@ -77,106 +77,36 @@
                     
 
                     <div class="panel">
-                      <div class="panel-element">
-                        <div class="element-actions">
-                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-                        </div>
-                        <div class="element-content">
-                          <button class="btn btn-more">
-                            <i class="fa fa-ellipsis-h icon-closed"></i>
-                            <i class="fa fa-times icon-open"></i>
-                            <i class="fa fa-heart-o icon-hearted"></i>
-                          </button>
-                          <div class="content-post">
-                            <div class="post-avatar"></div>
-                            <div class="post-content">
-                              <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                              <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
+
+                      {{#each questionItem}}
+                        <div class="panel-element" data-id="{{_id}}">
+                          <div class="element-actions">
+                            <button class="btn btn-action btn-hide deleteQuestionBtn"><i class="fa fa-ban"></i></button>
+                           <!--  <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button> -->
+                          </div>
+                          <div class="element-content">
+                            <button class="btn btn-more">
+                              <i class="fa fa-ellipsis-h icon-closed"></i>
+                              <i class="fa fa-times icon-open"></i>
+                              <i class="fa fa-heart-o icon-hearted"></i>
+                            </button>
+                            <div class="content-post">
+                              {{#if isPublic}}
+                                <div class="post-avatar isPublic togglePulicBtn" title="currently in public view"></div>
+                              {{else}}
+                                <div class="post-avatar isntPublic togglePulicBtn" title="send to public view"></div>
+                              {{/if}}
+                              <div class="post-content">
+                                <span class="post-title">{{thisAuthorName}}</span>
+                                <p class="post-body">{{{body}}}</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="panel-element">
-                        <div class="element-actions">
-                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-                        </div>
-                        <div class="element-content">
-                          <button class="btn btn-more">
-                            <i class="fa fa-ellipsis-h icon-closed"></i>
-                            <i class="fa fa-times icon-open"></i>
-                            <i class="fa fa-heart-o icon-hearted"></i>
-                          </button>
-                          <div class="content-post">
-                            <div class="post-avatar"></div>
-                            <div class="post-content">
-                              <span class="post-title">Nullam egestas neque et</span>
-                              <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel-element">
-                        <div class="element-actions">
-                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-                        </div>
-                        <div class="element-content">
-                          <button class="btn btn-more">
-                            <i class="fa fa-ellipsis-h icon-closed"></i>
-                            <i class="fa fa-times icon-open"></i>
-                            <i class="fa fa-heart-o icon-hearted"></i>
-                          </button>
-                          <div class="content-post">
-                            <div class="post-avatar"></div>
-                            <div class="post-content">
-                              <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                              <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel-element">
-                        <div class="element-actions">
-                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-                        </div>
-                        <div class="element-content">
-                          <button class="btn btn-more">
-                            <i class="fa fa-ellipsis-h icon-closed"></i>
-                            <i class="fa fa-times icon-open"></i>
-                            <i class="fa fa-heart-o icon-hearted"></i>
-                          </button>
-                          <div class="content-post">
-                            <div class="post-avatar"></div>
-                            <div class="post-content">
-                              <span class="post-title">Nullam egestas neque et</span>
-                              <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="panel-element">
-                        <div class="element-actions">
-                          <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-                          <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-                        </div>
-                        <div class="element-content">
-                          <button class="btn btn-more">
-                            <i class="fa fa-ellipsis-h icon-closed"></i>
-                            <i class="fa fa-times icon-open"></i>
-                            <i class="fa fa-heart-o icon-hearted"></i>
-                          </button>
-                          <div class="content-post">
-                            <div class="post-avatar"></div>
-                            <div class="post-content">
-                              <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                              <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      {{/each}}
+
+
+
                     </div>
 
                 </div>
@@ -189,7 +119,7 @@
                         <h2><small>Publish Your Own Question</small></h2>
                     </div>
                     <div class="col-md-9">
-                        <input type="text" class="create_question_input form-control" name="creatorQuestion" placeholder="Create your own question here!">
+                        <textarea type="text" class="create_question_input form-control" name="creatorQuestion" placeholder="Create your own question here!"></textarea>
                     </div>
                     <div class="col-md-3">
                         <button type="submit" class="create_selfpublish_button hvr-bounce-to-right-publish">Publish</button>

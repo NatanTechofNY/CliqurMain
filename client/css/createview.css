@@ -1,0 +1,46 @@
+
+
+.sessidCont{
+	margin-top: 24px;
+}
+.sessidCont>label{
+	padding-right: 9px;
+}
+
+.sessidCont>input{
+	width: 84px!important;
+}
+
+
+.togglePulicBtn{
+	cursor: pointer;
+	background-position: center;
+	background-size: 50%; background-repeat: no-repeat;
+	
+	-webkit-transition: all .54s;
+	   -moz-transition: all .54s;
+	    -ms-transition: all .54s;
+	     -o-transition: all .54s;
+	        transition: all .54s;
+}
+.togglePulicBtn:hover{
+	background-color: #DEDEDE!important;
+	opacity: 0.9;
+}
+.togglePulicBtn:active{
+	background-color: #CCC!important;
+}
+.togglePulicBtn.isPublic{
+	background-image: url('/icons/tick.png');
+}
+.togglePulicBtn.isntPublic{
+	background-image: url('/icons/sendIco.png');
+}
+
+.post-title{
+	font-size: 11px!important;
+}
+.post-body{
+	color: #111!important;
+	font-size: 14px!important;
+}

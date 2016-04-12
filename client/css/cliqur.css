@@ -122,13 +122,12 @@
 	}
 	.exit {
 		font-family: Roboto;
-		font-size: 14px;
+		font-size: 13px;
 		cursor: pointer;
 		color: #E53935;
 		border: 1px solid #E53935;
 		border-radius: 2px;
 		background-color: white;
-		font-size: 14px;
 		height: 40px !important;
 		width: 100px !important;
 	}
@@ -156,16 +155,20 @@
 	}
 	.student-view-jumbotron {
 		margin-top: -2%;
-		background-color: white;
-		color: black;
-		border: 2px solid #263238;
-		height:130px !important;
+		background-color: rgba(245, 248, 250, 0.6);
+		color: #111;
+		border: 1px solid #E4E8EB; border-radius: 1px!important;
+		height: 130px!important;
 	}
 	.student-display-question {
 		margin-top: -0.5%;
 		font-family: Roboto;
-		color: black;
+		color: #111;
 		font-size: 18px;
+	}
+	.student-display-question>span{
+		font-size: 14px;
+		color: #333;
 	}
 	.student-qa-button-group {
 		padding-top: 10px;
@@ -339,7 +342,7 @@
 			border: 3px solid 00A896;
 			margin-left: auto;
 			margin-right: auto;
-			width: 100%;
+			max-width: 100%;
 			height: 50px;
 			vertical-align: middle;
 	}
