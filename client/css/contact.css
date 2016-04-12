@@ -1,0 +1,37 @@
+* {
+	font-family: Roboto;
+}
+
+.contact_title {
+	margin-top: 8%;
+	color: #1D2934;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+}
+.contact_line{
+	height: 3px;
+	width: 50%;
+}
+.contact_line:nth-child(2){
+	margin-left: 20%;
+	background-color: #B31D30;
+}
+.contact_line:nth-child(3){
+	margin-top: -1%;
+	margin-left: 30%;
+	background-color: #ECAD24;
+}
+.contact_intro{
+	font-size: 17px;
+}
+.contact_center {
+	margin-top: 3%;
+	margin-left: 13%;
+}
+.contact_form {
+	margin-top: 5%;
+	border: 2px solid red;
+	height: 50%;
+	margin-left: 12%;
+}
