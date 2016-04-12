@@ -2,8 +2,18 @@
 	font-family: Roboto;
 }
 
+.about_home_button {
+	margin-top: 3%;
+	margin-left: 93%;	
+	border: 1.8px solid #1D2934;
+	border-radius: 2px;
+	padding: 5px;
+	min-width: 8%;
+	width: 8%;
+	outline: none;
+}
 .about_title {
-	margin-top: 8%;
+	margin-top: 4%;
 	color: #1D2934;
 	font-size: 40px;
 	font-weight: bold;
@@ -13,11 +23,11 @@
 	height: 3px;
 	width: 50%;
 }
-.about_line:nth-child(2){
+.about_line:nth-child(3){
 	margin-left: 20%;
 	background-color: #2875B8;
 }
-.about_line:nth-child(3){
+.about_line:nth-child(4){
 	margin-top: -1%;
 	margin-left: 30%;
 	background-color: #DD4A3B;
