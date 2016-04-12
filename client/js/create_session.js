@@ -168,12 +168,11 @@ if (Meteor.isClient) {
                 alert(e.error);
               }
               else {
-                $('input[name="creatorQuestion"]').val('');
+                $('textarea[name="creatorQuestion"]').val('');
                 Meteor.call('toggleQuestion', {target: true, questionId: d, sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId}, function (err, res) {
                   if (err) {
                     alert(err.error);
-                  } else
-                    alert("Question has been publicly shared.");
+                  };
                 });
               }
             });
