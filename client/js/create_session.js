@@ -5,6 +5,9 @@ if (Meteor.isClient) {
   
   var hammertime, toggleElement;
   Template.create_session.rendered = function() {
+
+
+
     hammertime = undefined;
       toggleElement = function ($el, type) {
           if (type != null) {
@@ -122,17 +125,16 @@ if (Meteor.isClient) {
             });
           };
         },
-        'click #changeToThisPublic': function(e) {
-           Meteor.call('toggleQuestion', {target: true, questionId: $('input[name="optionsRadios"]:checked').val(), sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId}, function (err, res) {
+        'click .togglePulicBtn': function(e) {
+           Meteor.call('toggleQuestion', {target: true, questionId: $(e.currentTarget).parents('.panel-element').attr('data-id'), sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId}, function (err, res) {
             if (err) {
               alert(err.error);
-            } else
-            alert("Question has been publicly shared.");
+            }
           });
         },
-        'click #deleteThisQuestion': function() {
+        'click .deleteQuestionBtn': function(e) {
           if (confirm('Are you sure you want to delete this question?')) {
-            Meteor.call('removeQuestion', {questionId: $('input[name="optionsRadios"]:checked').val(), sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId}, function (err, res) {
+            Meteor.call('removeQuestion', {questionId: $(e.currentTarget).parents('.panel-element').attr('data-id'), sessionId: Router.current().params.sessionId, userId: Session.get('userSessItem').userId}, function (err, res) {
               if (err) {
                 alert(err.error);
               };
@@ -148,13 +150,12 @@ if (Meteor.isClient) {
           };
         },
         'focus #autoSelectrLoc': function(e) {
-          setTimeout(function() {$('#autoSelectrLoc').select();}, 12);
+          setTimeout(function() {$('#autoSelectrLoc').select();}, 3);
         },
         'submit #customQuestionSubmit': function(e) {
           e.preventDefault();
-          var q = $('input[name="creatorQuestion"]').val().trim();
+          var q = $('textarea[name="creatorQuestion"]').val().trim();
           if (q && q.length) {
-            q = q.replace(/&/g, '&amp;').replace(/</g, '&#60;').replace(/>/g, '&#62;').replace(/\n\s*\n/g, '\n\n').replace(/\n/g, '<br>');
             var parentSessionId = Session.get('userSessItem').sessionId;
             var authId = Session.get('userSessItem').userId;
             var obj = {
@@ -180,21 +181,20 @@ if (Meteor.isClient) {
           
         },
         'click #timerSetBtn': function() {
-          if ($('input[name="timeSet60"]').is(':checked') &&  $('input[name="timeSet"]').val().length) return alert('Please select only one of the two options');
-          var timingCheck = $('input[name="timeSet60"]').is(':checked')? 60: $('input[name="timeSet"]').val();
-          if (timingCheck && timingCheck.toString().length) {
+          var timingCheck = $('input[name="timeSet"]').val();
+          if (!timingCheck || !timingCheck.toString().length)
+            timingCheck = $('select[name="timeSet60"]').val();
+
             var obj = {
               "sessionId": Session.get('userSessItem').sessionId,
               "userId": Session.get('userSessItem').userId,
               "maxSecs": parseInt(timingCheck)
             };
             Meteor.call('setTiming', obj, function (error, result) {
-              $('input[name="timeSet60"]').attr('checked', false);
               $('input[name="timeSet"]').val('');
               if (error)
                 alert(error.error);
             });
-          }
         },
         'click #timerEndBtn': function() {
           var obj = {
@@ -257,7 +257,7 @@ if (Meteor.isClient) {
         else return [{"fullName": "Loading..."}];
       },
       questionItem: function() {
-        return Questions.find();
+        return Questions.find({}, {sort: {createdAt: -1}});
       },
       thisAuthorName: function() {
         if (Questions.findOne()) {

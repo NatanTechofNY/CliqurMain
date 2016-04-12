@@ -1,0 +1,72 @@
+.index_footer{
+	margin-bottom: 48px;
+}
+.index_create_btn{
+	line-height: -3px;
+}
+.index_join_btn, .index_spectate_btn, .index_create_btn{
+	font-size: 13px;
+	opacity: 0.9;
+	border-radius: 3px;
+	border-width: 1px;
+	-webkit-transition: opacity .3s, background .3s;
+	   -moz-transition: opacity .3s, background .3s;
+	    -ms-transition: opacity .3s, background .3s;
+	     -o-transition: opacity .3s, background .3s;
+	        transition: opacity .3s, background .3s;
+}
+.index_join_btn:hover, .index_spectate_btn:hover, .index_create_btn:hover{
+	opacity: 1;
+	background-color: rgba(235, 239, 240, 0.1);
+}
+.index_create_btn{
+	background-color: rgba(211, 223, 227, 0.18);
+}
+.index_spectate_btn{
+	color: #B84E1A;
+	border-color: #B84E1A;
+	background-color: rgba(235, 222, 213, 0.18);
+}
+.index_join_btn{
+	color: #738C2E;
+	border-color: #738C2E;
+	background-color: rgba(242, 246, 247, 0.48);
+}
+
+.main_logo_img{
+	margin-top: 48px;
+}
+
+
+.index_error_msg{
+	text-align: center;
+}
+.index_error_msg, #errorMSG-joinForm, #errorMSG-createSession{
+	font-size: 12px;
+	margin-bottom: 12px;
+	-webkit-transition: opacity .2s;
+	   -moz-transition: opacity .2s;
+	    -ms-transition: opacity .2s;
+	     -o-transition: opacity .2s;
+	        transition: opacity .2s;
+}
+#pinForm{
+	top: 40%!important;
+}
+
+
+
+
+.pw_submit_btn_indx{
+	width: 54px;
+	line-height: 12px;
+	height: 48px;
+	font-size: 18px;
+	margin-top: 12px;
+}
+#pinTitle{
+	font-size: 18px;
+	margin-bottom: 18px;
+	display: block;
+	font-weight: normal;
+}

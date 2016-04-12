@@ -5,7 +5,7 @@ if (Meteor.isClient) {
        		Router.go("/endsession");
           Session.setPersistent('userSessItem', {});
        	},
-       	'click .mc': function(e) {
+       	'click .student-response-button': function(e) {
        		document.getElementById('status').innerHTML='Sending your response';
           var $THIS = $(e.currentTarget);
           $THIS.children('span').css('opacity', '1');
@@ -32,7 +32,7 @@ if (Meteor.isClient) {
 
     		},
         'click #sendQuestionBtn': function() {
-          var questionBody = document.querySelector('textarea[name="questionInput"]').value.replace(/&/g, '&amp;').replace(/</g, '&#60;').replace(/>/g, '&#62;').replace(/\n\s*\n/g, '\n\n').replace(/\n/g, '<br>');
+          var questionBody = document.querySelector('textarea[name="questionInput"]').value;
           if (questionBody.length) {
             var parentSessionId = Session.get('userSessItem').sessionId;
             var authId = Session.get('userSessItem').userId;

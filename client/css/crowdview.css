@@ -1,0 +1,47 @@
+.create_view_input{
+	display: block;
+	padding: 12px;
+	width: 100%; min-height: 120px;
+	border: 1px solid #DEDEDE;
+	border-radius: 2px;
+	outline: none;
+	
+	-webkit-transition: all .25s;
+	   -moz-transition: all .25s;
+	    -ms-transition: all .25s;
+	     -o-transition: all .25s;
+	        transition: all .25s;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.create_view_input:focus{
+	border-color: #BDBDBD;
+	box-shadow: 0px 0px 12px -6px #787878;
+}
+
+#sendQuestionBtn, #clearQuestionBtn{
+	border-width: 1px;
+	font-size: 13px;
+	margin-top: 12px;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+#sendQuestionBtn{
+	color: #3B698A;
+	background-color: rgba(233, 238, 242, 0.3);
+	font-size: 14px;
+}
+#sendQuestionBtn:hover, #clearQuestionBtn:hover{
+	background-color: rgba(233, 238, 242, 0.1);
+}
+#clearQuestionBtn{
+	color: #AD5F47;
+	border-color: #AD5F47;
+	background-color: rgba(242, 237, 235, 0.3);
+}
+
+
