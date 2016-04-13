@@ -19,20 +19,20 @@
 				 
 					<p class = "contact_intro"> Whether you have a question, want to partner with us or are stopping to say hi, get in touch! </p>
 				  	
-				  	<form action = "" class = "contact_form col-md-8">
+				  	<form action="" charset="utf-8" name="contactForm" class="contact_form col-md-8">
 						
 						<div class = "contact_input_container">
-							<i class="fa fa-user" aria-hidden="true"></i><input class = "contact_input" type="text" placeholder="Name">
+							<i class="fa fa-user" aria-hidden="true"></i><input id="fullNameinpt" class = "contact_input" type="text" placeholder="Your name" required />
 							<br>
-							<i class="fa fa-envelope-o" aria-hidden="true"></i><input class = "contact_input" type="email" placeholder="Email">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i><input class = "contact_input" id="emailinpt" type="email" placeholder="Your email" required />
 							<br>
-							<i class="fa fa-phone" aria-hidden="true"></i><input class = "contact_input" type="text" placeholder="Phone">
+							<i class="fa fa-phone" aria-hidden="true"></i><input class = "contact_input" type="text" id="phNoInpt" placeholder="Phone # (optional)" />
 						</div>
 						<div class = "contact_input_container">
-							<textarea class = "contact_ta" placeholder="Message"></textarea>
+							<textarea class = "contact_ta" id="msgarea" placeholder="Message" required></textarea>
 						</div>
 						
-				  		<button type="submit" class = "contact_send_button">Send Message</button>
+				  		<button type="submit" class="contact_send_button">Send Message</button>
 				  	</form>
 				  
 				  	<div class = "contact_sm_container">
