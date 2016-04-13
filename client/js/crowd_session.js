@@ -14,7 +14,7 @@ if (Meteor.isClient) {
 
           var selectedResponse = parseInt(e.currentTarget.getAttribute('data-idx'));
 
-          var usr = Users.findOne({"_id": Session.get('userSessItem').userId});
+          var usr = Usrs.findOne({"_id": Session.get('userSessItem').userId});
           Meteor.call('addResponses', {sessionId: Router.current().params.sessionId, studentId: usr? usr.studentId: undefined, userId: usr? usr._id: undefined, respIndx: selectedResponse}, function (e, res) {
             if (e) {
               alert(e.error);
@@ -48,7 +48,6 @@ if (Meteor.isClient) {
               }
               else {
                 document.querySelector('textarea[name="questionInput"]').value = "";
-                alert("Question sent.");
               }
             });
           }
@@ -61,7 +60,7 @@ if (Meteor.isClient) {
 
   Template.crowd_session.helpers({
     userName: function () {
-      var sr = Users.findOne({"_id": Session.get('userSessItem').userId});
+      var sr = Usrs.findOne({"_id": Session.get('userSessItem').userId});
       return sr && sr.fullName;
     },
     latestQuestion: function() {
@@ -75,7 +74,7 @@ if (Meteor.isClient) {
       if (sessionOwnerId) sessionOwnerId = sessionOwnerId.sessionOwnerId;
       var subn = Meteor.subscribe('userDoc', sessionOwnerId);
       if(subn.ready()) {
-        return Users.findOne({"_id": sessionOwnerId}).fullName;
+        return Usrs.findOne({"_id": sessionOwnerId}).fullName;
       };
     }, 
     class: function() {
@@ -83,7 +82,7 @@ if (Meteor.isClient) {
     },
     authorName: function() {
       if (Questions.findOne({isPublic: true})) {
-        var sr = Users.findOne({"_id": Questions.findOne({isPublic: true}).authorId});
+        var sr = Usrs.findOne({"_id": Questions.findOne({isPublic: true}).authorId});
         return sr && sr.fullName;
       }
       else return "No public questions";

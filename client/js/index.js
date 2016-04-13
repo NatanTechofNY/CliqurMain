@@ -92,6 +92,7 @@ if (Meteor.isClient) {
 						return alert(err.error);
 					}
 					else {
+						ga("send", "event", "Sessions", "Joined", 'null', new Date().getTime());
 						updateSess(data, 'userId');
 						updateSess(classCode, 'sessionId');
 						Router.go("/d/" + classCode);
@@ -164,6 +165,7 @@ if (Meteor.isClient) {
 						if(err)
 							return alert(err.error);
 						else{
+							ga("send", "event", "Sessions", "Created", 'hasPin='+(!!pin.length), new Date().getTime());
 							updateSess(data, 'userId');
 							updateSess(d2, 'sessionId');
 							Router.go("/d/" + d2);

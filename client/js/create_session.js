@@ -72,6 +72,7 @@ if (Meteor.isClient) {
         'click #menu-toggle': function(e) {
           e.preventDefault();
           $('#wrapper').toggleClass("toggled");
+          ga("send", "event", "Report", "Previewed", 'null', new Date().getTime());
         },
         'click #endssn': function() {
           Router.go("/endsession");
@@ -82,8 +83,8 @@ if (Meteor.isClient) {
             var skipr = false;
             var list = Sessions.findOne({"sessionId": Router.current().params.sessionId}).userList.map(function(g) {
               if (skipr) return;
-            if(Users.findOne({"_id": g.userId})){
-              return Users.findOne({"_id": g.userId})
+            if(Usrs.findOne({"_id": g.userId})){
+              return Usrs.findOne({"_id": g.userId})
             }
             else{
               alert('Not all users have completely loaded');
@@ -105,6 +106,8 @@ if (Meteor.isClient) {
               return g.studentId !== "SessionOwner";
             });
             Session.setPersistent('reportData', o);
+            ga("send", "event", "Report", "Opened", 'null', new Date().getTime());
+
             window.open("/report", "_blank", "width=660,height=600");
 
             // Meteor.call('createDocument', {listed: list}, function (e, res) {
@@ -256,7 +259,7 @@ if (Meteor.isClient) {
             var list = Sessions.findOne({"sessionId": Router.current().params.sessionId}).userList.filter(function(g) {
                 return g.studentId !== 'SessionOwner';
               }).map(function(g) {
-                return Users.findOne({"_id": g.userId});
+                return Usrs.findOne({"_id": g.userId});
               });
               Session.set('newUserList', list);
               return list;
@@ -270,7 +273,7 @@ if (Meteor.isClient) {
       },
       thisAuthorName: function() {
         if (Questions.findOne()) {
-            var sr = Users.findOne({"_id": this.authorId});
+            var sr = Usrs.findOne({"_id": this.authorId});
             return sr && sr.fullName;
           }
           else return "Unknown";

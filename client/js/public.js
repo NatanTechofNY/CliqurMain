@@ -11,7 +11,7 @@ if(Meteor.isClient) {
 			if (sessionOwnerId) sessionOwnerId = sessionOwnerId.sessionOwnerId;
 			var subn = Meteor.subscribe('userDoc', sessionOwnerId);
 			if(subn.ready()) {
-				return Users.findOne({"_id": sessionOwnerId}).fullName;
+				return Usrs.findOne({"_id": sessionOwnerId}).fullName;
 			};
 		}, 
 		pushedQuestion: function() {
@@ -21,7 +21,7 @@ if(Meteor.isClient) {
 			var authorId = Questions.findOne({"parentSessionId": Router.current().params.sessionId}).authorId;
 			var subn = Meteor.subscribe('userDoc', authorId);
 			if(subn.ready()) {
-				return Users.findOne({"_id": authorId}).fullName;
+				return Usrs.findOne({"_id": authorId}).fullName;
 			};
 		},
 		voteDistribution: function() {

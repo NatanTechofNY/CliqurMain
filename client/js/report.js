@@ -4,7 +4,12 @@ if (Meteor.isClient) {
 			return moment().format('LL');
 		},
 		d: function () {
-			return Session.get('reportData');
+			var d =  Session.get('reportData');
+			d.userList.map(function(a, index) {
+				a.indx = index + 1;
+				return a;
+			})
+			return d;
 		}
 	});
 
@@ -27,6 +32,7 @@ if (Meteor.isClient) {
 				"className": Session.get('reportData').sessionName,
 				"reportHtml": reportHtml
 			}, function (e, r) {
+				ga("send", "event", "Report", "Emailed", 'null', new Date().getTime());
 				$('#toappTo').append('<button id="emailreport" style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: left;border-radius: 3px;">Email Report</button><button onclick="window.print()" style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: left;border-radius: 3px;">Print Report</button>');
 				if (e)
 					alert(e.error);
