@@ -15,7 +15,7 @@
 }
 .contact_line:nth-child(2){
 	margin-left: 20%;
-	background-color: #B31D30;
+	background-color: #6A9E3A;
 }
 .contact_line:nth-child(3){
 	margin-top: -1%;
@@ -23,6 +23,7 @@
 	background-color: #ECAD24;
 }
 .contact_intro{
+	margin-top: 3%;
 	font-size: 17px;
 }
 .contact_center {
@@ -31,7 +32,24 @@
 }
 .contact_form {
 	margin-top: 5%;
-	border: 2px solid red;
+	border: 2px solid 6A9E3A;
+	background: #33691E;
 	height: 50%;
 	margin-left: 12%;
+}
+.contact_input {
+	margin-left: -5%;
+	letter-spacing: normal;
+	height: 35px;
+	width: 200px;
+}
+.contact_ta {
+	margin-left: 10%;
+	height: 100px;
+	width: 30%;
+	resize: none;
+}
+.contact_icon {
+	color: white;
+	border: 2px solid red;
 }
