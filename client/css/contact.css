@@ -24,12 +24,12 @@
 }
 .contact_line:nth-child(3){
 	margin-left: 20%;
-	background-color: #2875B8;
+	background-color: #5DD39E;
 }
 .contact_line:nth-child(4){
 	margin-top: -1%;
 	margin-left: 30%;
-	background-color: #E68529;
+	background-color: #513B56;
 }
 .contact_intro{
 	margin-top: 3%;
@@ -42,7 +42,7 @@
 .contact_form {
 	margin-top: 5%;
 	border: 2px solid 6A9E3A;
-	background: #E68529;
+	background: #513B56;
 	height: 280px;
 	margin-left: 17%;
 	border-radius: 2px;
@@ -80,7 +80,6 @@
 	margin-top: 3%;
 }
 .contact_sm_container {
-	margin-top: 40%;
-	border: 2px solid red;
+	margin-top: 35%;
 }
 
