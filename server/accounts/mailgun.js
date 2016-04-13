@@ -15,7 +15,8 @@ if (Meteor.isServer) {
 
 			Meteor.Mailgun.send({
 				to: data.to,
-				from: 'reports@cliqur.com',
+
+				from: 'Reports@cliqur.com',
 				subject: 'Attendance report for: ' + data.className,
 				html: data.reportHtml
 			});
