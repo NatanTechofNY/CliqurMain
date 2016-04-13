@@ -1,80 +1,62 @@
 <template name="report">
 
-<link rel="stylesheet" href="//nethna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<script type="text/javascript" src="http://nethna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-
-
-
-<section class="report_container_section">
-	<div class="container">
-		<div class="jumbotron">
-			<div class="row">
-				<div class="col-md-12">
-					<tabel class="table table-hover">
-						<thread>
-							<tr>
-								<th><strong>#</strong></th>
-								<th><strong>First Name</strong></th>
-								<th><strong>Last Name</strong></th>
-								<th><strong>Student ID</strong></th>
-							</tr>
-						</thread>
-						<br>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<th>John</th>
-								<th>Doe</th>
-								<th>12345678</th>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<th>John</th>
-								<th>Doe</th>
-								<th>12345678</th>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<th>John</th>
-								<th>Doe</th>
-								<th>12345678</th>
-							</tr>
-							<tr>
-								<th scope="row">4</th>
-								<th>John</th>
-								<th>Doe</th>
-								<th>12345678</th>
-							</tr>
-							<tr>
-								<th scope="row">5</th>
-								<th>John</th>
-								<th>Doe</th>
-								<th>12345678</th>
-							</tr>
-						</tbody>
-					</tabel>
-				</div>
-			</div>
+<section style="width: 100vh; font-family: Roboto; background-color: rgba(220, 225, 227, 0.36); margin-left: auto; margin-right: auto;">
+	
+	<h1 style="text-align: center; font-weight: 800; background-color: transparent; margin-bottom: 20px;">Attendance Report</h1>
+<div style="margin-left: 50px;">
+	<p1 style="text-align: center;">Date:<span>(time)</span></p1>
+	<br>
+	<p1 style="text-align: center;">Class:<span>(className)</span></p1>
+	<br>
+	<button style="color: #05668d;
+			background-color: #fff;
+			font-size: 13px;
+			padding: 15px;
+			font-weight: 200;
+			border: 1px solid #05668d;
+			width: 150px;
+			margin: 20px 20px 20px 0px;
+			float: left;
+			border-radius: 3px;">Email Report</button>
+	<button style="color: #05668d;
+			background-color: #fff;
+			font-size: 13px;
+			padding: 15px;
+			font-weight: 200;
+			border: 1px solid #05668d;
+			width: 150px;
+			margin: 20px 20px 20px 0px;
+			float: left;
+			border-radius: 3px;">Print Report</button>
+</div>
+	<div style="width: 80%; color: #333; font-size: 18px; letter-spacing: 2px; margin-left: auto; margin-right: auto; margin-top: 50px;">
+		<div style="width: 100%; padding: 50px">
+			<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">#:</h3>
+			<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">Name:</h3>
+			<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">Student ID</h3>
+		</div>
+		<div style="width: 100%; padding: 50px;">
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">1</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
+		</div>
+		<div style="width: 100%; padding: 50px;">
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">2</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
+		</div>
+		<div style="width: 100%; padding: 50px;">
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">3</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
+		</div>
+		<div style="width: 100%; padding: 50px;">
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">4</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
+			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
 		</div>
 	</div>
+
 </section>
 
-<!--
-	<h1>Attendance list | <span id="currentTime"></span></h1>
-	<table>
-		<thead><tr><th>Name</th><th>Id</th></tr></thead>
-		<tbody>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-			<tr><th>John Doe</th><th>5825775727272722</th></tr>
-		</tbody>
-	</table> -->
-</template>
+	</template>

@@ -1,13 +1,69 @@
 <template name="publicview">
-    <section>
+<div class="publicview_panel">
+<h3 class="publicview_panel_title">Class: {{className}} | Instructor: {{lecturerName}} | Session ID: {{sess}}</h3>
+<center>
+              <div class="public-display" style="overflow-x:hidden;height:100%;width:700px">
+                  <h1 style="font-size: 48px">
+                  {{#if pushedQuestion.body}}
+                  {{{pushedQuestion.body}}}
+                  {{else}}
+                  No question published yet.
+                  {{/if}}
+                  </h1>
+                  <h3 style="text-decoration: none">{{questionAuthor}}</h3>
+                  <hr>
+              {{#if pushedQuestion.body}}
+              <center>
+              <h1>Poll | {{#unless eq pollTime '0s'}}Time: {{pollTime}}{{else}} closed{{/unless}}</h1>
+              </center>
+              <div class="row">
+              <div class="col-md-7">
+                <div class="progress">
+                  <span>A</span>
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 6.9%" data-factor="{{voteDistribution.wholes.a}}">
+                    <p>{{A}}</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span>B</span> <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 6.9%" data-factor="{{voteDistribution.wholes.b}}">
+                    <p>{{B}}</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span>C</span> <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 6.9%" data-factor="{{voteDistribution.wholes.c}}">
+                    <p>{{C}}</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span>D</span> <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 6.9%" data-factor="{{voteDistribution.wholes.d}}">
+                    <p>{{D}}</p>
+                  </div>
+                </div>
+                </div>
+                <div class="col-md-5">
+                <div style="font-size:18px">Total: {{voteDistribution.wholes.total}}</div>
+                <div style="font-size:18px">A: {{voteDistribution.wholes.a}}</div>
+                <div style="font-size:18px">B: {{voteDistribution.wholes.b}}</div>
+                <div style="font-size:18px">C: {{voteDistribution.wholes.c}}</div>
+                <div style="font-size:18px">D: {{voteDistribution.wholes.d}}</div>
+                </div>
+                </div>
+                {{else}}
+                <h1>No multiple choice or poll published.</h1>
+                {{/if}}
+              </div>
+              </center>
+
+</div>
+<!--
       <div class="container-fluid">
           <div class="col-md-12 padding-top">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Class: {{className}} | Instructor: {{lecturerName}} | Session ID: {{sess}}</h3>
+            <div class="panel panel-primary">
+              <div class="panel-heading" style="width: 700px">
+                <h3 class="panel-title" style="width: 700px">Class: {{className}} | Instructor: {{lecturerName}} | Session ID: {{sess}}</h3>
               </div>
               <center>
-              <div class="panel-body public-display" style="overflow-x:hidden;height:100%;">
+              <div class="panel-body public-display" style="overflow-x:hidden;height:100%;width:700px">
                   <h1 style="font-size: 48px">
                   {{#if pushedQuestion.body}}
                   {{{pushedQuestion.body}}}
@@ -60,6 +116,5 @@
               </center>
             </div>
            </div>
-      </div>
-    </section>
+      </div>-->
 </template>

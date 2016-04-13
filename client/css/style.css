@@ -123,15 +123,6 @@
 }
 
 
-.public-display {
-    height: 82vh;
-    width: 100%;
-    overflow: scroll;
-}
-.public-display li {
-    font-size: 300%;
-    padding: 50px;
-}
 .public-poll {
     height: 88vh;
     width: 100%;
