@@ -1,20 +1,25 @@
 <template name="contact">
+<div class="row">
+		<div class="col-md-10">
+		</div>
+		<div class="col-md-2">
+			<button class = "contact_home_button  hvr-bounce-to-right-gohome" id = "home_btn">Home</button>
+		</div>
+</div>
 
 
-
-<div style = "overflow: hidden" class="container contact-container">
+<div class="container contact-container">
        <div class="row">
           <div class="container-fluid">
 			   
 			  <center>
-				 	<button class = "contact_home_button" id = "home_btn">Home</button>
           			<h2 class = "contact_title">SAY HELLO</h2>
 				  <hr class = "contact_line">
 				  <hr class = "contact_line">
 				 
 					<p class = "contact_intro"> Whether you have a question, want to partner with us or are stopping to say hi, get in touch! </p>
 				  	
-				  	<div class = "contact_form col-md-8">
+				  	<form action = "" class = "contact_form col-md-8">
 						
 						<div class = "contact_input_container">
 							<i class="fa fa-user" aria-hidden="true"></i><input class = "contact_input" type="text" placeholder="Name">
@@ -28,7 +33,7 @@
 						</div>
 						
 				  		<button type="submit" class = "contact_send_button">Send Message</button>
-				  	</div>
+				  	</form>
 				  
 				  	<div class = "contact_sm_container">
 				  		<p> Connect with us: </p>
