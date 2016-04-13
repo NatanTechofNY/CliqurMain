@@ -40,7 +40,7 @@
 	margin-left: 13%;
 }
 .contact_form {
-	margin-top: 5%;
+	margin-top: 2%;
 	border: 2px solid 6A9E3A;
 	background: #513B56;
 	height: 280px;
@@ -80,6 +80,10 @@
 	margin-top: 3%;
 }
 .contact_sm_container {
-	margin-top: 35%;
+	margin-top: 32%;
 }
-
+.fa-facebook-square {
+	border: 2px solid red;
+	font-size: 20px;
+	color: black;
+}
