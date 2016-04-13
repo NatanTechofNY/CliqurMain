@@ -20,9 +20,8 @@ if (Meteor.isClient) {
 			$('.modalItem_report').hide();
 			alert("Sending report...");
 			var email = e.target.emailinpt.value;
-			$('section button').css('display', 'none');
+			$('section button').remove();
 			var reportHtml = '<section style="width: 100vh; font-family: Roboto; background-color: rgba(220, 225, 227, 0.36); margin-left: auto; margin-right: auto;">' + $('section').html() + '</section>';
-			$('section button').show();
 			Meteor.call('sendReport', {
 				"to": email,
 				"className": Session.get('reportData').sessionName,
@@ -31,6 +30,7 @@ if (Meteor.isClient) {
 				if (e)
 					alert(e.error);
 				else alert('Report sent!');
+				window.close();
 			});
 		}
 	});
