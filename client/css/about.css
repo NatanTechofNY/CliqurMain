@@ -23,7 +23,7 @@
 	height: 3px;
 	width: 50%;
 }
-.about_line:nth-child(3){
+.about_line:nth-child(1){
 	margin-left: 20%;
 	background-color: #2875B8;
 }
