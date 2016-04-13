@@ -24,12 +24,12 @@
 }
 .contact_line:nth-child(3){
 	margin-left: 20%;
-	background-color: #6A9E3A;
+	background-color: #2875B8;
 }
 .contact_line:nth-child(4){
 	margin-top: -1%;
 	margin-left: 30%;
-	background-color: #ECAD24;
+	background-color: #E68529;
 }
 .contact_intro{
 	margin-top: 3%;
@@ -42,7 +42,7 @@
 .contact_form {
 	margin-top: 5%;
 	border: 2px solid 6A9E3A;
-	background: #33691E;
+	background: #E68529;
 	height: 280px;
 	margin-left: 17%;
 	border-radius: 2px;
@@ -56,14 +56,14 @@
 }
 .contact_input {
 	margin-top: 3%;
-	padding-left: 2%;
+	padding: 2%;
 	margin-left: -44%;
 	letter-spacing: normal;
 	height: 35px;
 	width: 40%;
 }
 .contact_ta {
-	padding-left: 2%;
+	padding: 2%;
 	padding-top: 5px;
 	margin-left: 49%;
 	margin-top: -19.2% !important;
@@ -78,5 +78,9 @@
 	width: 40%;
 	color: white;
 	margin-top: 3%;
+}
+.contact_sm_container {
+	margin-top: 40%;
+	border: 2px solid red;
 }
 
