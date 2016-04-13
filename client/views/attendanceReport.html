@@ -1,62 +1,58 @@
 <template name="report">
-
-<section style="width: 100vh; font-family: Roboto; background-color: rgba(220, 225, 227, 0.36); margin-left: auto; margin-right: auto;">
-	
-	<h1 style="text-align: center; font-weight: 800; background-color: transparent; margin-bottom: 20px;">Attendance Report</h1>
-<div style="margin-left: 50px;">
-	<p1 style="text-align: center;">Date:<span>(time)</span></p1>
-	<br>
-	<p1 style="text-align: center;">Class:<span>(className)</span></p1>
-	<br>
-	<button style="color: #05668d;
-			background-color: #fff;
-			font-size: 13px;
-			padding: 15px;
-			font-weight: 200;
-			border: 1px solid #05668d;
-			width: 150px;
-			margin: 20px 20px 20px 0px;
-			float: left;
-			border-radius: 3px;">Email Report</button>
-	<button style="color: #05668d;
-			background-color: #fff;
-			font-size: 13px;
-			padding: 15px;
-			font-weight: 200;
-			border: 1px solid #05668d;
-			width: 150px;
-			margin: 20px 20px 20px 0px;
-			float: left;
-			border-radius: 3px;">Print Report</button>
-</div>
-	<div style="width: 80%; color: #333; font-size: 18px; letter-spacing: 2px; margin-left: auto; margin-right: auto; margin-top: 50px;">
-		<div style="width: 100%; padding: 50px">
-			<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">#:</h3>
-			<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">Name:</h3>
-			<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">Student ID</h3>
-		</div>
-		<div style="width: 100%; padding: 50px;">
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">1</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
-		</div>
-		<div style="width: 100%; padding: 50px;">
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">2</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
-		</div>
-		<div style="width: 100%; padding: 50px;">
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">3</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
-		</div>
-		<div style="width: 100%; padding: 50px;">
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">4</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">Peter Zheng</p1>
-			<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">128128291</p1>
+	<div class="modalItem_report">
+		<div>
+			<h2>Enter your email</h2>
+			<form name="emailSubmit" charset="utf-8" method="POST" action="">
+				<input type="email" id="emailinpt" name="email" placeholder="ex. batman@cliqur.com" required />
+				<button type="submit">Send report</button>
+			</form>
+			<span>Close</span>
 		</div>
 	</div>
+	<section style="width: 100vh; font-family: Roboto; background-color: rgba(220, 225, 227, 0.36); margin-left: auto; margin-right: auto;">
+		
+		<h1 style="text-align: center; font-weight: 800; background-color: transparent; margin-bottom: 20px;">Attendance Report</h1>
+		<div style="margin-left: 50px;">
+			<p1 style="text-align: center;">Date:<span> {{thisTime}}</span></p1>
+			<br>
+			<p1 style="text-align: center;">Class:<span> {{d.sessionName}}</span></p1>
+			<br>
+			<button id="emailreport" style="color: #05668d;
+					background-color: #fff;
+					font-size: 13px;
+					padding: 15px;
+					font-weight: 200;
+					border: 1px solid #05668d;
+					width: 150px;
+					margin: 20px 20px 20px 0px;
+					float: left;
+					border-radius: 3px;">Email Report</button>
+			<button onclick="window.print()" style="color: #05668d;
+					background-color: #fff;
+					font-size: 13px;
+					padding: 15px;
+					font-weight: 200;
+					border: 1px solid #05668d;
+					width: 150px;
+					margin: 20px 20px 20px 0px;
+					float: left;
+					border-radius: 3px;">Print Report</button>
+		</div>
+		<div style="width: 660px; color: #333; font-size: 18px; letter-spacing: 2px; margin-left: auto; margin-right: auto; margin-top: 50px;">
+			<div style="width: 100%; padding: 50px">
+				<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">#:</h3>
+				<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">Name:</h3>
+				<h3 style="font-weight: 700; letter-spacing: 2px; font-size: 24px; padding: 10px 50px 10px 50px; display: inline;">Student ID</h3>
+			</div>
+			{{#each d.userList}}
+				<div style="width: 100%; padding: 50px;">
+					<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">{{@index}}</p1>
+					<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">{{this.fullName}}</p1>
+					<p1 style="font-size: 14px; padding: 10px 50px 10px 50px;">{{this.studentId}}</p1>
+				</div>
+			{{/each}}
+		</div>
 
 </section>
 
-	</template>
+</template>

@@ -99,30 +99,38 @@ if (Meteor.isClient) {
             //   unit: "in",
             //   format: "letter"
             // });
-            Meteor.call('createDocument', {listed: list}, function (e, res) {
-              if (e)
-                return alert(e.error);
-              else if(res){
 
-
-
-                  download(res, "attendance.html", "text/html")
-
-
-            //    var byteCharacters = atob(res);
-            //    var byteNumbers = new Array(byteCharacters.length);
-                // for (var i = 0; i < byteCharacters.length; i++) {
-                //  byteNumbers[i] = byteCharacters.charCodeAt(i);
-                // };
-                // var byteArray = new Uint8Array(byteNumbers);
-
-                // var blob = new Blob([byteArray], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}); `
-
-            //     var blob = new Blob([res], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});//application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-                // saveAs(blob, "attendance.xlsx");
-                // window.open(res, "_blank");
-              }
+            var o = Sessions.findOne({"sessionId": Router.current().params.sessionId});
+            o.userList = list.filter(function(g) {
+              return g.studentId !== "SessionOwner";
             });
+            Session.setPersistent('reportData', o);
+            window.open("/report", "_blank", "width=660,height=600");
+
+            // Meteor.call('createDocument', {listed: list}, function (e, res) {
+            //   if (e)
+            //     return alert(e.error);
+            //   else if(res){
+
+
+
+            //       download(res, "attendance.html", "text/html")
+
+
+            // //    var byteCharacters = atob(res);
+            // //    var byteNumbers = new Array(byteCharacters.length);
+            //     // for (var i = 0; i < byteCharacters.length; i++) {
+            //     //  byteNumbers[i] = byteCharacters.charCodeAt(i);
+            //     // };
+            //     // var byteArray = new Uint8Array(byteNumbers);
+
+            //     // var blob = new Blob([byteArray], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}); `
+
+            // //     var blob = new Blob([res], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});//application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+            //     // saveAs(blob, "attendance.xlsx");
+            //     // window.open(res, "_blank");
+            //   }
+            // });
           };
         },
         'click .togglePulicBtn': function(e) {
