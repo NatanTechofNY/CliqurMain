@@ -1,4 +1,11 @@
 <template name="contact">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+label {
+	color: white;
+	font-weight: normal;
+}
+</style>
 <div class="row">
 		<div class="col-md-10">
 		</div>
@@ -19,25 +26,32 @@
 				 
 					<p class = "contact_intro"> Whether you have a question, want to partner with us or are stopping to say hi, get in touch! </p>
 				  	
-				  	<form action = "" class = "contact_form col-md-8">
-						
-						<div class = "contact_input_container">
-							<i class="fa fa-user" aria-hidden="true"></i><input class = "contact_input" type="text" placeholder="Name">
-							<br>
-							<i class="fa fa-envelope-o" aria-hidden="true"></i><input class = "contact_input" type="email" placeholder="Email">
-							<br>
-							<i class="fa fa-phone" aria-hidden="true"></i><input class = "contact_input" type="text" placeholder="Phone">
-						</div>
-						<div class = "contact_input_container">
-							<textarea class = "contact_ta" placeholder="Message"></textarea>
-						</div>
-						
-				  		<button type="submit" class = "contact_send_button">Send Message</button>
+				  	<form action="" charset="utf-8" name="contactForm" style="height:100%" class="contact_form col-md-8">
+<br>
+						<div class="row">
+            <div class="form-group col-sm-4">
+                <label for="fullNameinpt">Name/Company Name</label>
+                <input type="text" class="form-control" id="fullNameinpt" placeholder="Enter name" required>
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="emailinpt">Email</label>
+                <input type="email" class="form-control" id="emailinpt" placeholder="Enter email" required>
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="phNoInpt">Phone # (Optional)</label>
+                <input type="text" class="form-control" id="phNoInpt" placeholder="123-123-1234">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="msgarea" class="h4 ">Message</label>
+            <textarea id="msgarea" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+        </div>
+				  		<button type="submit" class="contact_send_button">Send Message</button>
+				  		<br>
 				  	</form>
-				  
 				  	<div class = "contact_sm_container">
 				  		<p> Connect with us: </p>
-						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+						<i class="fa fa-facebook-square" style="border:none" aria-hidden="true"></i>
 				  
 				  	</div>
 				  </center>
