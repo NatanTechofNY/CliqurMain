@@ -4,19 +4,18 @@
 <style>
 body {
   height: 100%;
+  padding: 1em;
 }
 </style>
-    <nav class="navbar creatview_navbar">
       <div class="container-fluid">
-          <a class="navbar-brand">
+          <a class="navbar-brand" style="float:left">
         Cliqur <span> Students</span> | <span class = "cred">Session ID: {{sessionId}}</span></a>
       <button class="btn-danger exit" style="z-index:1;float:right;margin-top: 10px" id="endssn">Exit Session</button>
       </div>
-      <left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: {{inst}} </p> 
-            <p class = "cred smallcred"> Signed in as <b style = "color: #2875B8">{{userName}}</b></p>
+      <left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: <b style = "color: #2875B8">{{inst}}</b> </p> 
+            <p class = "cred smallcred"> Signed in as <b style = "color: #009900">{{userName}}</b></p>
       </left>
-    
-    </nav>
+    <br>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div class="jumbotron student-view-jumbotron">
   <div class="row">
@@ -72,10 +71,10 @@ body {
 			  Cliqur <span> Students</span> | <span class = "cred">Session ID: {{sessionId}}</span></a>
 		  
             <button class="navbar-right btn-danger exit" style="z-index:1" id="endssn">Exit Session</button>
-            <p class="navbar-right login-name">Signed in as {{userName}}</p>
+            <p class="navbar-right login-name">Signed in as <b style = "color: #009900">{{userName}}</b></p>
             <label id="status" class="navbar-text navbar-right"></label>
       </div>
-			<left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: {{inst}} </p> </left>
+			<left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: <b style = "color: #2875B8">{{inst}}</b></p> </left>
 		
     </nav>
 
