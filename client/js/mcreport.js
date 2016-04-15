@@ -17,7 +17,7 @@ if (Meteor.isClient) {
 			var sets = sess.clickerData.sets;
 			if (sets) {
 				var studentsList = [];
-
+				console.log(sets)
 				sets.forEach(function($t, $qIdx) {
 					var resps = $t.responses;
 					var $tQ = $t.question;
@@ -45,7 +45,7 @@ if (Meteor.isClient) {
 				});
 
 				//fill up empty responses
-				studentsList.map(function($stud) {
+				studentsList = studentsList.map(function($stud) {
 					for (var i = 0; i < $stud.responseList.length; i++) {
 						if (typeof $stud.responseList[i] === "undefined") $stud.responseList[i] = "No response";
 					};
