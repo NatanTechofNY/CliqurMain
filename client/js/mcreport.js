@@ -7,13 +7,13 @@ if (Meteor.isClient) {
 			};
 		},
 		session: function () {
-			return Session.get('reportData');
+			return Session.get('mcreportData');
 		},
 		todaysDay: function() {
 			return moment().format('LL');
 		},
 		students: function() {
-			var sess = Session.get('reportData');
+			var sess = Session.get('mcreportData');
 			var sets = sess.clickerData.sets;
 			if (sets) {
 				var studentsList = [];

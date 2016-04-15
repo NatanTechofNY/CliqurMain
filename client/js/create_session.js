@@ -285,6 +285,13 @@ Tabs.init();
         'click #create_closeNav_btn': function() {
           document.getElementById("mySidenav").style.width = "0";
           document.getElementById("create_id_body").style.marginLeft = "0";
+        },
+        'click #pollRespReport': function() {
+          var o = Sessions.findOne({"sessionId": Router.current().params.sessionId});
+          Session.setPersistent('mcreportData', o);
+          ga("send", "event", "McReport", "Opened", 'null', new Date().getTime());
+
+          window.open("/mcreport", "_blank", "width=660,height=600");
         }
     });
     Template.create_session.helpers({
