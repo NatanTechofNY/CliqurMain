@@ -293,9 +293,35 @@ body {
                     Spectator View
                 </button>
             </a>
-           <button type="button" id="createAtten" class="create_generate_btn hvr-icon-hang">
+          <button type="button" class="create_generate_btn" data-toggle="modal" data-target=".bs-example-modal-sm">
                   Get Report
            </button>
+
+           <div class="modal fade bs-example-modal-sm" id="overridebs" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content" id="overridebs">
+                  <div class="modal-header">
+                      <div class="create-header-text page-header">
+                          <h2><small><center>Choose a Report</center></small></h2>
+                      </div>
+                  </div>
+                  <div class="container-fluid create_modal-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                 <button type="button" id="createAtten" class="create_modalatt_btn hvr-icon-hang">
+                                        Class Attendance
+                                 </button>
+                            </div>
+                            <div class="col-md-12">
+                                  <button type="button" class="create_modalmc_btn hvr-icon-hang">
+                                        Poll Response
+                                  </button>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           
         </div>
 </div>
@@ -397,103 +423,5 @@ body {
       </div>
   </section>
   </div>
-<!--
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-      <div class="navbar-brand" href="">Cliqur | Session ID: <input readonly type="text" value="{{sessionId}}" id="autoSelectrLoc"> </div>
-      
- 
-    <div class="btn btn-danger btn-lg navbar-right" style="font-family: Cabin;font-size:15px" id="endssn">End Session</div>
-    <a target="_blank" href="/d/{{sessionId}}/p"><div style="font-family: Cabin;font-size:15px" class="btn btn-primary btn-lg navbar-right">Go to Public View</div></a>
-    </div>
-</nav>
-<div class="row">
-<div class="instructorOwnQuestion col-md-offset-3">
-<h1>Publish your own question</h1>
-            <form id="customQuestionSubmit">
-            <div class="row">
-            <div class="col-md-6">
-        <input type="text" name="creatorQuestion" class="form-control">
-        <hr />
-        <center>
-          {{#if pollTime}}
-            <a href="#" id="timerEndBtn">Close polls</a>
-            <p>Time: {{pollTime}}</p>
-          {{else}}
-                <h1>Open polls</h1>
-                <label>
-                  <input type="checkbox" name="timeSet60" value="60" class="optionsRadios">
-                  60 sec
-                </label> or 
-                <label>
-                  <input type="number" name="timeSet" placeholder="Set a custom time (seconds)" style="width:200px" min="1" max="600">
-                  </label>
-                <a href="#" style="display:block;" id="timerSetBtn">Set timer</a>
-            {{/if}}
-          </center>
-        </div>
-        <div class="col-md-6">
-        <button type="submit" class="btn btn-success" style="color:white;width:120px;padding:9px;font-family: Cabin;font-size:18px" id="joinPublicViewBtn">Publish!</button>
-        </div>
-        </div>
-        </form>
-<hr style="width:90%">
-<h1>Student asked questions</h1>
-<div style="padding-left: 10px;padding-top: 10px;margin-bottom:120px;">  
-            {{#each questionItem}}
-              <div class="radio" style="font-size: 18px">
-                <label>
-                  <input type="radio" style="width:20px !important;height: 20px !important;" name="optionsRadios" class="optionsRadios" value="{{_id}}" checked="{{isPublic}}">
-                  {{{body}}}<br>
-                  {{#if thisAuthorName}}<span>&ndash; by {{thisAuthorName}}</span>{{/if}}
-                </label>
-              </div>
-              {{else}}
-              <h1>No questions asked yet.</h1>
-            {{/each}}
-</div>
-</div>
-</div>
-<section>
-  <div class="row panel-button-group">
-    <div class="col-md-4 nopadding">
-      <button id="changeToThisPublic" style="font-family: Cabin;font-size:18px" class="btn btn-success btn-block">Publish selected question</button>
-    </div>
-    <div class="col-md-4 nopadding">
-      <button id="resetPollBtn" style="font-family: Cabin;font-size:18px" class="btn btn-warning btn-block">Reset Polls</button>
-    </div> 
-    <div class="col-md-4 nopadding">
-      <button id="deleteThisQuestion" style="font-family: Cabin;font-size:18px" class="btn btn-danger btn-block">Delete</button>
-    </div>
-  </div>
-</section>
-    <div id="wrapper" class="toggled">
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <h3>Class Attendance</h3>
-                </li>
-                {{#each usersList}}
-                    <li class="student-item" title="{{studentId}}">
-                        {{#if eq userId SessionItem.sessionOwnerId}}
-                            <b>{{fullName}}</b>
-                        {{else}}
-                            <span>{{fullName}}</span>
-                        {{/if}}
-                    </li>
-                {{/each}}
-            </ul>
-            <button class="btn btn-danger btn-block generate-button" id="createAtten">Generate Attendance Report</button>
-        </div>
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#menu-toggle" class="btn btn-default fix-button-left vertical-text" id="menu-toggle">Show Attendance</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     {{/if}}
 </template>
