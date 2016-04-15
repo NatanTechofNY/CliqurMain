@@ -27,8 +27,8 @@ if(Meteor.isClient) {
 		voteDistribution: function() {
 			if (Sessions.findOne({"sessionId": Router.current().params.sessionId})) {
 				var sess = Sessions.findOne({"sessionId": Router.current().params.sessionId});
-				if (sess.clickerData) {
-					var $D = sess.clickerData;
+				if (sess.clickerData && sess.clickerData.sets) {
+					var $D = sess.clickerData.sets[sess.clickerData.sets.length - 1];
 					if ($D && $D.responses && $D.responses.length) {
 						var $R = $D.responses;
 						var totalResp = $R.length;

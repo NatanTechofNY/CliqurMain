@@ -1,94 +1,63 @@
-<!doctype html>
-	<html>
-		<head>
-		</head>
-			<body>
-				<section>
-					<div style="font-family: Roboto; font: 18px;">
-						<h1 style="font-family: Roboto; font-size: 38px; border-bottom: 2px double #333; text-align: center; vertical-align: middle; font-weight: 300; width: 450px; margin-left: auto; margin-right: auto;">Score Report and Analysis</h1>
-							
-								<br>
-							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Instructor Name: <span>{{Name}}</span></p1>
-								<br>
-							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Name: <span>{{Name}}</span></p1>
-								<br>
-							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Section: <span>{{Class Section}}</span></p1>
-								<br>
-							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Date: <span>{{date}}</span></p1>
-		
-							<span>
-								<button style="color: #05668D;
-									background-color: #fff;
-									font-size: 14px;
-									margin: 12px;
-									padding: 15px;
-									border: 2px solid #05668D;
-									width: 200px;
-									height: 50px;
-									display: inline-block;
-									float: right;">Print</button>
-								<button style="color: #05668D;
-									background-color: #fff;
-									font-size: 14px;
-									margin: 12px;
-									padding: 15px;
-									border: 2px solid #05668D;
-									width: 200px;
-									height: 50px;
-									display: inline-block;
-									float: right;">Email</button>
-							</span>
-						<table style="width: 100%; border: 3px solid #333; margin-top: 60px;" cellspacing="0" cellpadding="0" >
-							<div style="font-weight: 800; font-family: Roboto; font-size: 18px;"> <!--table headers with extra heavy font-weight-->
-								<tr>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">#</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Name</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #1</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #2</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #3</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #4</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #5</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #6</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #7</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #8</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #9</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Question #10</td>
-									<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Final Score</td>
-								</tr>
-							</div>
-							<div style="font-weight: normal; font-family: Roboto; font-size: 14px;" cellspacing="0" cellpadding="0"> 
-								<tr> <!--table row 1 item 1, generate a new row for each additional student in class-->
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">#</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">student 1</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #1</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #2</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #3</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #4</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #5</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #6</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #7</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #8</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #9</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #10</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Score</td>
-								</tr>
-								<tr> <!--table row 2 item 2, generate a new row for each additional student in class-->
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">#</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">student 1</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #1</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #2</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #3</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #4</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #5</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #6</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #7</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #8</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #9</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Response #10</td>
-									<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">Score</td>
-								</tr>
-							</div>
-						</table>
-					</div>
-					</div>
-				</section>
+<template name="mcreport">
+	<section>
+		<div style="font-family: Roboto; font: 18px;">
+			<h1 style="font-family: Roboto; font-size: 38px; border-bottom: 2px double #333; text-align: center; vertical-align: middle; font-weight: 300; width: 450px; margin-left: auto; margin-right: auto;">Score Report and Analysis</h1>
+				
+					<br>
+				<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Instructor Name: <span>{{ThisUserName}}</span></p1>
+					<br>
+				<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Name: <span>{{session.sessionName}}</span></p1>
+					<br>
+				<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Section: <span></span></p1>
+					<br>
+				<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Date: <span>{{todaysDay}}</span></p1>
+
+				<span>
+					<button style="color: #05668D;
+						background-color: #fff;
+						font-size: 14px;
+						margin: 12px;
+						padding: 15px;
+						border: 2px solid #05668D;
+						width: 200px;
+						height: 50px;
+						display: inline-block;
+						float: right;" onclick="window.print();">Print</button>
+					<button style="color: #05668D;
+						background-color: #fff;
+						font-size: 14px;
+						margin: 12px;
+						padding: 15px;
+						border: 2px solid #05668D;
+						width: 200px;
+						height: 50px;
+						display: inline-block;
+						float: right;">Email</button>
+				</span>
+			<table style="width: 100%; border: 3px solid #333; margin-top: 60px;" cellspacing="0" cellpadding="0" >
+				<div style="font-weight: 800; font-family: Roboto; font-size: 18px;"> <!--table headers with extra heavy font-weight-->
+					<tr>
+						<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">#</td>
+						<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Name</td>
+						{{#each session.clickerData.sets}}
+							<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">{{this.question}}</td>
+						{{/each}}
+						<!-- <td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Final Score</td> -->
+					</tr>
+				</div>
+				<div style="font-weight: normal; font-family: Roboto; font-size: 14px;" cellspacing="0" cellpadding="0">
+					{{#each students}}
+						<tr> <!--table row 1 item 1, generate a new row for each additional student in class-->
+							<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{studentId}}</td>
+							<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{fullName}}</td>
+							{{#each responseList}}
+								<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{this}}</td>
+							{{/each}}
+							<!-- <td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{Score}}</td> -->
+						</tr>
+					{{/each}}
+				</div>
+			</table>
+		</div>
+	</section>
+</template>
