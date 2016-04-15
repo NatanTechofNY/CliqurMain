@@ -255,7 +255,7 @@ Tabs.init();
               "userId": Session.get('userSessItem').userId,
               "maxSecs": parseInt(timingCheck),
               "thisTime": new Date(),
-              "questionItem": Questions.findOne({"parentSessionId": Router.current().params.sessionId, "isPublic": true})
+              "questionItem": Questions.findOne({"parentSessionId": Router.current().params.sessionId, "isPublic": true}).body
             };
             Meteor.call('setTiming', obj, function (error, result) {
               $('input[name="timeSet"]').val('');
@@ -269,7 +269,7 @@ Tabs.init();
             "userId": Session.get('userSessItem').userId,
             "maxSecs": 1,
             "thisTime": new Date(),
-            "questionItem": Questions.findOne({"parentSessionId": Router.current().params.sessionId, "isPublic": true})
+            "questionItem": Questions.findOne({"parentSessionId": Router.current().params.sessionId, "isPublic": true}).body
           };
           Meteor.call('setTiming', obj, function (error, result) {
             $('input[name="timeSet60"]').attr('checked', false);
