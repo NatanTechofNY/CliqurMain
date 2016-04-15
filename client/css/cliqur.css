@@ -18,10 +18,10 @@
   		margin: 40px auto;
   		text-align: center;
   		border-radius: 4px;
-  		box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  		box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 	}
 	.publicview_panel_title {
-		background-color: #FA7921;
+		background-color: #2875B8;
 		padding:10px;
 		color:white;
 	}
