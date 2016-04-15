@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
 
+
 	Template.crowd_session.events({
        	'click #endssn': function() {
        		Router.go("/endsession");
