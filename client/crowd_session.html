@@ -1,19 +1,69 @@
 <template name="crowd_session">
 
 {{#if isPhone}}
-    <nav class="navbar creatview_navbar">
+<style>
+body {
+  height: 100%;
+  padding: 1em;
+}
+</style>
       <div class="container-fluid">
-          <a class="navbar-brand">
+          <a class="navbar-brand" style="float:left">
         Cliqur <span> Students</span> | <span class = "cred">Session ID: {{sessionId}}</span></a>
-      
-            <button class="navbar-right btn-danger exit" style="z-index:1" id="endssn">Exit Session</button>
-            <p class="navbar-right login-name">Signed in as {{userName}}</p>
-            <label id="status" class="navbar-text navbar-right"></label>
+      <button class="btn-danger exit" style="z-index:1;float:right;margin-top: 10px" id="endssn">Exit Session</button>
       </div>
-      <left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: {{inst}} </p> </left>
-    
-    </nav>
-WHAT YOU WANT TO SHOW FOR PHONE. So you can have two different navbars but they will each have different layout for phone and desktop.
+      <left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: <b style = "color: #2875B8">{{inst}}</b> </p> 
+            <p class = "cred smallcred"> Signed in as <b style = "color: #009900">{{userName}}</b></p>
+      </left>
+    <br>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<div class="jumbotron student-view-jumbotron">
+  <div class="row">
+    <div class="col-md-12">
+        <center>
+          <p class="student-display-question">{{latestQuestion.body}} <span>&ndash; {{authorName}}</span></p>
+        </center>
+      </div>
+    </div>
+  </div>
+            <div class="container-fluid">
+            <textarea class="student-input create_view_input" style="resize: none;" type="text" name="questionInput" placeholder="Have a question? Enter it here"></textarea>
+            <div class="row student-qa-button-group">
+              <div class="col-md-6">
+                <button id="sendQuestionBtn" class="btn student-qa-button student-send-btn">
+                  Send
+                </button>
+              </div>
+              <div class="col-md-6">
+                <button id="clearQuestionBtn" class="btn student-qa-button student-clear-btn">
+                  Clear
+                </button>
+              </div>
+            </div>
+            {{#if pollTime}}
+              <div class="row student-mc-container">
+                <div class="col-md-12 col-xs-12 text-center nopadding-bottom">
+                 <center><p class="student-mc-title">Multiple Choice Response</p>
+                                 <p class = "student-time-display">Time remaining: {{pollTime}}</p></center> 
+                </div>
+                <div class="col-md-3 col-xs-3">
+                  <button class="btn hvr-grow student-response-button" style="font-size:32px;height:75px" data-idx="0"><span></span>A</button>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                  <button class="btn hvr-grow student-response-button" style="font-size:32px;height:75px" data-idx="1"><span></span>B</button>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                  <button class="btn hvr-grow student-response-button" style="font-size:32px;height:75px" data-idx="2"><span></span>C</button>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                  <button class="btn hvr-grow student-response-button" style="font-size:32px;height:75px" data-idx="3"><span></span>D</button>
+                </div>
+              </div>
+                          <center>
+                        <label id="status"></label>
+                        </center>
+            {{/if}}
+          </div>
 {{else}}
     <nav class="navbar">
       <div class="container-fluid">
@@ -21,10 +71,10 @@ WHAT YOU WANT TO SHOW FOR PHONE. So you can have two different navbars but they 
 			  Cliqur <span> Students</span> | <span class = "cred">Session ID: {{sessionId}}</span></a>
 		  
             <button class="navbar-right btn-danger exit" style="z-index:1" id="endssn">Exit Session</button>
-            <p class="navbar-right login-name">Signed in as {{userName}}</p>
+            <p class="navbar-right login-name">Signed in as <b style = "color: #009900">{{userName}}</b></p>
             <label id="status" class="navbar-text navbar-right"></label>
       </div>
-			<left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: {{inst}} </p> </left>
+			<left class = "left" > <p class = "cred smallcred" style = "margin-top: -0.4%">Class: {{class}} | Instructor: <b style = "color: #2875B8">{{inst}}</b></p> </left>
 		
     </nav>
 
@@ -57,10 +107,11 @@ WHAT YOU WANT TO SHOW FOR PHONE. So you can have two different navbars but they 
               </div>
             </div>
             {{#if pollTime}}
+                            <br>
               <div class="row student-mc-container">
-                <p class = "student-time-display">Time remaining: {{pollTime}}</p>
                 <div class="col-md-12 col-xs-12 text-center nopadding-bottom">
-                 <center><p class="student-mc-title">Multiple Choice Response</p></center> 
+                 <center><p class="student-mc-title">Multiple Choice Response</p>
+                  <p class = "student-time-display">Time remaining: {{pollTime}}</p></center> 
                 </div>
                 <div class="col-md-3 col-xs-3">
                   <button class="btn hvr-grow student-response-button" data-idx="0"><span>Recording response...</span><p class = "student-mc-text">A</p></button>

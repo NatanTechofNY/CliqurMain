@@ -254,7 +254,8 @@ Tabs.init();
               "sessionId": Session.get('userSessItem').sessionId,
               "userId": Session.get('userSessItem').userId,
               "maxSecs": parseInt(timingCheck),
-              "thisTime": new Date()
+              "thisTime": new Date(),
+              "questionItem": Questions.findOne({"parentSessionId": Router.current().params.sessionId, "isPublic": true}).body
             };
             Meteor.call('setTiming', obj, function (error, result) {
               $('input[name="timeSet"]').val('');
@@ -267,7 +268,8 @@ Tabs.init();
             "sessionId": Session.get('userSessItem').sessionId,
             "userId": Session.get('userSessItem').userId,
             "maxSecs": 1,
-            "thisTime": new Date()
+            "thisTime": new Date(),
+            "questionItem": Questions.findOne({"parentSessionId": Router.current().params.sessionId, "isPublic": true}).body
           };
           Meteor.call('setTiming', obj, function (error, result) {
             $('input[name="timeSet60"]').attr('checked', false);
@@ -283,6 +285,13 @@ Tabs.init();
         'click #create_closeNav_btn': function() {
           document.getElementById("mySidenav").style.width = "0";
           document.getElementById("create_id_body").style.marginLeft = "0";
+        },
+        'click #pollRespReport': function() {
+          var o = Sessions.findOne({"sessionId": Router.current().params.sessionId});
+          Session.setPersistent('mcreportData', o);
+          ga("send", "event", "McReport", "Opened", 'null', new Date().getTime());
+
+          window.open("/mcreport", "_blank", "width=660,height=600");
         }
     });
     Template.create_session.helpers({

@@ -18,10 +18,10 @@
   		margin: 40px auto;
   		text-align: center;
   		border-radius: 4px;
-  		box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  		box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 	}
 	.publicview_panel_title {
-		background-color: #FA7921;
+		background-color: #2875B8;
 		padding:10px;
 		color:white;
 	}
@@ -313,7 +313,7 @@
 		background-color: rgba(242, 231, 223, 0.1);
 		opacity: 0.84;
 	}
-	.create_generate_btn, .create_public_btn, .create_selfpublish_button{
+	.create_generate_btn, .create_public_btn, .create_selfpublish_button, .create_modalmc_btn, .create_modalatt_btn {
 		background-color: rgba(220, 225, 227, 0.36);
 		border-radius: 2px;
 			-webkit-transition: background .3s, opacity .3s;
@@ -322,7 +322,7 @@
 			     -o-transition: background .3s, opacity .3s;
 			        transition: background .3s, opacity .3s;
 	}
-	.create_generate_btn:hover, .create_public_btn:hover, .create_selfpublish_button:hover{
+	.create_generate_btn:hover, .create_public_btn:hover, .create_selfpublish_button:hover, .create_modalatt_btn:hover, .create_modalmc_btn:hover {
 		background-color: rgba(220, 225, 227, 0.1);
 		opacity: 0.84;
 	}
@@ -336,6 +336,29 @@
 			margin: 10px;
 			text-decoration: none;
 			float: right;
+	}
+	.create_modalatt_btn {
+			color: #05668D;
+			font-size: 13px;
+			padding: 15px;
+			font-weight: 200;
+			border: 1px solid #05668D;
+			width: 170px;
+			margin: 20px;
+			text-decoration: none;
+	}
+	#overridebs .container-fluid {
+		padding: 20px 45px 20px 45px;
+	}
+	.create_modalmc_btn {
+			color: #05668D;
+			font-size: 13px;
+			padding: 15px;
+			font-weight: 200;
+			border: 1px solid #05668D;
+			width: 170px;
+			margin: 0px 20px 20px 20px;
+			text-decoration: none;
 	}
 	.create_public_btn {
 			color: #05668D;
