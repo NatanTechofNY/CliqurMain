@@ -123,9 +123,9 @@ body {
                     Spectator View
                 </button>
             </a><br>
-           <button type="button" style="float: none;margin: 0;" id="createAtten" class="create_generate_btn hvr-icon-hang">
+<button type="button" class="create_generate_btn" style="float: none;margin: 0;" data-toggle="modal" data-target=".bs-example-modal-sm">
                   Get Report
-           </button> 
+           </button>
            </center>   
   </div>
   
@@ -242,7 +242,32 @@ body {
                 </form>
         </div>
         </center>
-
+           <div class="modal fade bs-example-modal-sm" id="overridebs" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content" id="overridebs">
+                  <div class="modal-header">
+                      <div class="create-header-text page-header">
+                          <h2><small><center>Choose a Report</center></small></h2>
+                      </div>
+                  </div><center>
+                  <div class="container-fluid create_modal-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                 <button type="button" id="createAtten" class="create_modalatt_btn hvr-icon-hang">
+                                        Class Attendance
+                                 </button>
+                            </div>
+                            <div class="col-md-12">
+                                  <button id="pollRespReport" type="button" class="create_modalmc_btn hvr-icon-hang">
+                                        Poll Response
+                                  </button>
+                            </div>
+                        </div>
+                  </div>
+                  </center>
+                </div>
+              </div>
+            </div>
 {{else}}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
