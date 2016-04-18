@@ -1,5 +1,7 @@
+
+
 <template name="mcreport">
-	<section>
+		<section>
 		<div style="font-family: Roboto; font: 18px;">
 			<h1 style="font-family: Roboto; font-size: 38px; border-bottom: 2px double #333; text-align: center; vertical-align: middle; font-weight: 300; width: 450px; margin-left: auto; margin-right: auto;">Score Report and Analysis</h1>
 				
@@ -36,30 +38,35 @@
 					border-radius: 3px; 
 					-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;">Email</button>
 				</span>
-			<table style="width: 100%; border: 3px solid #333; margin-top: 60px;" cellspacing="0" cellpadding="0" >
-				<div style="font-weight: 800; font-family: Roboto; font-size: 18px;"> <!--table headers with extra heavy font-weight-->
+			<table style="width: 100%; border: 3px solid #333; margin-top: 60px;" cellspacing="0" cellpadding="0">
+				
+				<div style="font-weight: 800; font-family: Roboto; font-size: 18px; width: 100%;"> <!--table headers with extra heavy font-weight-->
 					<tr>
-						<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">#</td>
-						<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Name</td>
+						<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; max-width: 8.33%; width: 8.33%;">#</td>
+						<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; max-width: 8.33%; width: 8.33%;">Name</td>
 						{{#each session.clickerData.sets}}
-							<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">{{this.question}}</td>
+						<td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; max-width: 8.33%; width: 8.33%;">{{this.question}}</td>
+
 						{{/each}}
 						<!-- <td style="border-right: 3px solid #333; border-bottom: 3px solid #333; padding: 15px; text-align: center; margin: 10px;">Final Score</td> -->
 					</tr>
 				</div>
-				<div style="font-weight: normal; font-family: Roboto; font-size: 14px;" cellspacing="0" cellpadding="0">
+
+				<div style="font-weight: normal; font-family: Roboto; font-size: 18px; width: 100%;">
 					{{#each students}}
 						<tr> <!--table row 1 item 1, generate a new row for each additional student in class-->
-							<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{studentId}}</td>
-							<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{fullName}}</td>
+							<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center; overflow: hidden;  text-overflow: ellipsis; max-width: 8.33%; white-space: nowrap; width: 8.33%;">{{studentId}}</td>
+							<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; text-align: center; overflow: hidden;  text-overflow: ellipsis;  max-width: 8.33%; width: 8.33%;">{{fullName}}</td>
 							{{#each responseList}}
-								<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{this}}</td>
+								<td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center; overflow: hidden;  text-overflow: ellipsis;  max-width: 8.33%; white-space: nowrap; width: 8.33%;">{{this}}</td>
 							{{/each}}
 							<!-- <td style="border-right: 1px solid #333; border-bottom: 1px solid #333; padding: 15px; text-align: center;">{{Score}}</td> -->
 						</tr>
 					{{/each}}
 				</div>
+
 			</table>
 		</div>
 	</section>
 </template>
+
