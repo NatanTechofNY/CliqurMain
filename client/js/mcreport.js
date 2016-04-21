@@ -1,4 +1,31 @@
 if (Meteor.isClient) {
+	Template.mcreport.events({
+		'click #sendEmail': function () {
+			$('.modalItem_report').show();
+		},
+		'click .modalItem_report>div>span': function () {
+			$('.modalItem_report').hide();
+		},
+		'submit form[name="emailSubmit"]': function (e) {
+			e.preventDefault();
+			$('.modalItem_report').hide();
+			alert("Sending report...");
+			var email = e.target.emailinpt.value;
+			$('section button').remove();
+			var reportHtml = '<section>' + $('section').html() + '</section>';
+			Meteor.call('sendReport', {
+				"to": email,
+				"className": Session.get('reportData').sessionName,
+				"reportHtml": reportHtml
+			}, function (e, r) {
+				ga("send", "event", "Report", "Emailed", 'null', new Date().getTime());
+				$('#toappTo').append('<button style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: right;border-radius: 3px; -webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" onclick="window.print();">Print</button><button style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: right;border-radius: 3px; -webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" id="sendEmail">Email</button>');
+				if (e)
+					alert(e.error);
+				else alert('Report sent!');
+			});
+		}
+	});
 	Template.mcreport.helpers({
 		ThisUserName: function () {
 			var usrItem = Usrs.findOne({"_id": Session.get('userSessItem').userId});

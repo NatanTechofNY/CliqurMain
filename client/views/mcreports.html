@@ -1,7 +1,17 @@
 
 
 <template name="mcreport">
-						<section>
+	<div class="modalItem_report">
+		<div>
+			<h2>Enter your email</h2>
+			<form name="emailSubmit" charset="utf-8" method="POST" action="">
+				<input type="email" id="emailinpt" name="email" placeholder="ex. batman@cliqur.com" required />
+				<button type="submit">Send report</button>
+			</form>
+			<span>Close</span>
+		</div>
+	</div>
+					<section>
 						<h1 style="font-family: Roboto; font-size: 38px; border-bottom: 2px double #333; text-align: center; vertical-align: middle; font-weight: 300; width: 450px; margin-left: auto; margin-right: auto;">Score Report and Analysis</h1>
 							
 								<br>
@@ -13,7 +23,7 @@
 								<br>
 							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Date: <span>{{todaysDay}}</span></p1>
 
-							<span>
+							<span id="toAppTo">
 								<button style="color: #05668d;
 								background-color: #fff;
 								font-size: 13px;
@@ -35,7 +45,7 @@
 								margin: 20px 20px 20px 0px;
 								float: right;
 								border-radius: 3px; 
-								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;">Email</button>
+								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" id="sendEmail">Email</button>
 							</span>
 					<table class="table table-bordered" style="border: 1px solid #ddd; width: 100%; max-width: 100%; margin-bottom: 20px; background-color: transparent; border-spacing: 0; border-collapse: collapse; box-sizing: border-box; display: table; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333; "> 
 						<thead style="box-sizing: border-box; display: table-header-group; vertical-align: middle; border-color: inherit; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;"> 
