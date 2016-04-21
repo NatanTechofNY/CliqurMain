@@ -43,8 +43,8 @@
 								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">#</th> 
 								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Student ID</th>
 								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Name</th>
-								{{#each session.clickerData.sets}} 
-								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">{{this.question}}</th>
+								{{#each questionNumberTransformed}} 
+									<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Poll {{qIdx}}</th>
 								{{/each}}
 							</tr> 
 						</thead> 
