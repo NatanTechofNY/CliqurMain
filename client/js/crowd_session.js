@@ -83,8 +83,12 @@ if (Meteor.isClient) {
     },
     authorName: function() {
       if (Questions.findOne({isPublic: true})) {
-        var sr = Usrs.findOne({"_id": Questions.findOne({isPublic: true}).authorId});
-        return sr && sr.fullName;
+        var subz = Meteor.subscribe("userDoc", Questions.findOne({isPublic: true}).authorId);
+        if (subz.ready()) {
+          var sr = Usrs.findOne({"_id": Questions.findOne({isPublic: true}).authorId});
+          return sr ? sr.fullName : "Anon.";
+        }
+        else return "Loading...";
       }
       else return "No public questions";
     },
