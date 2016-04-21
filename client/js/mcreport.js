@@ -80,6 +80,7 @@ if (Meteor.isClient) {
 						else if($stud.responseList[i] === 2) $stud.responseList[i] = "C";
 						else if($stud.responseList[i] === 3) $stud.responseList[i] = "D";
 					};
+					$stud.indexTransformer = $iddx + 1;
 					return $stud;
 				});
 				return studentsList;
