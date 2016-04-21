@@ -12,12 +12,12 @@ if (Meteor.isServer) {
 			check([data.reportHtml, data.to, data.className], [String]);
 
 			this.unblock();
-
+			var subjLine = data.isMC? 'Poll report for: ': 'Attendance report for: '
 			Meteor.Mailgun.send({
 				to: data.to,
 
 				from: 'Reports@cliqur.com',
-				subject: 'Attendance report for: ' + data.className,
+				subject: subjLine + data.className,
 				html: sanitizeHtml(data.reportHtml, {
 					allowedTags: ['h1', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'p1', 'a', 'ul', 'ol',
   'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',

@@ -16,10 +16,11 @@ if (Meteor.isClient) {
 			Meteor.call('sendReport', {
 				"to": email,
 				"className": Session.get('reportData').sessionName,
-				"reportHtml": reportHtml
+				"reportHtml": reportHtml,
+				"isMC": true
 			}, function (e, r) {
 				ga("send", "event", "Report", "Emailed", 'null', new Date().getTime());
-				$('#toappTo').append('<button style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: right;border-radius: 3px; -webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" onclick="window.print();">Print</button><button style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: right;border-radius: 3px; -webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" id="sendEmail">Email</button>');
+				$('#toAppTo').append('<button style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: right;border-radius: 3px; -webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" onclick="window.print();">Print</button><button style="color: #05668d;background-color: #fff;font-size: 13px;padding: 15px;font-weight: 200;border: 1px solid #05668d;width: 150px;margin: 20px 20px 20px 0px;float: right;border-radius: 3px; -webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" id="sendEmail">Email</button>');
 				if (e)
 					alert(e.error);
 				else alert('Report sent!');
