@@ -12,21 +12,20 @@
 		</div>
 	</div>
 					<section>
-						<h1 style="font-family: Roboto; font-size: 38px; border-bottom: 2px double #333; text-align: center; vertical-align: middle; font-weight: 300; width: 450px; margin-left: auto; margin-right: auto;">Score Report and Analysis</h1>
+						<h1 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.42857143; color: #333; font-size: 38px; border-bottom: 2px double #333; text-align: center; vertical-align: middle; font-weight: 300; width: 450px; margin-left: auto; margin-right: auto; padding-bottom: 20px; padding-top: 20px;">Score Report and Analysis</h1>
 							
 								<br>
-							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Instructor Name: <span>{{ThisUserName}}</span></p1>
+							<p1 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.42857143; color: #333; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Instructor Name: <span>{{ThisUserName}}</span></p1>
 								<br>
-							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Name: <span>{{session.sessionName}}</span></p1>
+							<p1 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.42857143; color: #333;font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Name: <span>{{session.sessionName}}</span></p1>
 								<!-- <br> -->
 							<!-- <p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Section: <span></span></p1> -->
 								<br>
-							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Date: <span>{{todaysDay}}</span></p1>
+							<p1 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.42857143; color: #333; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Date: <span>{{todaysDay}}</span></p1>
 
 							<span id="toAppTo">
 								<button style="color: #05668d;
 								background-color: #fff;
-								font-size: 13px;
 								padding: 15px;
 								font-weight: 200;
 								border: 1px solid #05668d;
@@ -34,10 +33,9 @@
 								margin: 20px 20px 20px 0px;
 								float: right;
 								border-radius: 3px; 
-								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" onclick="window.print();">Print</button>
+								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;" onclick="window.print();">Print</button>
 								<button style="color: #05668d;
 								background-color: #fff;
-								font-size: 13px;
 								padding: 15px;
 								font-weight: 200;
 								border: 1px solid #05668d;
@@ -45,27 +43,52 @@
 								margin: 20px 20px 20px 0px;
 								float: right;
 								border-radius: 3px; 
-								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" id="sendEmail">Email</button>
+								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143;" id="sendEmail">Email</button>
 							</span>
-					<table class="table table-bordered" style="border: 1px solid #ddd; width: 100%; max-width: 100%; margin-bottom: 20px; background-color: transparent; border-spacing: 0; border-collapse: collapse; box-sizing: border-box; display: table; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333; "> 
-						<thead style="box-sizing: border-box; display: table-header-group; vertical-align: middle; border-color: inherit; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;"> 
-							<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;"> 
-								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">#</th> 
-								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Student ID</th>
-								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Name</th>
+
+					<!--reference table-->
+					<h2 style="font-size: 30px; margin-top: 20px; margin-bottom: 20px; font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; box-sizing: border-box; display: block; ">Poll - Question Reference</h2>
+					<table style="border: 1px solid #ddd; width: 100%; max-width: 100%; margin-bottom: 20px; background-color: transparent; border-spacing: 0; border-collapse: collapse; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; "> 
+							 	<thead style="box-sizing: border-box; display: table-header-group; vertical-align: middle; border-color: inherit; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+							 		<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+							 			<th  style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; position: static; display: table-cell; float: none; min-height: 1px; text-align: left; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; width: 10%;">Poll #</th> 
+							 			<th  style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; position: static; display: table-cell; float: none; min-height: 1px; text-align: left; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; width: 80%;">Poll Question</th> 
+							 			<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; position: static; display: table-cell; float: none; min-height: 1px; text-align: left; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; width: 10%;">Answer Key</th>
+							 		</tr> 
+							 	</thead> 
+							 	<tbody style="box-sizing: border-box; display: table-row-group; vertical-align: middle; border-color: inherit; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+						{{#each questionNumberTransformed}} 
+							 		<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+							 			<td style="border: 1px solid #ddd; padding: 8px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; vertical-align: top; position: static; display: table-cell; float: none; min-height: 1px; width: 10%;">Poll {{qIdx}}</td> 
+
+							 			<td style="border: 1px solid #ddd; padding: 8px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; vertical-align: top; position: static; display: table-cell; float: none; min-height: 1px; width: 80%;" >question</td> 
+							 			<td style="border: 1px solid #ddd; padding: 8px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; vertical-align: top; position: static; display: table-cell; float: none; min-height: 1px; width: 10%"></td>
+							 		</tr>
+						{{/each}}
+							 	</tbody> 
+					</table> 
+
+
+
+					<table class="table table-bordered" style="border: 1px solid #ddd; width: 100%; max-width: 100%; margin-bottom: 20px; background-color: transparent; border-spacing: 0; border-collapse: collapse; box-sizing: border-box; display: table; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333; "> 
+						<thead style="box-sizing: border-box; display: table-header-group; vertical-align: middle; border-color: inherit; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+							<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">#</th> 
+								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">Student ID</th>
+								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">Name</th>
 								{{#each questionNumberTransformed}} 
-									<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Poll {{qIdx}}</th>
+									<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: left; box-sizing: border-box;font-weight: bold; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">Poll {{qIdx}}</th>
 								{{/each}}
 							</tr> 
 						</thead> 
-						<tbody style="box-sizing: border-box; display: table-row-group; vertical-align: middle; border-color: inherit;border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+						<tbody style="box-sizing: border-box; display: table-row-group; vertical-align: middle; border-color: inherit;border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
 							{{#each students}}
-							<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333; "> 
-								<th style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: bold; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">{{indexTransformer}}</th> 
-								<th style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">{{studentId}}</th>
-								<td style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">{{fullName}}</td> 
+							<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+								<th style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: bold; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">{{indexTransformer}}</th> 
+								<th style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">{{studentId}}</th>
+								<td style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">{{fullName}}</td> 
 								{{#each responseList}}
-								<td style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">{{this}}</td>
+								<td style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.42857143; color: #333;">{{this}}</td>
 								{{/each}}
 							</tr> 
 							{{/each}}
