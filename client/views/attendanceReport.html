@@ -1,4 +1,62 @@
 <template name="report">
+
+					<section>
+						<h1 style="font-family: Roboto; font-size: 38px; border-bottom: 2px double #333; text-align: center; vertical-align: middle; font-weight: 300; width: 450px; margin-left: auto; margin-right: auto; padding-bottom: 20px;">Attendance Report</h1>
+							
+								<br>
+							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Instructor Name: <span>{{d.UserName}}</span></p1>
+								<br>
+							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Name: <span>{{d.sessionName}}</span></p1>
+								<br>
+							<!--<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Class Section: <span></span></p1> -->
+							<p1 style="font-family: Roboto; font-size: 22px; text-align: left; vertical-align: middle; font-weight: normal;">Date: <span>{{thisTime}}</span></p1>
+
+							<span>
+								<button style="color: #05668d;
+								background-color: #fff;
+								font-size: 13px;
+								padding: 15px;
+								font-weight: 200;
+								border: 1px solid #05668d;
+								width: 150px;
+								margin: 20px 20px 20px 0px;
+								float: right;
+								border-radius: 3px; 
+								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;" onclick="window.print();">Print</button>
+								<button id="emailreport" style="color: #05668d;
+								background-color: #fff;
+								font-size: 13px;
+								padding: 15px;
+								font-weight: 200;
+								border: 1px solid #05668d;
+								width: 150px;
+								margin: 20px 20px 20px 0px;
+								float: right;
+								border-radius: 3px; 
+								-webkit-appearance: button; cursor: pointer; text-transform: none; overflow: visible; font: inherit; display: block; background: transparent; box-sizing: border-box; align-items: flex-start; text-align: center; text-rendering: auto; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none;">Email</button>
+							</span>
+					<table class="table table-bordered" style="border: 1px solid #ddd; width: 100%; max-width: 100%; margin-bottom: 20px; background-color: transparent; border-spacing: 0; border-collapse: collapse; box-sizing: border-box; display: table; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333; "> 
+						<thead style="box-sizing: border-box; display: table-header-group; vertical-align: middle; border-color: inherit; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+							<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: center; box-sizing: border-box;font-weight: 800; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">#</th> 
+								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: center; box-sizing: border-box;font-weight: 800; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Student Name</th>
+								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: center; box-sizing: border-box;font-weight: 800; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Student ID</th>
+								<th style="border-top: 0; border-bottom-width: 2px; border: 1px solid #ddd; vertical-align: bottom; padding: 8px; line-height: 1.42857143; text-align: center; box-sizing: border-box;font-weight: 800; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; color: #333;">Status</th>
+							</tr> 
+						</thead> 
+						<tbody style="box-sizing: border-box; display: table-row-group; vertical-align: middle; border-color: inherit;border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;"> 
+							{{#each d.userList}}
+							<tr style="box-sizing: border-box; display: table-row; vertical-align: inherit; border-color: inherit; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333; "> 
+								<th style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">{{this.indx}}</th> 
+								<th style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">{{this.fullName}}</th>
+								<td style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">{{this.studentId}}</td>
+								<td style="border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; text-align: left; box-sizing: border-box; font-weight: thin; display: table-cell; border-collapse: collapse; font-family: Roboto; font-size: 14px; line-height: 1.42857143; color: #333;">On-Time</td>
+							</tr> 
+							{{/each}}
+						</tbody> 
+					</table>
+				</section>
+
 	<div class="modalItem_report">
 		<div>
 			<h2>Enter your email</h2>
@@ -9,6 +67,8 @@
 			<span>Close</span>
 		</div>
 	</div>
+<!--
+	
 	<section style="width: 100vh; font-family: Roboto; background-color: rgba(220, 225, 227, 0.36); margin-left: auto; margin-right: auto; display: block; box-sizing: border-box; font-size: 14px; line-height: 1.42857143; color: #333;">
 		
 		<h1 style="text-align: center; font-weight: 800; background-color: transparent; margin-bottom: 20px; font-size: 2em; margin: 0.67em 0; display: block; width: 100%; line-height: 1; padding: 65px 50px; color: #6f6f6f; font-family: Roboto; box-sizing: border-box; -webkit-margin-before:0.83em; -webkit-margin-after: 0.83em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; ">Attendance Report</h1>
@@ -61,6 +121,6 @@
 			{{/each}}
 		</div>
 
-</section>
+</section> -->
 
 </template>
