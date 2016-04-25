@@ -1,183 +1,173 @@
 <template name="create_session">
 {{#if isPhone}}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<style>
-@charset "UTF-8";
-.transformer-tabs ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-bottom: 3px solid white;
-}
-.transformer-tabs li {
-  display: inline-block;
-  padding: 0;
-  vertical-align: bottom;
-}
-.transformer-tabs li:nth-child(1) .active {
-  color: #c6a0d5;
-  border-bottom-color: #9b59b6;
-}
-.transformer-tabs li:nth-child(2) .active {
-  color: #8bc4ea;
-  border-bottom-color: #3498db;
-}
-.transformer-tabs li:nth-child(3) .active {
-  color: #f0b37e;
-  border-bottom-color: #e67e22;
-}
-.transformer-tabs li:nth-child(4) .active {
-  color: #df7c72;
-  border-bottom-color: #c0392b;
-}
-.transformer-tabs a {
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-.transformer-tabs a.active {
-  border-bottom: 3px solid transparent;
-  position: relative;
-  bottom: -3px;
-}
-@media (max-width: 700px) {
-  .transformer-tabs ul {
-    border-bottom: 0;
-    overflow: hidden;
-    position: relative;
-    background: #FFF;
-  }
-  .transformer-tabs ul::after {
-    content: "☰";
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    z-index: 2;
-    pointer-events: none;
-  }
-  .transformer-tabs ul.open a {
-    position: relative;
-    display: block;
-  }
-  .transformer-tabs li {
-    display: block;
-  }
-  .transformer-tabs a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .transformer-tabs a.active {
-    border: 0;
-    z-index: 1;
-    background: #FFF;
-    /* fallback */
-  }
-}
+    <link rel="stylesheet" href="/css/ruby00.css">
+    <link rel="stylesheet" href="/css/rubytabs.css">
+    <link rel="stylesheet" href="/css/ruby.animate.css">
+    <script src="/css/jquery-last.min.js"></script>
+    <script src="/css/rubytabs.js"></script>
+    <script src="/css/modernizr.js"></script>
+    <div class="wrapper">
+    <div class="container">
 
-.tabs > div {
-  display: none;
-  padding: 1rem;
-}
-.tabs > div:nth-of-type(1) {
-  border: 1px solid #9b59b6;
-}
-.tabs > div:nth-of-type(2) {
-    border: 1px solid #3498db;
-}
-.tabs > div:nth-of-type(3) {
-  border: 1px solid #e67e22;
-}
-.tabs > div:nth-of-type(4) {
-  border: 1px solid #c0392b;
-}
-.tabs > .active {
-  display: block;
-}
+        <!-- TITLE HEADING - begin -->
+        <!-- TITLE HEADING - end -->
 
-body {
-  padding: 1rem;
-}
-</style>
-<div class="tabs">
-  
-  <nav role='navigation' class="transformer-tabs">
-    <ul>
-      <li style="font-size: 24px"><a href="#tab-1" class="active">Control Panel</a></li>
-      <li style="font-size: 24px"><a href="#tab-2">Publish a Question/Timer</a></li>
-      <li style="font-size: 24px"><a href="#tab-3">Student Asked Questions</a></li>
-      <li style="font-size: 24px"><a href="#tab-4">Attendance</a></li>
-    </ul>
-  </nav>
-  
-  <div id="tab-1" class="active">
-  <center>
-            <button type="button" style="float: none;margin: 0;" class="create_exit_btn" id="endssn"> 
+
+
+
+        <!-- LAYOUT DEVICE - begin -->
+        <style>
+
+            .layout-device {
+            }
+            .device {
+                overflow: hidden;
+                box-shadow: inset 0 -10px 25px -20px hsla(0,0%,0%,.5);
+                border-bottom: 1px solid #f9f9f9;
+            }
+            .device > img {
+                display: block;
+            }
+
+
+
+            /* TABS PREVIEW */
+            .tabs-preview {
+                visibility: hidden;
+                position: absolute;
+                left: 0; right: 0; top: 0;
+                margin: 0 auto;
+            }
+            .tabs-preview.rt01ready {
+                visibility: visible;
+            }
+            .tabs-preview > .rt01viewport {
+                padding-left: 10px; padding-right: 10px;
+            }
+
+            /* TABS TITLE */
+            .tabs-preview > .rt01tabs .rt01pagitem {
+                padding: 0;
+                text-indent: -99999px;
+            }
+            .rt01pagmark {
+                position: absolute;
+                left: 0; bottom: 0px;
+                height: 100%;
+                z-index: -1;
+            }
+            .rt01pagmark-item {
+                height: 100% !important;
+                padding-right: 1px;
+            }
+
+            .icon {
+                display: block;
+                width: 50px; height: 50px;
+                margin: 0 auto;
+                background: url(/imgs/icon-tabs-title.svg) no-repeat;
+
+                -webkit-transition: background-position .3s;
+                        transition: background-position .3s;
+            }
+            .ie8 .icon {
+                background-image: url(/imgs/icon-tabs-title.png);
+            }
+            .icon-overview { background-position: -5px -5px; }
+            .icon-slider { background-position: -65px -5px; }
+            .icon-prevent { background-position: -125px -5px; }
+            .icon-lazy { background-position: -185px -5px; }
+            .icon-video { background-position: -245px -5px; }
+
+            .rt01cur > .icon-overview { background-position: -5px -65px; }
+            .rt01cur > .icon-slider { background-position: -65px -65px; }
+            .rt01cur > .icon-prevent { background-position: -125px -65px; }
+            .rt01cur > .icon-lazy { background-position: -185px -65px; }
+            .rt01cur > .icon-video { background-position: -245px -65px; }
+
+
+
+            /* MEDIA WIDTH */
+            @media only screen and (max-width: 479px) {
+                .layout-device {
+                    width: auto;
+                }
+                .device {
+                    display: none;
+                }
+                .tabs-preview {
+                    position: static;
+                    width: auto;
+                }
+                .tabs-preview .rt01viewport {
+                    padding-left: 0; padding-right: 0;
+                }
+                .tabs-preview .rt01pagmark-item {
+                    border-radius: 4px;
+                }
+            }
+        </style>
+        
+        <div class="layout-device">
+
+
+            <!-- TABS PREVIEW - begin -->
+            <div class="tabs-preview rt01"
+                data-tabs='{
+                    "isAutoInit" : true,
+                    "fx"         : "line",
+                    "speed"      : 600,
+                    "width"      : 940,
+                  "showBy"     : "mobile",
+                    "pag"        : { "align": "justify", "isJustifyWhenLarge": true, "isMark": true },
+                    "isKeyboard" : true
+                }'>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-overview">Overview</span>
+                    </div>
+                        <hr>
+                    <div class="font-blokk"><center>
+                        <div class="card-outline">
+                        <label>Session ID: </label>
+                        <input readonly class="large" type="text" value="{{sessionId}}" id="autoSelectrLoc">
+                        </div>
+                        <div class="card-outline">
+<button type="button" style="float:none;margin:0" class="create_exit_btn" id="endssn"> 
                  End Session
             </button><br>
             <a target="_blank" href="/d/{{sessionId}}/p">
-                <button type="button" style="float: none;margin: 0;" class="create_public_btn">
+                <button type="button" style="float:none;margin:0" class="create_public_btn">
                     Spectator View
                 </button>
             </a><br>
-<button type="button" class="create_generate_btn" style="float: none;margin: 0;" data-toggle="modal" data-target=".bs-example-modal-sm">
+          <button type="button" style="float:none;margin:0" class="create_generate_btn" data-toggle="modal" data-target=".bs-example-modal-sm">
                   Get Report
-           </button>
-           </center>   
-  </div>
-  
-  <div id="tab-2">
-<form id="customQuestionSubmit">
-              <div class="row">
-                    <div class="col-md-12 page-header create_header_text">
-                        <h2><small>Publish Your Own Question</small></h2>
+           </button><br>
+                        </div>
+                        </center>
                     </div>
-                    <div class="col-md-9">
-                        <textarea type="text" class="create_question_input form-control" name="creatorQuestion" placeholder="Create your own question here!"></textarea>
+                </div>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-slider">Questions</span>
                     </div>
-                    <div class="col-md-3">
-                        <button type="submit" class="create_selfpublish_button">Publish</button>
-                    </div>
+                    <hr>
+                    <!-- Slider Nested - end -->
+
+
+                    <!-- Dummy Content - begin -->
+                    <div class="font-blokk">
+                    <div class="rt01swipe-prevent">
+              <div class="create_header-text page-header">
+                        <h2><small><center>Student Questions</center></small></h2>
               </div>
-              <hr class="create_margin_hr">
-              <div class="row">
-                  <div class="col-md-12 page-header create_header_text">
-                        <h2><small>Timer</small></h2>
-                  </div>
-               {{#if pollTime}}
-                      <div class="page-header create_header_text">
-                          <h1><small> Time Left: {{pollTime}} </small></h1>
-                      </div>
-                    <div class="row">
-                      <div class="col-md-2">
-                            <button id="timerEndBtn" class="create_reset_button hvr-icon-spin">Close Poll</button>
-                      </div>
-                    </div>
-               {{else}}
-                  <div id="overridebs" class="col-md-6 specialwidth_timerset" style="padding-left: 20px">
-                      <select class="form-control" style="text-align:center;" name="timeSet60">
-                        <option value="15">15s</option>
-                        <option value="30">30s</option>
-                        <option value="60" selected>60s</option>
-                      </select>
-                  </div>
-                  <div  id="overridebs" class="col-md-6 specialwidth_timerset">
-                        <input class="create_customtime_input" name="timeSet" type="number" placeholder="Custom time">
-                  </div>
-                  <div class="col-md-10">
-                        <button class="create_customtime_button hvr-icon-buzz-out" id="timerSetBtn">Set new Timer</button>
-                        <!-- <button id="resetPollBtn" class="create_reset_button hvr-icon-spin">Save &amp; Reset Poll</button> -->
-                  </div>
-                {{/if}}
-              </div>
-            </form>
-  </div>
-  
-  <div id="tab-3">
-                               <div class="panel panel-default" style="border:none;background-color: none">
+              <div class="panel panel-default">
                  <div class="panel-body create_question_panel">
                     
 
@@ -216,10 +206,68 @@ body {
 
                 </div>
               </div>
-  </div>
-  
-  <div id="tab-4">
-    <h2>Class Attendance</h2>
+              </div>
+                    </div>
+                    <!-- Dummy Content - end -->
+                </div>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-prevent">Publish</span>
+                    </div>
+<hr>
+
+                    <div class="bg-wrap">
+                    <center>
+                        <form class="block clearfix rt01swipe-prevent" id="customQuestionSubmit">
+                        <h2><small>Publish Your Own Question</small></h2>
+                    <div class="col-md-9">
+                        <textarea type="text" class="create_question_input form-control" name="creatorQuestion" placeholder="Create your own question here!"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="create_selfpublish_button">Publish</button>
+                    </div>
+              <hr class="create_margin_hr">
+                        <h2><small>Timer</small></h2>
+               {{#if pollTime}}
+                          <h1><small> Time Left: {{pollTime}} </small></h1>
+                            <button id="timerEndBtn" class="create_reset_button hvr-icon-spin">Close Poll</button>
+               {{else}}
+                  <div id="overridebs" class="">
+                      <select class="form-control" style="text-align:center;" name="timeSet60">
+                        <option value="15">15 seconds</option>
+                        <option value="30">30 seconds</option>
+                        <option value="60" selected>60 seconds</option>
+                      </select>
+                  </div>
+                  <div  id="overridebs" class="">
+                        <input class="create_customtime_input" name="timeSet" type="number" placeholder="Custom time">
+                  </div>
+                  <center>
+                        <button class="create_customtime_button hvr-icon-buzz-out" id="timerSetBtn">Set New Timer</button>
+                        <button id="pollRespReport" type="button" class="create_modalmc_btn hvr-icon-hang">
+                                        Poll Response
+                                  </button>
+                        </center>
+                {{/if}}
+                        </form>
+                        </center>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-lazy">Attendance</span>
+                    </div>
+<hr>
+                    <div class="bg-wrap">
+                    <center>
+                    <h2><small>Attendance</small></h2>
+                     <button type="button" id="createAtten" style="width:50%;float:none;margin:0" class="create_modalatt_btn hvr-icon-hang">
+                    Generate Attendance Sheet
+                     </button><br>
 {{#each usersList}}
           <li class="create_att_li" title="{{studentId}}">
               {{#if eq userId SessionItem.sessionOwnerId}}
@@ -229,45 +277,19 @@ body {
               {{/if}}
           </li>
       {{/each}}
-  </div>
-  
-</div>
-<center>
-        <div class="col-md-4 form-group">
-                <form class="form-inline">
-                    <div class="form-group navbar-text sessidCont">
-                        <label>Session ID</label>
-                        <input readonly class="form-control" type="text" value="{{sessionId}}" id="autoSelectrLoc">
+      </center>
                     </div>
-                </form>
-        </div>
-        </center>
-           <div class="modal fade bs-example-modal-sm" id="overridebs" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-              <div class="modal-dialog modal-sm">
-                <div class="modal-content" id="overridebs">
-                  <div class="modal-header">
-                      <div class="create-header-text page-header">
-                          <h2><small><center>Choose a Report</center></small></h2>
-                      </div>
-                  </div><center>
-                  <div class="container-fluid create_modal-container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                 <button type="button" id="createAtten" class="create_modalatt_btn hvr-icon-hang">
-                                        Class Attendance
-                                 </button>
-                            </div>
-                            <div class="col-md-12">
-                                  <button id="pollRespReport" type="button" class="create_modalmc_btn hvr-icon-hang">
-                                        Poll Response
-                                  </button>
-                            </div>
-                        </div>
-                  </div>
-                  </center>
                 </div>
-              </div>
+
+
             </div>
+            <!-- TABS PREVIEW - end -->
+
+        </div>
+        <!-- LAYOUT DEVICE - end -->
+
+    </div>
+    </div>
 {{else}}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -313,14 +335,11 @@ body {
             <button type="button" class="create_exit_btn" id="endssn"> 
                  End Session
             </button>
-            <a target="_blank" href="/d/{{sessionId}}/p">
+            <a target="_blank" style="text-decoration: none" href="/d/{{sessionId}}/p">
                 <button type="button" class="create_public_btn">
                     Spectator View
                 </button>
             </a>
-          <button type="button" class="create_generate_btn" data-toggle="modal" data-target=".bs-example-modal-sm">
-                  Get Report
-           </button>
 
            <div class="modal fade bs-example-modal-sm" id="overridebs" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
               <div class="modal-dialog modal-sm">

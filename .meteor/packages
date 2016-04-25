@@ -11,7 +11,6 @@ session                 # Client-side reactive dictionary for your app
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
-standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 
 aldeed:simple-schema
@@ -36,3 +35,6 @@ mizzao:jquery-ui
 cunneen:mailgun
 reywood:iron-router-ga
 djedi:sanitize-html
+mrt:jquery-mobile
+standard-minifier-css
+standard-minifier-js

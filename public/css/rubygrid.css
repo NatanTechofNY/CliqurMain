@@ -1,0 +1,498 @@
+/*
+ * RUBY GRID
+ * @author          HaiBach
+ * @version         2.0
+ */
+
+/* Table of Content
+==================================================
+    .Normalize
+    ------------------
+    .Base 960 Grid
+    .Tablet (Portrait)
+    .Mobile (Portrait)
+    .Mobile (Landscape)
+    .Clearing
+    */
+
+
+
+
+
+
+/* Normalize
+ * normalize.css v3.0.2 | MIT License | git.io/normalize
+============================================================== */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b, strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+button, select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base 960 Grid
+* Desktop Normal
+* Note: Design for a width of 940px
+============================================================== */
+    
+/* Container & Row */
+.container {
+    width: 940px;
+    margin-left: auto; margin-right: auto;
+}
+
+
+/* Grid system default - gutter 44px
+------------------------------------------------------- */
+.row {
+    margin-left: -32px;
+}
+
+/* Columns */
+.col1, .col2, .col3, .col4, .col5, .col6,
+.col7, .col8, .col9, .col10, .col11, .col12 {
+    float: left;
+    min-height: 1px;
+    padding-left: 32px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.col1   { width: 8.33%;  }
+.col2   { width: 16.66%; }
+.col3   { width: 25%; }
+.col4   { width: 33.33%; }
+.col5   { width: 41.66%; }
+.col6   { width: 50%; }
+.col7   { width: 58.33%; }
+.col8   { width: 66.66%; }
+.col9   { width: 75%; }
+.col10  { width: 83.33%; }
+.col11  { width: 91.66%; }
+.col12  { width: 100%; }
+
+/* Offsets */
+.offset1   { margin-left: 8.33%;  }
+.offset2   { margin-left: 16.66%; }
+.offset3   { margin-left: 25%; }
+.offset4   { margin-left: 33.33%; }
+.offset5   { margin-left: 41.66%; }
+.offset6   { margin-left: 50%; }
+.offset7   { margin-left: 58.33%; }
+.offset8   { margin-left: 66.66%; }
+.offset9   { margin-left: 75%; }
+.offset10  { margin-left: 83.33%; }
+.offset11  { margin-left: 91.66%; }
+
+
+
+
+/* Tablet
+ * Note: Design for a width of 768px
+============================================================== */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    
+    /* Container */
+    .container {
+        width: 748px;
+    }
+
+    
+    /* Grid system default
+    ------------------------------------------------------- */
+    .row {
+        margin-left: -20px;
+    }
+    
+    /* Columns */
+    .col1, .col2, .col3, .col4, .col5, .col6,
+    .col7, .col8, .col9, .col10, .col11, .col12 {
+        padding-left: 20px;
+    }
+
+    /* Columns Small */
+    .col-s-1   { width: 8.33%;  }
+    .col-s-2   { width: 16.66%; }
+    .col-s-3   { width: 25%; }
+    .col-s-4   { width: 33.33%; }
+    .col-s-5   { width: 41.66%; }
+    .col-s-6   { width: 50%; }
+    .col-s-7   { width: 58.33%; }
+    .col-s-8   { width: 66.66%; }
+    .col-s-9   { width: 75%; }
+    .col-s-10  { width: 83.33%; }
+    .col-s-11  { width: 91.66%; }
+    .col-s-12  { width: 100%; }
+
+    /* Offsets Small */
+    .offset-s-1   { margin-left: 8.33%;  }
+    .offset-s-2   { margin-left: 16.66%; }
+    .offset-s-3   { margin-left: 25%; }
+    .offset-s-4   { margin-left: 33.33%; }
+    .offset-s-5   { margin-left: 41.66%; }
+    .offset-s-6   { margin-left: 50%; }
+    .offset-s-7   { margin-left: 58.33%; }
+    .offset-s-8   { margin-left: 66.66%; }
+    .offset-s-9   { margin-left: 75%; }
+    .offset-s-10  { margin-left: 83.33%; }
+    .offset-s-11  { margin-left: 91.66%; }
+}
+
+
+
+
+/* Mobile (Portrait)
+ * Note: Design for a width of 320px + 480px
+============================================================== */
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+
+    .container {
+        width: auto;
+        padding-left: 10px; padding-right: 10px;
+    }
+
+
+    /* Grid system default
+    ------------------------------------------------------- */
+    .row {
+        margin-left: -20px;
+    }
+    .col1, .col2, .col3, .col4, .col5, .col6,
+    .col7, .col8, .col9, .col10, .col11, .col12 {
+        width: 100%;
+        padding-left: 20px;
+    }
+    .offset1, .offset2, .offset3, .offset4, .offset5, .offset6,
+    .offset7, .offset8, .offset9, .offset10, .offset11, .offset12 {
+        margin-left: 0;
+    }
+
+
+    /* Columns Extra Small */
+    .col-xxs-1   { width: 8.33%;  }
+    .col-xxs-2   { width: 16.66%; }
+    .col-xxs-3   { width: 25%; }
+    .col-xxs-4   { width: 33.33%; }
+    .col-xxs-5   { width: 41.66%; }
+    .col-xxs-6   { width: 50%; }
+    .col-xxs-7   { width: 58.33%; }
+    .col-xxs-8   { width: 66.66%; }
+    .col-xxs-9   { width: 75%; }
+    .col-xxs-10  { width: 83.33%; }
+    .col-xxs-11  { width: 91.66%; }
+    .col-xxs-12  { width: 100%; }
+
+    /* Offsets Extra Small */
+    .offset-xxs-1   { margin-left: 8.33%;  }
+    .offset-xxs-2   { margin-left: 16.66%; }
+    .offset-xxs-3   { margin-left: 25%; }
+    .offset-xxs-4   { margin-left: 33.33%; }
+    .offset-xxs-5   { margin-left: 41.66%; }
+    .offset-xxs-6   { margin-left: 50%; }
+    .offset-xxs-7   { margin-left: 58.33%; }
+    .offset-xxs-8   { margin-left: 66.66%; }
+    .offset-xxs-9   { margin-left: 75%; }
+    .offset-xxs-10  { margin-left: 83.33%; }
+    .offset-xxs-11  { margin-left: 91.66%; }
+}
+
+
+
+
+
+/* Mobile (Landscape)
+ * Note: Design for a width of 480px
+============================================================== */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .container {
+        padding-left: 20px; padding-right: 20px;
+    }
+
+    /* Columns More Extra Small */
+    .col-xs-1   { width: 8.33%;  }
+    .col-xs-2   { width: 16.66%; }
+    .col-xs-3   { width: 25%; }
+    .col-xs-4   { width: 33.33%; }
+    .col-xs-5   { width: 41.66%; }
+    .col-xs-6   { width: 50%; }
+    .col-xs-7   { width: 58.33%; }
+    .col-xs-8   { width: 66.66%; }
+    .col-xs-9   { width: 75%; }
+    .col-xs-10  { width: 83.33%; }
+    .col-xs-11  { width: 91.66%; }
+    .col-xs-12  { width: 100%; }
+
+    /* Offsets More Extra Small */
+    .offset-xs-1   { margin-left: 8.33%;  }
+    .offset-xs-2   { margin-left: 16.66%; }
+    .offset-xs-3   { margin-left: 25%; }
+    .offset-xs-4   { margin-left: 33.33%; }
+    .offset-xs-5   { margin-left: 41.66%; }
+    .offset-xs-6   { margin-left: 50%; }
+    .offset-xs-7   { margin-left: 58.33%; }
+    .offset-xs-8   { margin-left: 66.66%; }
+    .offset-xs-9   { margin-left: 75%; }
+    .offset-xs-10  { margin-left: 83.33%; }
+    .offset-xs-11  { margin-left: 91.66%; }
+}
+
+
+
+
+
+/* Clearfix
+============================================================== */
+.clearfix:after, .container:after, .row:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+.clearfix, .container, .row { *zoom: 1; }               /* For IE7 */
