@@ -182,6 +182,9 @@ input[type=password] {
 #createSessionForm{ 
     overflow: hidden;
 }
+#createSessionForm label{
+    width: 90%!important;
+}
 
 .nopadding-bottom {
     padding: 0px !important;

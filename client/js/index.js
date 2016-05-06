@@ -64,6 +64,26 @@ if (Meteor.isClient) {
 		'click input.inputPasswordTs': function(e) {
 			$(e.currentTarget).select();
 		},
+		'change #geoLocSecure': function(e) {
+			if (e.target.checked) {
+				var $thiss = e.target;
+				navigator.geolocation.getCurrentPosition(function(d, e) {
+					if (e) {
+						alert('There was an issue getting your location.');
+						$thiss.checked = false;
+						Session.set('useGeo', false);
+					}
+					else{
+						var longitude = d.coords.longitude;
+						var latitude = d.coords.latitude;
+						Session.set('useGeo', {longi: longitude, lati: latitude});
+					};
+				});
+			}
+			else{
+				Session.set('useGeo', false);
+			};
+		},
 		'submit #toJoinForm': function(e) {
 			e.preventDefault();
 			var classCode = Session.get('toJoinSession');
@@ -160,7 +180,12 @@ if (Meteor.isClient) {
 				if(err)
 					return alert(err.error);
 				else {
-					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner"}, 
+					var longi, lati;
+					if (Session.get('useGeo')) {
+						longi = Session.get('useGeo').longi;
+						lati = Session.get('useGeo').lati;
+					};
+					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner", latitude: lati, longitude: longi}, 
 					function(err, d2) {
 						if(err)
 							return alert(err.error);
@@ -192,6 +217,9 @@ if (Meteor.isClient) {
 		},
 		toCreateSession: function() {
 			return Session.get('toCreateSession');
+		},
+		geoLocSupported: function() {
+			return navigator.geolocation;
 		}
 	});
 };
