@@ -1,8 +1,4 @@
 if (Meteor.isClient) {
-	Template.indexItem.rendered = function () {
-
-	};
-
 	var tempRet;
 	Template.indexItem.events({
 		'click #joinSessionBtn': function (e) {
