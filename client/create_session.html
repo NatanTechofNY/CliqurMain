@@ -139,14 +139,11 @@
 <button type="button" style="float:none;margin:0" class="create_exit_btn" id="endssn"> 
                  End Session
             </button><br>
-            <a target="_blank" href="/d/{{sessionId}}/p">
+            <a target="_blank" href="/d/{{sessionId}}/p" style="text-decoration: none;">
                 <button type="button" style="float:none;margin:0" class="create_public_btn">
                     Spectator View
                 </button>
-            </a><br>
-          <button type="button" style="float:none;margin:0" class="create_generate_btn" data-toggle="modal" data-target=".bs-example-modal-sm">
-                  Get Report
-           </button><br>
+            </a>
                         </div>
                         </center>
                     </div>
@@ -340,6 +337,9 @@
                     Spectator View
                 </button>
             </a>
+          <button type="button" class="create_generate_btn" data-toggle="modal" data-target=".bs-example-modal-sm">
+                  Get Report
+           </button>
 
            <div class="modal fade bs-example-modal-sm" id="overridebs" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
               <div class="modal-dialog modal-sm">

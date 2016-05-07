@@ -26,34 +26,158 @@ label {
 				 
 					<p class = "contact_intro"> Whether you have a question, want to partner with us or are stopping to say hi, get in touch! </p>
 				  	
-				  	<form action="" charset="utf-8" name="contactForm" style="height:100%" class="contact_form col-md-8">
-<br>
-						<div class="row">
-            <div class="form-group col-sm-4">
-                <label for="fullNameinpt">Name/Company Name</label>
-                <input type="text" class="form-control" id="fullNameinpt" placeholder="Enter name" required>
-            </div>
-            <div class="form-group col-sm-4">
-                <label for="emailinpt">Email</label>
-                <input type="email" class="form-control" id="emailinpt" placeholder="Enter email" required>
-            </div>
-            <div class="form-group col-sm-4">
-                <label for="phNoInpt">Phone # (Optional)</label>
-                <input type="text" class="form-control" id="phNoInpt" placeholder="123-123-1234">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="msgarea" class="h4 ">Message</label>
-            <textarea id="msgarea" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
-        </div>
-				  		<button type="submit" class="contact_send_button">Send Message</button>
-				  		<br>
-				  	</form>
-				  	<div class = "contact_sm_container">
-				  		<p> Connect with us: </p>
-						<a href = "https://www.facebook.com/CliqurCorp/" target = "_blank"><i class="fa fa-facebook-square" style="border:none" aria-hidden="true"></i></a>
-				  
-				  	</div>
+
+<style>
+.socialmedia {
+  display: inline-block;
+  position:absolute;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+
+/* Icons */
+
+.socialmedia a {
+  color:#fff;
+  background: #D86E82;
+  border-radius:4px;
+  text-align:center;
+  text-decoration:none;
+  font-family:fontawesome;
+  position: relative;
+  display: inline-block;
+  width:40px;
+  height:38px;
+  padding-top:12px;
+  margin:0 0px;
+  -o-transition:all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+   -webkit-font-smoothing: antialiased;
+}
+
+.socialmedia a:hover {
+  background: #ef92a3;
+}
+
+/* pop-up text */
+
+.socialmedia a span {
+  color:#666;
+  position:absolute;
+  font-family:sans-serif;
+  bottom:0;
+  left:-25px;
+  right:-25px;
+  padding:5px 7px;
+  z-index:-1;
+  font-size:14px;
+  border-radius:2px;
+  background:#fff;
+  visibility:hidden;
+  opacity:0;
+  -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* pop-up text arrow */
+
+.socialmedia a span:before {
+  content:'';
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  position:absolute;
+  bottom:-5px;
+  left:40px;
+}
+
+/* text pops up when icon is in hover state */
+
+.socialmedia a:hover span {
+  bottom:50px;
+  visibility:visible;
+  opacity:1;
+}
+
+/* font awesome icons */
+
+.socialmedia a:nth-of-type(1):before {
+content:'\f09a';
+}
+.socialmedia a:nth-of-type(2):before {
+content:'\f099';
+}
+.socialmedia a:nth-of-type(3):before {
+content:'\f0d5';
+}
+.socialmedia a:nth-of-type(4):before {
+content:'\f113';
+}
+.socialmedia a:nth-of-type(5):before {
+content:'\f17d';
+}
+.socialmedia a:nth-of-type(6):before {
+content:'\f1cb';
+}
+
+</style>
+
+ <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form id="contact-form" method="post" name="contactForm" role="form">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="fullNameinpt">Full Name/Company *</label>
+                                    <input id="fullNameinpt" placeholder="Please enter your full name and/or company *" type="text" class="form-control" required="required">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="emailinpt">Email *</label>
+                                    <input id="emailinpt" type="email" class="form-control" placeholder="Please enter your email *" required="required">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phNoInpt">Phone</label>
+                                    <input id="phNoInpt" type="tel" class="form-control" placeholder="Please enter your phone">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="msgarea">Message *</label>
+                                    <textarea id="msgarea" class="form-control" placeholder="Message for us *" rows="4" required="required"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                <br>
+                                    <input type="submit" class="btn btn-success" value="Send message">
+                                </div>
+                                <div class="col-md-12">
+                                    <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                                    <hr><br>
+                                    <div class="socialmedia">
+  <a href="https://www.facebook.com/CliqurCorp/"><span>Facebook</span></a>
+</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div><!-- /.8 -->
+
+            </div> <!-- /.row-->
+
+        </div> <!-- /.container-->
 				  </center>
 			 
 		
