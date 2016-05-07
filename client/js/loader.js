@@ -21,9 +21,10 @@ if (Meteor.isClient) {
 			
 			if (firstLoading) {
 				$('#loaderContainer').addClass('animating1');
-				firstLoading = false; removeLoaderOverlay(false, 1200);
+				firstLoading = false; removeLoaderOverlay(false, 1500);
 				setTimeout(function() {
 					isAnimingOut = true;
+					cancelLoader = true;
 					$('.bg-loader-wrap>span').css('opacity', '0.6');
 					setTimeout(function() {
 						$('#loaderContainer').addClass('animating2');
@@ -52,7 +53,7 @@ if (Meteor.isClient) {
 	showLoaderOverlay(true);
 	setTimeout(function() {
 		removeLoaderOverlay();
-	}, 900);
+	}, 2100);
 
 	Template.loader.rendered = function () {
 		showLoaderOverlay(false, 420);
