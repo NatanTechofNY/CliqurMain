@@ -97,25 +97,78 @@ if (Meteor.isClient) {
 				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid student ID.", $("#errorMSG-joinForm").css('opacity', 1);
 
 
-			function tempEndCall(datter) {
-				Meteor.call("addUser", {
-					fullName: fname + " " + lname,
-					studentId: stdntId,
-					sessionToAddToId: classCode,
-					pinr: datter
-				}, function(err, data) {
-					if(err){
-						$('input[name="pinpw"]').each(function() {
-							$(this).val('');
-						});
-						$('input[name="pinpw"]').focus();
-						return alert(err.error);
+			function getLocationAndCreateSession(datter) {
+				navigator.geolocation.getCurrentPosition(function(d, e) {
+					if (e) {
+						if(confirm('There was an issue getting your location. Try again?')) getLocationAndCreateSession(datter);
 					}
-					else {
-						ga("send", "event", "Sessions", "Joined", 'null', new Date().getTime());
-						updateSess(data, 'userId');
-						updateSess(classCode, 'sessionId');
-						Router.go("/d/" + classCode);
+					else{
+						var longitude = d.coords.longitude;
+						var latitude = d.coords.latitude;
+						if (typeof latitude === "number" && typeof longitude === "number") {
+							Meteor.call("addUser", {
+								fullName: fname + " " + lname,
+								studentId: stdntId,
+								sessionToAddToId: classCode,
+								pinr: datter,
+								locData: {
+									lati: latitude,
+									longi: longitude
+								}
+							}, function(err, data) {
+								if(err){
+									$('input[name="pinpw"]').each(function() {
+										$(this).val('');
+									});
+									$('input[name="pinpw"]').focus();
+									return alert(err.error);
+								}
+								else {
+									ga("send", "event", "Sessions", "Joined", 'null', new Date().getTime());
+									updateSess(data, 'userId');
+									updateSess(classCode, 'sessionId');
+									Router.go("/d/" + classCode);
+								};
+							});
+						}
+						else{
+							if(confirm("Error getting location - try again?"))
+								getLocationAndCreateSession(datter);
+						};
+					};
+				});
+			};
+
+			function tempEndCall(datter) {
+				Meteor.call('sessionHasGeoSecurity', classCode, function (ee, rss) {
+					if (ee) {
+						alert("Error finding session");
+					}
+					else if(rss){
+						alert("Session is Location-secured. Allow sharing of your location.");
+						getLocationAndCreateSession(datter);
+					}
+					else{
+						Meteor.call("addUser", {
+							fullName: fname + " " + lname,
+							studentId: stdntId,
+							sessionToAddToId: classCode,
+							pinr: datter
+						}, function(err, data) {
+							if(err){
+								$('input[name="pinpw"]').each(function() {
+									$(this).val('');
+								});
+								$('input[name="pinpw"]').focus();
+								return alert(err.error);
+							}
+							else {
+								ga("send", "event", "Sessions", "Joined", 'null', new Date().getTime());
+								updateSess(data, 'userId');
+								updateSess(classCode, 'sessionId');
+								Router.go("/d/" + classCode);
+							};
+						});
 					};
 				});
 			};
@@ -184,17 +237,20 @@ if (Meteor.isClient) {
 					if (Session.get('useGeo')) {
 						longi = Session.get('useGeo').longi;
 						lati = Session.get('useGeo').lati;
-					};
-					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner", latitude: lati, longitude: longi}, 
-					function(err, d2) {
-						if(err)
-							return alert(err.error);
-						else{
-							ga("send", "event", "Sessions", "Created", 'hasPin='+(!!pin.length), new Date().getTime());
-							updateSess(data, 'userId');
-							updateSess(d2, 'sessionId');
-							Router.go("/d/" + d2);
+						if (typeof longi !== "number" || typeof lati !== "number") {
+							if (confirm('Could not get location information properly - try again? Clicking cancel will continue the process without geo-location security.')) return;
 						};
+					};
+					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner", latitude: lati, longitude: longi},
+						function(err, d2) {
+							if(err)
+								return alert(err.error);
+							else{
+								ga("send", "event", "Sessions", "Created", 'hasPin='+(!!pin.length), new Date().getTime());
+								updateSess(data, 'userId');
+								updateSess(d2, 'sessionId');
+								Router.go("/d/" + d2);
+							};
 					});
 				}
 			});
