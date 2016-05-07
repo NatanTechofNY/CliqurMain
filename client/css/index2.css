@@ -156,6 +156,13 @@
 	width: 330px;
 }
 
+.control-label
+{
+	font-size: 15px;
+  font-weight: normal;
+  color: #444;
+}
+
 .index_main .fronting>div:first-child img{
 	width: 100%;
 	margin-top: 42px;
@@ -193,6 +200,56 @@
 	height: 36px;
 	width: 90%;
 	margin-left: 5%;
+	padding-left: 12px;
+	font-size: 14px;
+	color: #3B3E40;
+	border: 1px solid #DADFE3;
+	background-color: #FCFCFC;
+	outline: none;
+	margin-bottom: 9px;
+	border-radius: 2px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	        -webkit-transition: all .24s;
+	           -moz-transition: all .24s;
+	            -ms-transition: all .24s;
+	             -o-transition: all .24s;
+	                transition: all .24s;
+}
+
+.index_optsbox textarea:focus{
+	border: 1px solid #FCFCFC;
+	box-shadow: 0px 2px 5px -3px #111;
+}
+
+.index_optsbox textarea{
+	width: 100%;
+	margin-left: 5%;
+	padding-left: 12px;
+	font-size: 14px;
+	color: #3B3E40;
+	border: 1px solid #DADFE3;
+	background-color: #FCFCFC;
+	outline: none;
+	margin-bottom: 9px;
+	border-radius: 2px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	        -webkit-transition: all .24s;
+	           -moz-transition: all .24s;
+	            -ms-transition: all .24s;
+	             -o-transition: all .24s;
+	                transition: all .24s;
+}
+
+.index_optsbox input[type="text"]:focus{
+	border: 1px solid #FCFCFC;
+	box-shadow: 0px 2px 5px -3px #111;
+}
+
+.index_optsbox input[type="password"]{
 	padding-left: 12px;
 	font-size: 14px;
 	color: #3B3E40;

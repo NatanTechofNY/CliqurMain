@@ -1,6 +1,9 @@
 * {
 	font-family: Roboto;
 }
+body {
+	background-color: #F7F7F7;
+}
 .about_body_section {
 	width: 100%;
 }
