@@ -217,6 +217,7 @@ if (Meteor.isClient) {
 			var fname = $('#firstNameInput2').val();
 			var lname = $('#lastNameInput2').val();
 			var className = $('#classNameInput2').val();
+			var range = document.getElementById('rangeinput').value;
 			var pin = "";
 			$('.inputPasswordTs').each(function() {
 				pin += $(this).val();
@@ -253,7 +254,7 @@ if (Meteor.isClient) {
 							return;
 						};
 					};
-					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner", latitude: lati, longitude: longi},
+					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner", latitude: lati, longitude: longi, ranger: range},
 						function(err, d2) {
 							removeLoaderOverlay();
 							if(err)
