@@ -1,0 +1,16 @@
+.thankyou_gohome_btn {
+			color: #05668D;
+			background-color: #fff;
+			font-size: 13px;
+			padding: 15px;
+			font-weight: 200;
+			border: 2px solid #05668D;
+			width: 150px;
+			margin: 10px;
+	}
+	.thankyou_img {
+		padding-top: 2%;
+		padding-bottom: 2%;
+		height: 30%;
+		width: 35%;
+	}

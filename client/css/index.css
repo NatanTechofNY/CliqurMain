@@ -1,3 +1,107 @@
+.main_logo_img {
+		margin-top: 2%;
+		height: 25%;
+		width: 35%;
+	}
+	.index_headline_text {
+		text-align: center;
+		margin: 10px;
+		padding-top: 0px; 
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 700;
+		letter-spacing: 2px;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	.index_input_container {
+		margin-top: 30px;
+	}
+	.index_id_input {
+		margin: 12px;
+		padding: 15px;
+		border: 2px solid 00A896;
+		margin-left: auto;
+		margin-right: auto;
+		width: 320px;
+		height: 50px;
+	}
+	.index_error_msg {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		color: red;
+		font-weight: 700;
+		letter-spacing: 2px;
+	}
+	.index_join_btn {
+			color: #b31d30;
+			background-color: #fff;
+			font-size: 14px;
+			padding: 15px;
+			font-weight: 200;
+			border: 2px solid #b31d30;
+			width: 150px;
+			margin: 10px;
+			float: right;
+	}
+	.index_spectate_btn {
+			color: #FA7921;
+			background-color: #fff;
+			font-size: 14px;
+			padding: 15px;
+			font-weight: 200;
+			border: 2px solid #FA7921;
+			width: 150px;
+			margin: 10px;
+			float: left;
+	}
+	.index_create_btn {
+			color: #05668D;
+			background-color: #fff;
+			font-size: 14px;
+			margin: 12px;
+			padding: 15px;
+			border: 2px solid #05668D;
+			margin-left: auto;
+			margin-right: auto;
+			width: 320px;
+			height: 50px;
+			display: block;
+
+	}
+	.index_close_btn {
+		color: #b31d30;
+			background-color: #fff;
+			font-size: 14px;
+			margin: 12px;
+			padding: 15px;
+			border: 2px solid #b31d30;
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+			height: 50px;
+	}
+	.index_continue_btn {
+		color: #02C39A;
+			background-color: #fff;
+			font-size: 14px;
+			margin: 12px;
+			padding: 15px;
+			border: 2px solid #02C39A;
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+			height: 50px;
+	}
+	.index_footer {
+		margin-top: 2%;
+	}
+	.index_footer_link {
+		display: inline-block;
+		color: #757575;
+		font-size: 12px;
+		padding-left: 20px;
+	}
 .index_footer{
 	margin-bottom: 48px;
 }
