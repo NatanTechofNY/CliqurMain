@@ -110,7 +110,10 @@
             <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control" id="classNameInput2">
           </div>
           <div class="form-group">
-            <label class="control-label" for="geoLocSecure">{{#if geoLocSupported}}<input type="checkbox" id="geoLocSecure" name="geoLocSecure" /> Secure by location within 1000 feet{{else}}<input type="checkbox" id="geoLocSecure" name="geoLocSecure" disabled /> <strike>Secure by location within 1000 feet</strike> Your browser does not support Geolocation.{{/if}}</label>
+            <label class="control-label" for="geoLocSecure">{{#if geoLocSupported}}<input type="checkbox" id="geoLocSecure" name="geoLocSecure" /> Secure by location within <b><output style="padding:0;margin:0;float:none;display: inline;" id="rangechange">500</output></b> feet{{else}}<input type="checkbox" id="geoLocSecure" name="geoLocSecure" disabled /> <strike>Secure by location within <b><output style="padding:0;margin:0;float:none;display: inline;" id="rangechange2">500</output></b>feet</strike> Your browser does not support Geolocation.{{/if}}</label>
+  <input class="bar" type="range" id="rangeinput" value="500" max="1000" min="500" step="100" onchange="rangevalue.value=value;rangechange.value=value;rangechange2.value=value"/>
+  <span class="highlight"></span>
+  <output id="rangevalue">500</output>
           </div>
           <div class="form-group index_optsbox">
             <label for="inputPassword" class="control-label">Passcode (Optional)</label>

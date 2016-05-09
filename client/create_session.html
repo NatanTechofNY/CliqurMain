@@ -347,11 +347,11 @@
                     Spectator PPT View
                 </button>
             </a>
-          <button type="button" class="create_generate_btn" data-toggle="modal" data-target=".bs-example-modal-sm">
+          <button type="button" class="create_generate_btn" data-toggle="modal" data-target="#report">
                   Get Report
            </button>
 
-           <div class="modal fade bs-example-modal-sm" id="overridebs" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+           <div class="modal fade bs-example-modal-sm" id="report" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
               <div class="modal-dialog modal-sm">
                 <div class="modal-content" id="overridebs">
                   <div class="modal-header">
@@ -372,6 +372,45 @@
                                   </button>
                             </div>
                         </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                       <div class="modal fade bs-example-modal-sm" id="ppt" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content" id="overridebs">
+                  <div class="modal-header">
+                      <div class="create-header-text page-header">
+                          <h2><small><center>Upload a PPT</center></small></h2>
+                      </div>
+                  </div>
+                  <div class="container-fluid create_modal-container">
+                  <form id="glowForm" name="testForm" action="" method="POST" accept-charset="UTF-8"
+autocomplete="off">
+<!-- 
+      'disabled' class is to indicate drag n' drop isn't available 
+        -> JS will remove 'disabled' class if drag'n drop is available 
+    -->
+    <div class="fileUpload disabled">
+      <input type="file" accept="image/*">
+      <div>
+        <p class="msgForDisabled">Click to upload file</p>
+      </div>
+      <div>
+        <p class="msgForEnabled"><b>Click here</b> or <b>Drag n' Drop</b><br>to upload</p>
+        <!-- Upload icon by Icons8 -->
+        <img src="https://maxcdn.icons8.com/iOS7/PNG/75/Very_Basic/upload-75.png" title="Upload" width="75">
+      </div>
+    </div>
+
+<br>
+
+  <input class="create_modalmc_btn" type="submit" value="Submit">
+
+
+</form>
+
+
                   </div>
                 </div>
               </div>
@@ -471,6 +510,33 @@
                 {{/if}}
               </div>
             </form>
+            <hr>
+            <style type="text/css">#filedrag
+{
+  display: none;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em 0;
+  margin: 1em 0;
+  color: #555;
+  border: 2px dashed #555;
+  border-radius: 7px;
+  cursor: default;
+}
+
+#filedrag.hover
+{
+  color: #f00;
+  border-color: #f00;
+  border-style: solid;
+  box-shadow: inset 0 3px 4px #888;
+}</style>
+<script type="text/javascript" src="http://blogs.sitepointstatic.com/examples/tech/filedrag/1/filedrag.js"></script>
+<button class="create_public_btn" data-toggle="modal" data-target="#ppt">Want to use a PPT? Click me!</button>
+
+<div id="messages">
+<p></p>
+</div>
         </div> 
         <div class="col-md-1">
         </div> 
