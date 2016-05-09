@@ -13,16 +13,6 @@ Primary style
   content: '';
 }
 
-body {
-  font-size: 100%;
-  margin:0;
-  padding:0;
-}
-
-a {
-  color: #89ba2c;
-  text-decoration: none;
-}
 /* -------------------------------- 
 
 Main components 
