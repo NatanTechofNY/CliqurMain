@@ -251,7 +251,121 @@
 	font-size: 13px;
 	padding-right: 9px;
 }
+/*--------------------------------------------------------------------*/
 
+
+
+
+/*--------------------------------------------------------------------*/
+
+/* file upload container */
+.fileUpload{
+	position: relative;
+	height: 180px; width: 240px;
+	background-color: #F9F9F8;
+	border-radius: 3px;
+	border: 1px solid #DEDEDE;
+}
+/* if invalid */
+.fileUpload.hasError{
+	border: 1px solid #AD4834;
+}
+
+/* interaction styles */
+.fileUpload:hover{
+	background-color: #FCFCFC;
+}
+.fileUpload:active{
+	background-color: #EBEBEB;
+}
+
+/* make file input invisibly overlay everything */
+.fileUpload>input{
+	display: block;
+	height: 100%; width: 100%;
+	position: absolute; top: 0; left: 0;
+	z-index: 2;
+	opacity: 0;
+	cursor: pointer;
+}
+
+
+/* 
+	Last div is with drag and drop enabled, first div is for incompatibility
+	 	--> start by hiding first div (only visible if .fileUpload also has class .disabled)
+*/
+.fileUpload>div:first-of-type{
+	display: none;
+}
+.fileUpload>div:last-child{
+	cursor: pointer;
+	display: block;
+	height: 90%; width: 90%;
+	position: relative;
+	top: 5%; left: 5%;
+	border: 2px dashed #DEDEDE;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/* on file hover over, change background color style */
+.fileUpload>div:last-child.hover{
+	background-color: #EBEBEB;
+}
+
+/* text element */
+.fileUpload>div:last-child>p{
+	font-size: 11px;
+	color: #787878;
+	text-align: center;
+	margin-top: 18px;
+	line-height: 18px;
+}
+/* bolded text styles */
+.fileUpload>div:last-child>p>b{
+	font-size: 13px;
+	display: inline-block;
+	max-width: 180px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: relative;
+	top: 4px;
+}
+/* image icon styles */
+.fileUpload>div:last-child>img{
+	width: 60px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 18px;
+	opacity: 0.6;
+}
+
+
+/* if drag and drop unsupported, hide last div and show first */
+.fileUpload.disabled>div:last-child{
+	display: none;
+}
+.fileUpload.disabled>div:first-of-type{
+	display: block;
+	height: 90%; width: 90%;
+	position: relative;
+	top: 5%; left: 5%;
+	border: 2px dashed #DEDEDE;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+/* compatibility div text styling */
+.fileUpload.disabled>div:first-of-type>p{
+	font-size: 13px;
+	text-align: center;
+	top: 72px;
+	position: relative;
+	color: #787878;
+}
 .sessidCont>input{
 	width: 84px!important;
 }

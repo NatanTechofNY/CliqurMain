@@ -1,8 +1,4 @@
 if (Meteor.isClient) {
-	Template.indexItem.rendered = function () {
-
-	};
-
 	var tempRet;
 	Template.indexItem.events({
 		'click #joinSessionBtn': function (e) {
@@ -64,8 +60,29 @@ if (Meteor.isClient) {
 		'click input.inputPasswordTs': function(e) {
 			$(e.currentTarget).select();
 		},
+		'change #geoLocSecure': function(e) {
+			if (e.target.checked) {
+				var $thiss = e.target;
+				navigator.geolocation.getCurrentPosition(function(d, e) {
+					if (e) {
+						alert('There was an issue getting your location.');
+						$thiss.checked = false;
+						Session.set('useGeo', false);
+					}
+					else{
+						var longitude = d.coords.longitude;
+						var latitude = d.coords.latitude;
+						Session.set('useGeo', {longi: longitude, lati: latitude});
+					};
+				});
+			}
+			else{
+				Session.set('useGeo', false);
+			};
+		},
 		'submit #toJoinForm': function(e) {
 			e.preventDefault();
+			
 			var classCode = Session.get('toJoinSession');
 			var fname = $('#firstNameInput').val();
 			var lname = $('#lastNameInput').val();
@@ -77,25 +94,85 @@ if (Meteor.isClient) {
 				return $('#errorMSG-joinForm')[0].innerHTML = "Please enter a valid student ID.", $("#errorMSG-joinForm").css('opacity', 1);
 
 
-			function tempEndCall(datter) {
-				Meteor.call("addUser", {
-					fullName: fname + " " + lname,
-					studentId: stdntId,
-					sessionToAddToId: classCode,
-					pinr: datter
-				}, function(err, data) {
-					if(err){
-						$('input[name="pinpw"]').each(function() {
-							$(this).val('');
-						});
-						$('input[name="pinpw"]').focus();
-						return alert(err.error);
+			function getLocationAndCreateSession(datter) {
+				navigator.geolocation.getCurrentPosition(function(d, e) {
+					if (e) {
+						if(confirm('There was an issue getting your location. Try again?')) getLocationAndCreateSession(datter)
+							else removeLoaderOverlay();
 					}
-					else {
-						ga("send", "event", "Sessions", "Joined", 'null', new Date().getTime());
-						updateSess(data, 'userId');
-						updateSess(classCode, 'sessionId');
-						Router.go("/d/" + classCode);
+					else{
+						var longitude = d.coords.longitude;
+						var latitude = d.coords.latitude;
+						if (typeof latitude === "number" && typeof longitude === "number") {
+							Meteor.call("addUser", {
+								fullName: fname + " " + lname,
+								studentId: stdntId,
+								sessionToAddToId: classCode,
+								pinr: datter,
+								locData: {
+									lati: latitude,
+									longi: longitude
+								}
+							}, function(err, data) {
+								removeLoaderOverlay();
+								if(err){
+									$('input[name="pinpw"]').each(function() {
+										$(this).val('');
+									});
+									$('input[name="pinpw"]').focus();
+									return alert(err.error);
+								}
+								else {
+									ga("send", "event", "Sessions", "Joined", 'null', new Date().getTime());
+									updateSess(data, 'userId');
+									updateSess(classCode, 'sessionId');
+									Router.go("/d/" + classCode);
+								};
+							});
+						}
+						else{
+							if(confirm("Error getting location - try again?"))
+								getLocationAndCreateSession(datter);
+							else removeLoaderOverlay();
+						};
+					};
+				});
+			};
+
+			function tempEndCall(datter) {
+				showLoaderOverlay(false, 420);
+
+				Meteor.call('sessionHasGeoSecurity', classCode, function (ee, rss) {
+					if (ee) {
+						removeLoaderOverlay();
+						return alert("Error finding session");
+					}
+					else if(rss){
+						alert("Session is Location-secured. Allow sharing of your location.");
+						getLocationAndCreateSession(datter);
+					}
+					else{
+						Meteor.call("addUser", {
+							fullName: fname + " " + lname,
+							studentId: stdntId,
+							sessionToAddToId: classCode,
+							pinr: datter
+						}, function(err, data) {
+							removeLoaderOverlay();
+							if(err){
+								$('input[name="pinpw"]').each(function() {
+									$(this).val('');
+								});
+								$('input[name="pinpw"]').focus();
+								return alert(err.error);
+							}
+							else {
+								ga("send", "event", "Sessions", "Joined", 'null', new Date().getTime());
+								updateSess(data, 'userId');
+								updateSess(classCode, 'sessionId');
+								Router.go("/d/" + classCode);
+							};
+						});
 					};
 				});
 			};
@@ -153,23 +230,37 @@ if (Meteor.isClient) {
 				return $('#errorMSG-createSession')[0].innerHTML = "Pin can only be 4 digits.", $("#errorMSG-createSession").css('opacity', 1);
 			}
 
+			showLoaderOverlay(false, 420);
 			Meteor.call("addUser", {
 				fullName: fname + " " + lname,
 				studentId: "SessionOwner",
 			}, function(err, data) {
-				if(err)
+				if(err) {
+					removeLoaderOverlay();
 					return alert(err.error);
+				}
 				else {
-					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner"}, 
-					function(err, d2) {
-						if(err)
-							return alert(err.error);
-						else{
-							ga("send", "event", "Sessions", "Created", 'hasPin='+(!!pin.length), new Date().getTime());
-							updateSess(data, 'userId');
-							updateSess(d2, 'sessionId');
-							Router.go("/d/" + d2);
+					var longi, lati;
+					if (Session.get('useGeo')) {
+						longi = Session.get('useGeo').longi;
+						lati = Session.get('useGeo').lati;
+						if (typeof longi !== "number" || typeof lati !== "number") {
+							alert('Could not get location information properly. Please uncheck location security to continue.');
+							removeLoaderOverlay();
+							return;
 						};
+					};
+					Meteor.call('createSession', {sessionOwnerId: data, sessionName: className, pin: !pin.length? undefined: pin, studentId: "SessionOwner", latitude: lati, longitude: longi},
+						function(err, d2) {
+							removeLoaderOverlay();
+							if(err)
+								return alert(err.error);
+							else{
+								ga("send", "event", "Sessions", "Created", 'hasPin='+(!!pin.length), new Date().getTime());
+								updateSess(data, 'userId');
+								updateSess(d2, 'sessionId');
+								Router.go("/d/" + d2);
+							};
 					});
 				}
 			});
@@ -184,7 +275,7 @@ if (Meteor.isClient) {
 	};
 	Template.indexItem.destroyed = function() {
 		$('.modal-backdrop').hide();
-		$('#pinDiv').fadeOut(900);
+		$('#pinDiv').fadeOut(300);
 	};
 	Template.indexItem.helpers({
 		toJoinSession: function() {
@@ -192,6 +283,9 @@ if (Meteor.isClient) {
 		},
 		toCreateSession: function() {
 			return Session.get('toCreateSession');
+		},
+		geoLocSupported: function() {
+			return navigator.geolocation;
 		}
 	});
 };

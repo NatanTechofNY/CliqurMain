@@ -139,14 +139,16 @@
 <button type="button" style="float:none;margin:0" class="create_exit_btn" id="endssn"> 
                  End Session
             </button><br>
-            <a target="_blank" href="/d/{{sessionId}}/p">
+            <a target="_blank" href="/d/{{sessionId}}/p" style="text-decoration: none;">
                 <button type="button" style="float:none;margin:0" class="create_public_btn">
                     Spectator View
                 </button>
             </a><br>
-          <button type="button" style="float:none;margin:0" class="create_generate_btn" data-toggle="modal" data-target=".bs-example-modal-sm">
-                  Get Report
-           </button><br>
+                        <a target="_blank" href="/d/{{sessionId}}/pp" style="text-decoration: none;">
+                <button type="button" style="float:none;margin:0" class="create_public_btn">
+                    Spectator PPT View
+                </button>
+            </a>
                         </div>
                         </center>
                     </div>
@@ -340,8 +342,16 @@
                     Spectator View
                 </button>
             </a>
+            <a target="_blank" style="text-decoration: none" href="/d/{{sessionId}}/pp">
+                <button type="button" class="create_public_btn">
+                    Spectator PPT View
+                </button>
+            </a>
+          <button type="button" class="create_generate_btn" data-toggle="modal" data-target="#report">
+                  Get Report
+           </button>
 
-           <div class="modal fade bs-example-modal-sm" id="overridebs" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+           <div class="modal fade bs-example-modal-sm" id="report" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
               <div class="modal-dialog modal-sm">
                 <div class="modal-content" id="overridebs">
                   <div class="modal-header">
@@ -362,6 +372,45 @@
                                   </button>
                             </div>
                         </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                       <div class="modal fade bs-example-modal-sm" id="ppt" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content" id="overridebs">
+                  <div class="modal-header">
+                      <div class="create-header-text page-header">
+                          <h2><small><center>Upload a PPT</center></small></h2>
+                      </div>
+                  </div>
+                  <div class="container-fluid create_modal-container">
+                  <form id="glowForm" name="testForm" action="" method="POST" accept-charset="UTF-8"
+autocomplete="off">
+<!-- 
+      'disabled' class is to indicate drag n' drop isn't available 
+        -> JS will remove 'disabled' class if drag'n drop is available 
+    -->
+    <div class="fileUpload disabled">
+      <input type="file" accept="image/*">
+      <div>
+        <p class="msgForDisabled">Click to upload file</p>
+      </div>
+      <div>
+        <p class="msgForEnabled"><b>Click here</b> or <b>Drag n' Drop</b><br>to upload</p>
+        <!-- Upload icon by Icons8 -->
+        <img src="https://maxcdn.icons8.com/iOS7/PNG/75/Very_Basic/upload-75.png" title="Upload" width="75">
+      </div>
+    </div>
+
+<br>
+
+  <input class="create_modalmc_btn" type="submit" value="Submit">
+
+
+</form>
+
+
                   </div>
                 </div>
               </div>
@@ -461,6 +510,12 @@
                 {{/if}}
               </div>
             </form>
+            <hr>
+<button class="create_public_btn" data-toggle="modal" data-target="#ppt">Want to use a PPT? Click me!</button>
+
+<div id="messages">
+<p></p>
+</div>
         </div> 
         <div class="col-md-1">
         </div> 
