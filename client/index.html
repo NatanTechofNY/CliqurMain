@@ -46,25 +46,31 @@
 
 <div class="modal fade join-panel" id="joinSession" tabindex="-1" role="dialog" aria-labelledby="joinSession">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: #F7F7F7;
+  border-radius: 2px;
+  box-shadow: 0px 3px 12px -6px #000; font-size: 15px;
+  font-weight: normal;
+  color: #444;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Join a Session: {{toJoinSession}}</h4>
+        <h4 class="modal-title" style="font-size: 16px;
+  font-weight: normal;
+  color: #444;" id="exampleModalLabel">Join a Session: {{toJoinSession}}</h4>
       </div>
       <div class="modal-body">
         <form id="toJoinForm">
         <div id="errorMSG-joinForm" style="display:block;font-size: 18px;color:red"></div>
-          <div class="form-group">
+          <div class="form-group index_optsbox">
             <label for="firstNameInput" class="control-label">First Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="firstNameInput">
+            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control index_optsbox" id="firstNameInput">
           </div>
-          <div class="form-group">
+          <div class="form-group index_optsbox">
             <label for="lastNameInput" class="control-label">Last Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="lastNameInput">
+            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control index_optsbox" id="lastNameInput">
           </div>
-          <div class="form-group">
+          <div class="form-group index_optsbox">
             <label for="studentId" class="control-label">Student ID No.</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="studentId">
+            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control index_optsbox" id="studentId">
           </div>
         </form>
       </div>
@@ -77,30 +83,36 @@
 </div>
 <div class="modal fade" id="createSession" tabindex="-1" role="dialog" aria-labelledby="createSession">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: #F7F7F7;
+  border-radius: 2px;
+  box-shadow: 0px 3px 12px -6px #000; font-size: 15px;
+  font-weight: normal;
+  color: #444;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Create a Session</h4>
+        <h4 class="modal-title" style="font-size: 16px;
+  font-weight: normal;
+  color: #444;" id="exampleModalLabel">Create a Session</h4>
       </div>
       <div class="modal-body">
         <form id="createSessionForm">
             <div id="errorMSG-createSession" style="display:block;font-size: 18px;color:red"></div>
-          <div class="form-group">
+          <div class="form-group index_optsbox">
             <label for="firstNameInput2" class="control-label">First Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="firstNameInput2">
+            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control" id="firstNameInput2">
           </div>
-          <div class="form-group">
+          <div class="form-group index_optsbox">
             <label for="lastNameInput2" class="control-label">Last Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="lastNameInput2">
+            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control" id="lastNameInput2">
           </div>
-          <div class="form-group">
+          <div class="form-group index_optsbox">
             <label for="classNameInput2" class="control-label">Class Name</label>
-            <input type="text" style="font-size: 24px;" class="form-control" id="classNameInput2">
+            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control" id="classNameInput2">
           </div>
           <div class="form-group">
             <label class="control-label" for="geoLocSecure">{{#if geoLocSupported}}<input type="checkbox" id="geoLocSecure" name="geoLocSecure" /> Secure by location within 1000 feet{{else}}<input type="checkbox" id="geoLocSecure" name="geoLocSecure" disabled /> <strike>Secure by location within 1000 feet</strike> Your browser does not support Geolocation.{{/if}}</label>
           </div>
-          <div class="form-group">
+          <div class="form-group index_optsbox">
             <label for="inputPassword" class="control-label">Passcode (Optional)</label>
             <br />
               <input style="float:left;font-size: 24px;" type="password" class="form-control inputPasswordTs" maxlength="1">
