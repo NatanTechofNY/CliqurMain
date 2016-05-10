@@ -451,3 +451,84 @@ input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue
 #or .form-group-geo {
 	margin-bottom: 0;
 }
+
+.index-top-hr {
+	display:block;
+	opacity:0;
+	height:1px;
+	width:100px;
+	margin:0;
+}
+.index2-join-modalcontent {
+	background-color: #F7F7F7;
+  border-radius: 2px;
+  box-shadow: 0px 3px 12px -6px #000; font-size: 15px;
+  font-weight: normal;
+  color: #444;
+}
+
+.index2-join-h4 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+}
+#errorMSG-joinForm {
+display:block;
+font-size: 18px;
+color:red
+}
+#errorMSG-createSession {
+  display:block;font-size: 18px;color:red
+}
+.index_optsbox {
+	font-size: 24px;
+	width:100%;
+	margin:0px
+}
+.index2-create-modalcontent {
+  background-color: #F7F7F7;
+  border-radius: 2px;
+  box-shadow: 0px 3px 12px -6px #000; font-size: 15px;
+  font-weight: normal;
+  color: #444;
+}
+.index2-create-modaltitle {
+	font-size: 16px;
+  font-weight: normal;
+  color: #444;
+}
+
+#firstNameInput2, #lastNameInput2, #classNameInput2 {
+	font-size: 24px;
+	width:100%;
+	margin:0px;
+}
+
+#rangechange {
+	padding:0;
+	margin:0;
+	float:none;
+	display: inline;
+}
+
+#rangechange2 {
+	padding:0;
+	margin:0;
+	float:none;
+	display: inline;
+}
+.inputPasswordTs {
+	float:left;
+	font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+

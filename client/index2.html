@@ -1,5 +1,5 @@
 <template name="index2">
-  <hr style="display:block;opacity:0;height:1px;width:100px;margin:0;" />
+  <hr class="index-top-hr" />
 	<header class="index_navbar">
 		<ul>
 			<li id="currentPage"><a href="/">Home</a><span></span></li>
@@ -46,34 +46,30 @@
 
 
 
-
+<!--Modal content for join sessions-->
 <div class="modal fade join-panel" id="joinSession" tabindex="-1" role="dialog" aria-labelledby="joinSession">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background-color: #F7F7F7;
-  border-radius: 2px;
-  box-shadow: 0px 3px 12px -6px #000; font-size: 15px;
-  font-weight: normal;
-  color: #444;">
+    <div class="modal-content index2-join-modalcontent">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" style="font-size: 16px;
-  font-weight: normal;
-  color: #444;" id="exampleModalLabel">Join a Session: {{toJoinSession}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title index2-join-h4" id="exampleModalLabel">Join a Session: {{toJoinSession}}</h4>
       </div>
       <div class="modal-body">
         <form id="toJoinForm">
-        <div id="errorMSG-joinForm" style="display:block;font-size: 18px;color:red"></div>
+        <div id="errorMSG-joinForm"></div>
           <div class="form-group index_optsbox">
             <label for="firstNameInput" class="control-label">First Name</label>
-            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control index_optsbox" id="firstNameInput">
+            <input type="text" class="form-control index_optsbox" id="firstNameInput">
           </div>
           <div class="form-group index_optsbox">
             <label for="lastNameInput" class="control-label">Last Name</label>
-            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control index_optsbox" id="lastNameInput">
+            <input type="text" class="form-control index_optsbox" id="lastNameInput">
           </div>
           <div class="form-group index_optsbox">
             <label for="studentId" class="control-label">Student ID No.</label>
-            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control index_optsbox" id="studentId">
+            <input type="text" class="form-control index_optsbox" id="studentId">
           </div>
         </form>
       </div>
@@ -84,45 +80,41 @@
     </div>
   </div>
 </div>
+
+<!--Modal Content for Create sessions -->
 <div class="modal fade" id="createSession" tabindex="-1" role="dialog" aria-labelledby="createSession">
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background-color: #F7F7F7;
-  border-radius: 2px;
-  box-shadow: 0px 3px 12px -6px #000; font-size: 15px;
-  font-weight: normal;
-  color: #444;">
+    <div class="modal-content index2-create-modalcontent">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" style="font-size: 16px;
-  font-weight: normal;
-  color: #444;" id="exampleModalLabel">Create a Session</h4>
+        <h4 class="modal-title index2-create-modaltitle" id="exampleModalLabel">Create a Session</h4>
       </div>
       <div class="modal-body" id="or">
         <form id="createSessionForm">
-            <div id="errorMSG-createSession" style="display:block;font-size: 18px;color:red"></div>
+            <div id="errorMSG-createSession"></div>
           <div class="form-group index_optsbox">
             <label for="firstNameInput2" class="control-label">First Name</label>
-            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control" id="firstNameInput2">
+            <input type="text" class="form-control" id="firstNameInput2">
           </div>
           <div class="form-group index_optsbox">
             <label for="lastNameInput2" class="control-label">Last Name</label>
-            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control" id="lastNameInput2">
+            <input type="text" class="form-control" id="lastNameInput2">
           </div>
           <div class="form-group index_optsbox">
             <label for="classNameInput2" class="control-label">Class Name</label>
-            <input type="text" style="font-size: 24px;width:100%;margin:0px" class="form-control" id="classNameInput2">
+            <input type="text" class="form-control" id="classNameInput2">
           </div>
           <div class="form-group form-group-geo">
             <label class="control-label index-geo-label" for="geoLocSecure"> 
               {{#if geoLocSupported}}
                 <input type="checkbox" id="geoLocSecure" name="geoLocSecure" /> Secure by location within 
                     <b>
-                        <output style="padding:0;margin:0;float:none;display: inline;" id="rangechange">1000</output>
+                        <output id="rangechange">1000</output>
                     </b> feet{{else}}
                 <input type="checkbox" id="geoLocSecure" name="geoLocSecure" disabled /> 
                 <strike>Secure by location within 
                     <b>
-                        <output style="padding:0;margin:0;float:none;display: inline;" id="rangechange2">1000</output>
+                        <output id="rangechange2">1000</output>
                     </b>feet
                 </strike> Your browser does not support Geolocation.{{/if}}
             </label>
@@ -133,10 +125,10 @@
           <div class="form-group index_optsbox">
             <label for="inputPassword" class="control-label">Passcode (Optional)</label>
             <br />
-              <input style="float:left;font-size: 24px;" type="password" class="form-control inputPasswordTs" maxlength="1">
-              <input style="float:left;font-size: 24px;" type="password" class="form-control inputPasswordTs" maxlength="1">
-              <input style="float:left;font-size: 24px;" type="password" class="form-control inputPasswordTs" maxlength="1">
-              <input style="float:left;font-size: 24px;" type="password" class="form-control inputPasswordTs" maxlength="1">
+              <input type="password" class="form-control inputPasswordTs" maxlength="1">
+              <input type="password" class="form-control inputPasswordTs" maxlength="1">
+              <input type="password" class="form-control inputPasswordTs" maxlength="1">
+              <input type="password" class="form-control inputPasswordTs" maxlength="1">
               <br />
           </div>
         </form>
