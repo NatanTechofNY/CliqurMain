@@ -1,0 +1,479 @@
+<template name="create_session2">
+{{#if isPhone}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/ruby00.css">
+    <link rel="stylesheet" href="/css/rubytabs.css">
+    <link rel="stylesheet" href="/css/ruby.animate.css">
+    <script src="/css/jquery-last.min.js"></script>
+    <script src="/css/rubytabs.js"></script>
+    <script src="/css/modernizr.js"></script>
+    <div class="wrapper">
+    <div class="container">
+
+        <!-- TITLE HEADING - begin -->
+        <!-- TITLE HEADING - end -->
+
+
+
+
+        <!-- LAYOUT DEVICE - begin -->
+        <style>
+
+            .layout-device {
+            }
+            .device {
+                overflow: hidden;
+                box-shadow: inset 0 -10px 25px -20px hsla(0,0%,0%,.5);
+                border-bottom: 1px solid #f9f9f9;
+            }
+            .device > img {
+                display: block;
+            }
+
+
+
+            /* TABS PREVIEW */
+            .tabs-preview {
+                visibility: hidden;
+                position: absolute;
+                left: 0; right: 0; top: 0;
+                margin: 0 auto;
+            }
+            .tabs-preview.rt01ready {
+                visibility: visible;
+            }
+            .tabs-preview > .rt01viewport {
+                padding-left: 10px; padding-right: 10px;
+            }
+
+            /* TABS TITLE */
+            .tabs-preview > .rt01tabs .rt01pagitem {
+                padding: 0;
+                text-indent: -99999px;
+            }
+            .rt01pagmark {
+                position: absolute;
+                left: 0; bottom: 0px;
+                height: 100%;
+                z-index: -1;
+            }
+            .rt01pagmark-item {
+                height: 100% !important;
+                padding-right: 1px;
+            }
+
+            .icon {
+                display: block;
+                width: 50px; height: 50px;
+                margin: 0 auto;
+                background: url(/imgs/icon-tabs-title.svg) no-repeat;
+
+                -webkit-transition: background-position .3s;
+                        transition: background-position .3s;
+            }
+            .ie8 .icon {
+                background-image: url(/imgs/icon-tabs-title.png);
+            }
+            .icon-overview { background-position: -5px -5px; }
+            .icon-slider { background-position: -65px -5px; }
+            .icon-prevent { background-position: -125px -5px; }
+            .icon-lazy { background-position: -185px -5px; }
+            .icon-video { background-position: -245px -5px; }
+
+            .rt01cur > .icon-overview { background-position: -5px -65px; }
+            .rt01cur > .icon-slider { background-position: -65px -65px; }
+            .rt01cur > .icon-prevent { background-position: -125px -65px; }
+            .rt01cur > .icon-lazy { background-position: -185px -65px; }
+            .rt01cur > .icon-video { background-position: -245px -65px; }
+
+
+
+            /* MEDIA WIDTH */
+            @media only screen and (max-width: 479px) {
+                .layout-device {
+                    width: auto;
+                }
+                .device {
+                    display: none;
+                }
+                .tabs-preview {
+                    position: static;
+                    width: auto;
+                }
+                .tabs-preview .rt01viewport {
+                    padding-left: 0; padding-right: 0;
+                }
+                .tabs-preview .rt01pagmark-item {
+                    border-radius: 4px;
+                }
+            }
+        </style>
+        
+        <div class="layout-device">
+
+
+            <!-- TABS PREVIEW - begin -->
+            <div class="tabs-preview rt01"
+                data-tabs='{
+                    "isAutoInit" : true,
+                    "fx"         : "line",
+                    "speed"      : 600,
+                    "width"      : 940,
+                  "showBy"     : "mobile",
+                    "pag"        : { "align": "justify", "isJustifyWhenLarge": true, "isMark": true },
+                    "isKeyboard" : true
+                }'>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-overview">Overview</span>
+                    </div>
+                        <hr>
+                    <div class="font-blokk"><center>
+                        <div class="card-outline">
+                        <label>Session ID: </label>
+                        <input readonly class="large" type="text" value="{{sessionId}}" id="autoSelectrLoc">
+                        </div>
+                        <div class="card-outline">
+<button type="button" style="float:none;margin:0" class="create_exit_btn" id="endssn"> 
+                 End Session
+            </button><br>
+            <a target="_blank" href="/d/{{sessionId}}/p" style="text-decoration: none;">
+                <button type="button" style="float:none;margin:0" class="create_public_btn">
+                    Spectator View
+                </button>
+            </a><br>
+                        <a target="_blank" href="/d/{{sessionId}}/pp" style="text-decoration: none;">
+                <button type="button" style="float:none;margin:0" class="create_public_btn">
+                    Spectator PPT View
+                </button>
+            </a>
+                        </div>
+                        </center>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-slider">Questions</span>
+                    </div>
+                    <hr>
+                    <!-- Slider Nested - end -->
+
+
+                    <!-- Dummy Content - begin -->
+                    <div class="font-blokk">
+                    <div class="rt01swipe-prevent">
+              <div class="create_header-text page-header">
+                        <h2><small><center>Student Questions</center></small></h2>
+              </div>
+              <div class="panel panel-default">
+                 <div class="panel-body create_question_panel">
+                    
+
+                    <div class="panel">
+
+                      {{#each questionItem}}
+                        <div class="panel-element" data-id="{{_id}}">
+                          <div class="element-actions">
+                            <button class="btn btn-action btn-hide deleteQuestionBtn"><i class="fa fa-ban"></i></button>
+                           <!--  <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button> -->
+                          </div>
+                          <div class="element-content">
+                            <button class="btn btn-more">
+                              <i class="fa fa-ellipsis-h icon-closed"></i>
+                              <i class="fa fa-times icon-open"></i>
+                              <i class="fa fa-heart-o icon-hearted"></i>
+                            </button>
+                            <div class="content-post">
+                              {{#if isPublic}}
+                                <div class="post-avatar isPublic togglePulicBtn" title="currently in public view"></div>
+                              {{else}}
+                                <div class="post-avatar isntPublic togglePulicBtn" title="send to public view"></div>
+                              {{/if}}
+                              <div class="post-content">
+                                <span class="post-title">{{thisAuthorName}}</span>
+                                <p class="post-body">{{{body}}}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {{/each}}
+
+
+
+                    </div>
+
+                </div>
+              </div>
+              </div>
+                    </div>
+                    <!-- Dummy Content - end -->
+                </div>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-prevent">Publish</span>
+                    </div>
+<hr>
+
+                    <div class="bg-wrap">
+                    <center>
+                        <form class="block clearfix rt01swipe-prevent" id="customQuestionSubmit">
+                        <h2><small>Publish Your Own Question</small></h2>
+                    <div class="col-md-9">
+                        <textarea type="text" class="create_question_input form-control" name="creatorQuestion" placeholder="Create your own question here!"></textarea>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="create_selfpublish_button">Publish</button>
+                    </div>
+              <hr class="create_margin_hr">
+                        <h2><small>Timer</small></h2>
+               {{#if pollTime}}
+                          <h1><small> Time Left: {{pollTime}} </small></h1>
+                            <button id="timerEndBtn" class="create_reset_button hvr-icon-spin">Close Poll</button>
+               {{else}}
+                  <div id="overridebs" class="">
+                      <select class="form-control" style="text-align:center;" name="timeSet60">
+                        <option value="15">15 seconds</option>
+                        <option value="30">30 seconds</option>
+                        <option value="60" selected>60 seconds</option>
+                      </select>
+                  </div>
+                  <div  id="overridebs" class="">
+                        <input class="create_customtime_input" name="timeSet" type="number" placeholder="Custom time">
+                  </div>
+                  <center>
+                        <button class="create_customtime_button hvr-icon-buzz-out" id="timerSetBtn">Set New Timer</button>
+                        <button id="pollRespReport" type="button" class="create_modalmc_btn hvr-icon-hang">
+                                        Poll Response
+                                  </button>
+                        </center>
+                {{/if}}
+                        </form>
+                        </center>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="rt01pagitem">
+                        <span class="icon icon-lazy">Attendance</span>
+                    </div>
+<hr>
+                    <div class="bg-wrap">
+                    <center>
+                    <h2><small>Attendance</small></h2>
+                     <button type="button" id="createAtten" style="width:50%;float:none;margin:0" class="create_modalatt_btn hvr-icon-hang">
+                    Generate Attendance Sheet
+                     </button><br>
+{{#each usersList}}
+          <li class="create_att_li" title="{{studentId}}">
+              {{#if eq userId SessionItem.sessionOwnerId}}
+                  <b>{{fullName}}</b>
+              {{else}}
+                  <span>{{fullName}}</span>
+              {{/if}}
+          </li>
+      {{/each}}
+      </center>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- TABS PREVIEW - end -->
+
+        </div>
+        <!-- LAYOUT DEVICE - end -->
+
+    </div>
+    </div>
+{{else}}    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+        <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+    
+  
+    <header class="index_navbar">
+    <ul>
+      <li><a href="/">Presentation View</a><span></span></li>
+      <li><a href="/about" style="color: red;font-size: 16px">End Session</a><span style="background-color: red"></span></li>
+    </ul>
+  </header>
+<div style="background-image: url('img/school.png');background-repeat: repeat;height:100%;width:100%;z-index: -9999;opacity: 0.8;position: absolute;"></div>
+    <!--<div class="sideBar">
+  <div class="close">
+    <i class="fa fa-times closeX"></i>
+  </div>
+  <hr />
+  <ul class="sideNav">
+John Smith<br>
+Adam Smith<br>
+Peter Smith<br>
+  </ul>
+</div>-->
+<!--<div class="centerMe">
+  <h1 class="toggle">
+    <span class="open">Show Attendance</span>
+    <span class="closeMe">Hide Attendance</span>
+  </h1>
+</div>-->
+<div class="text">
+<div class="row">
+<div class="col-md-3 widget-box sample-widget" style="height: 470px;margin-left: 50px">
+<div id="tableID">
+      <div class="widget-header">
+      <input class="search " placeholder="Attendance (Type to search)">
+      </div>
+      <div class="widget-content" style="color:black">
+  <table class="table-list" data-currentpage="1">
+    <thead>
+      <th><button type="button" class="sort" data-sort="sortID">ID #<i class="caret"></i></button></th>
+      <th><button type="button" class="sort" data-sort="sortDesc">Name<i class="caret"></i></button></th>
+    </thead>
+    <!-- IMPORTANT, class="list" must be on tbody -->
+    <tbody class="list">
+      <tr>
+        <td class="minify sortID">000001</td>
+        <td class="sortDesc">Alpha Bravo Charlie</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000002</td>
+        <td class="sortDesc">Bravo Charlie Delta</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000003</td>
+        <td class="sortDesc">Charlie Delto Echo</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000004</td>
+        <td class="sortDesc">Foxtrot</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000005</td>
+        <td class="sortDesc">Golf Hotel India</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000006</td>
+        <td class="sortDesc">Alpha Bravo Charlie</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000007</td>
+        <td class="sortDesc">Bravo Charlie Delta</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000008</td>
+        <td class="sortDesc">Charlie Delto Echo</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000009</td>
+        <td class="sortDesc">Foxtrot</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000010</td>
+        <td class="sortDesc">Golf Hotel India</td>
+      </tr>
+      <tr>
+        <td class="minify sortID">000011</td>
+        <td class="sortDesc">Alpha Bravo Charlie</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="table-footer">
+          <div class="table-pagination">
+            <button type="button" class="btn-tablepage jTablePagePrev">&laquo;</button>
+            <ul class="pagination"></ul>
+            <button type="button" class="btn-tablepage jTablePageNext">&raquo;</button>
+          </div>
+          </td>
+      </tr>
+    </tfoot>
+  </table>
+
+</div>
+      </div>
+    </div>
+  <div class="col-md-5 widget-box sample-widget" style="margin-left: 50px">
+      <div class="widget-header">
+        <input type="text" placeholder="Questions">
+        <div class="box_plus">
+                <i class="fa fa-plus"></i>
+        </div>
+      </div>
+      <div class="widget-content" style="color:black">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+    </div>
+      <div class="col-md-2 widget-box sample-widget" style="width: 250px;height: 500px;margin-left: 50px;">
+      <div class="widget-header">
+        <h2>Poll Settings</h2>
+      </div>
+      <div class="widget-content" style="color:black">
+      <center><br>
+  <select name="timeSet60" id="sources" class="custom-select sources" placeholder="Poll Time">
+    <option value="15">15 seconds</option>
+    <option value="30">30 seconds</option>
+    <option value="60">60 seconds</option>
+  </select><br><br>
+  or set a custom time<br><br>
+      <input type="text" style="text-align: center" class="poll_input" maxlength="3" max="999" placeholder="120">
+      <br><br><br>
+<a class="button" href="#" role="button" style="line-height: 70px;height: 70px;width:80%">
+  <span>Start Poll</span>
+  <div class="icon">
+    <i class="fa fa-clock-o"></i>
+    <i class="fa fa-check"></i>
+  </div>
+</a>
+      </center>
+      </div>
+    </div>
+</div>
+<br><br>
+<div class="row" style="padding: 0;margin: 0;margin-top: -7%">
+<div class="col-md-3" style="margin-left: 50px;"></div>
+      <div class="col-md-5 widget-box sample-widget" style="margin-left: 50px;">
+      <div class="widget-header">
+        <h2>Generate Reports</h2>
+      </div>
+      <div class="widget-content" style="color:black">
+      <center><br>
+      <div class="row">
+            <div class="col-md-1"></div>
+      <div class="col-md-5">
+<a class="button" href="#" role="button">
+  <span>Attendance Report</span>
+  <div class="icon">
+    <i class="fa fa-users"></i>
+    <i class="fa fa-check"></i>
+  </div>
+</a>
+</div>
+      <div class="col-md-5">
+<a class="button" href="#" role="button">
+  <span>Poll Report</span>
+  <div class="icon">
+    <i class="fa fa-bar-chart"></i>
+    <i class="fa fa-check"></i>
+  </div>
+</a>
+</div>
+</div><br>
+      </center>
+      </div>
+    </div>
+</div>
+
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js'></script>
+    {{/if}}
+</template>
