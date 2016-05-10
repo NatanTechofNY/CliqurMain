@@ -442,3 +442,12 @@ input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue
 	height: 36px; line-height: 36px;
 	font-size: 12px;
 }
+
+#or .index-geo-label {
+	padding-bottom: 15px;
+	margin-bottom: 0;
+}
+
+#or .form-group-geo {
+	margin-bottom: 0;
+}

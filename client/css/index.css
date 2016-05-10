@@ -190,3 +190,12 @@
 	display: block;
 	font-weight: normal;
 }
+#or .bar {
+	margin-top: 15px;
+}
+#or .index-modal-range {
+	margin-top: 15px;
+}
+#or .index-geo-label {
+	margin-bottom: 30px;
+}
