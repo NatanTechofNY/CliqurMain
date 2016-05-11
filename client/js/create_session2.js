@@ -24,7 +24,7 @@ if (Meteor.isClient) {
     'click .ses_custom-option': function(event) {
       $(event.currentTarget).parents(".ses_custom-select-wrapper").find("select").val($(event.currentTarget).data("value"));
       $(event.currentTarget).parents(".ses_custom-options").find(".ses_custom-option").removeClass("ses_selection");
-      $(event.currentTarget).addClass("selection");
+      $(event.currentTarget).addClass("ses_selection");
       $(event.currentTarget).parents(".ses_custom-select").removeClass("ses_opened");
       $(event.currentTarget).parents(".ses_custom-select").find(".ses_custom-select-trigger").text($(event.currentTarget).text());
     },
@@ -72,7 +72,7 @@ if (Meteor.isClient) {
 
 
     $(".ses_custom-option:first-of-type").hover(function() {
-      $(this).parents(".ses_custom-options").addClass("option-hover");
+      $(this).parents(".ses_custom-options").addClass("ses_option-hover");
     }, function() {
       $(this).parents(".ses_custom-options").removeClass("ses_option-hover");
     });

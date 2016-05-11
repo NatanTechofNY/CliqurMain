@@ -1,5 +1,7 @@
 
-
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 .ses_button {
   display: block;
   background-color: #5c9cd8;
@@ -69,12 +71,14 @@ width: 90%;
 .ses_button.ses_success span, .ses_button:hover span {
   left: -72%;
   opacity: 0;
+  color: #fff;
 }
-.ses_button.ses_success .ses_icon, .ses_button:hover .icon {
+.ses_button.ses_success .ses_icon, .ses_button:hover .ses_icon {
   width: 100%;
 }
-.ses_button.ses_success .ses_icon .fa, .ses_button:hover .icon .fa {
+.ses_button.ses_success .ses_icon .fa, .ses_button:hover .ses_icon .fa {
   font-size: 45px;
+  color: #fff;
 }
 .ses_button.ses_success {
   background-color: #27ae60;
@@ -219,8 +223,8 @@ overflow: hidden;
   background-color: #fff;
   margin: 11px 11px 1 0;
   color: white;
-  height: 48px;
-  width: 48px;
+  height: 49px;
+  width: 49px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
