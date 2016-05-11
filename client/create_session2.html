@@ -1,125 +1,20 @@
 <template name="create_session2">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
-        <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
-    <script type="text/javascript">$( ".toggle" ).click(function() {
-  $( '.sideBar' ).toggleClass( "slide" );
-  $( '.close' ).toggleClass( "rotate" );
-  $( '.toggle' ).toggleClass( "hide" );
-  $( '.sideNav' ).toggleClass( "fromTop" );
-});
-
-$( ".close" ).click(function() {
-  $( '.sideBar' ).toggleClass( "slide" );
-  $( '.toggle' ).toggleClass( "hide" );
-  $( '.close' ).toggleClass( "rotate" );
-  $( '.sideNav' ).toggleClass( "fromTop" );
-});
-
-(function () {
-    var removeSuccess;
-    removeSuccess = function () {
-        return $('.ses_button').removeClass('ses_success');
-    };
-    $(document).ready(function () {
-        return $('.ses_button').click(function () {
-            $(this).addClass('ses_success');
-            return setTimeout(removeSuccess, 3000);
-        });
-    });
-}.call(this));
-
-
-$(".ses_custom-select").each(function() {
-  var classes = $(this).attr("class"),
-      id      = $(this).attr("id"),
-      name    = $(this).attr("name");
-  var template =  '<div class="' + classes + '">';
-      template += '<span class="ses_custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
-      template += '<div class="ses_custom-options">';
-      $(this).find("option").each(function() {
-        template += '<span class="ses_custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-      });
-  template += '</div></div>';
-  
-  $(this).wrap('<div class="ses_custom-select-wrapper"></div>');
-  $(this).hide();
-  $(this).after(template);
-});
-$(".ses_custom-option:first-of-type").hover(function() {
-  $(this).parents(".ses_custom-options").addClass("ses_option-hover");
-}, function() {
-  $(this).parents(".ses_custom-options").removeClass("ses_option-hover");
-});
-$(".ses_custom-select-trigger").on("click", function() {
-  $('html').one('click',function() {
-    $(".ses_custom-select").removeClass("ses_opened");
-  });
-  $(this).parents(".ses_custom-select").toggleClass("ses_opened");
-  event.stopPropagation();
-});
-$(".ses_custom-option").on("click", function() {
-  $(this).parents(".ses_custom-select-wrapper").find("select").val($(this).data("value"));
-  $(this).parents(".ses_custom-options").find(".ses_custom-option").removeClass("ses_selection");
-  $(this).addClass("ses_selection");
-  $(this).parents(".ses_custom-select").removeClass("ses_opened");
-  $(this).parents(".ses_custom-select").find(".ses_custom-select-trigger").text($(this).text());
-});
-
-
-
-var pagingRows = 10;
-
-var paginationOptions = {
-    innerWindow: 1,
-    left: 0,
-    right: 0
-};
-var options = {
-  valueNames: [ 'sortID', 'sortDesc'],
-  page: pagingRows,
-  plugins: [ ListPagination(paginationOptions) ],
-};
-
-var tableList = new List('tableID', options);
-
-$('.ses_jTablePageNext').on('click', function(){
-    var list = $('.ses_pagination').find('li');
-    $.each(list, function(position, element){
-        if($(element).is('.ses_active')){
-            $(list[position+1]).trigger('click');
-        }
-    })
-})
-$('.ses_jTablePagePrev').on('click', function(){
-    var list = $('.ses_pagination').find('li');
-    $.each(list, function(position, element){
-        if($(element).is('.ses_active')){
-            $(list[position-1]).trigger('click');
-        }
-    })
-})
-
-
-
-</script>
   
     <header class="ses_index_navbar">
     <ul>
-      <li><a href="/">Presentation View</a><span></span></li>
-      <li><a href="/about" style="color: red;font-size: 16px">End Session</a><span style="background-color: red"></span></li>
+      <li><a style="font-size: 13px" href="/">Presentation View &rarr;</a><span></span></li>
+      <li><a href="/about" style="color: #DB9C84;font-size: 13px">End Session</a><span style="background-color: red"></span></li>
     </ul>
   </header>
-<div style="background-image: url('/school.png');background-repeat: repeat;height:100%;width:100%;z-index: -9999;opacity: 0.8;position: absolute;"></div>
+<div style="background-image: url('/school.png');background-repeat: repeat;height:100%;width:100%;z-index: -1;opacity: 0.8;position: fixed;"></div>
 
 <div class="ses_text">
 <div class="row">
 <div class="col-md-3 ses_widget-box ses_sample-widget" style="height: 470px;margin-left: 50px">
 <div id="tableID">
       <div class="ses_widget-header">
-      <input class="ses_search" placeholder="Attendance (Type to search)">
+      <input class="ses_search" placeholder="Attendance (Click to search)">
       </div>
       <div class="ses_widget-content" style="color:black">
   <table class="ses_table-list" data-currentpage="1">
@@ -168,9 +63,9 @@ $('.ses_jTablePagePrev').on('click', function(){
     </div>
   <div class="col-md-5 ses_widget-box ses_sample-widget" style="margin-left: 50px">
       <div class="ses_widget-header">
-        <input type="text" placeholder="Questions">
+        <input type="text" placeholder="Questions (Click to search)">
         <div class="ses_box_plus">
-                <i class="fa fa-plus"></i>
+                <i class="">+</i>
         </div>
       </div>
       <div class="ses_widget-content" style="color:black">
@@ -189,7 +84,7 @@ $('.ses_jTablePagePrev').on('click', function(){
     <option value="60">60 seconds</option>
   </select><br><br>
   or set a custom time<br><br>
-      <input type="text" style="text-align: center" class="ses_poll_input" maxlength="3" max="999" placeholder="120">
+      <input type="text" style="text-align: center" class="ses_poll_input" min="1" maxlength="4" max="9999" placeholder="120">
       <br><br><br>
 <a class="ses_button" href="#" role="button" style="line-height: 70px;height: 70px;width:80%">
   <span>Start Poll</span>
@@ -203,7 +98,7 @@ $('.ses_jTablePagePrev').on('click', function(){
     </div>
 </div>
 <br><br>
-<div class="row" style="padding: 0;margin: 0;margin-top: -7%">
+<div class="row" style="padding: 0;margin: 0;margin-top: -144px;margin-bottom:90px;">
 <div class="col-md-3" style="margin-left: 50px;"></div>
       <div class="col-md-5 ses_widget-box ses_sample-widget" style="margin-left: 50px;">
       <div class="ses_widget-header">
@@ -238,4 +133,5 @@ $('.ses_jTablePagePrev').on('click', function(){
 </div>
 
 </div>
+
 </template>

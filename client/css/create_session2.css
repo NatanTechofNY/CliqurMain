@@ -1,21 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700,800);
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  padding: 0px;
-  margin: 0px;
-}
-
-body {
-  color: #444246;
-  background-color: #F7F7F7;
-  font-family: 'Open Sans', sans-serif;
-}
 
 
 .ses_button {
@@ -160,27 +142,36 @@ background-color: #F7F7F7;
 .ses_widget-box {
   background: #fff;
   width: 100%;
-    border-radius: 2px;
+  border-radius: 2px;
   box-shadow: 0px 3px 12px -6px #000; 
+  padding: 0;
 }
 .ses_widget-header {
 background-color: #d64141;
+padding: 0;
+width: 100%;
+overflow: hidden;
 }
 .ses_widget-header input {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: normal;
   margin: 0;
-  width: 80%;
+  width: 90%; width: calc(100%-48px);
   color: white;
   background-color: transparent;
   border: none;
   outline: none;
   padding: 15px 20px;
-  display: inline-block;
+  display: block;
+  float: left;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .ses_widget-header h2 {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: normal;
   margin: 0;
   width: 93%;
@@ -193,19 +184,19 @@ background-color: #d64141;
 }
 
 .ses_widget-header input::-webkit-input-placeholder {
-   color: white;
+   color: #F5F0ED;
 }
 
 .ses_widget-header input:-moz-placeholder { /* Firefox 18- */
-   color: white;  
+   color: #F5F0ED;  
 }
 
 .ses_widget-header input::-moz-placeholder {  /* Firefox 19+ */
-   color: white;  
+   color: #F5F0ED;  
 }
 
 .ses_widget-header input:-ms-input-placeholder {  
-   color: white;  
+   color: #F5F0ED;  
 }
 .ses_sample-widget {max-width: 47%;}
 
@@ -228,20 +219,34 @@ background-color: #d64141;
   background-color: #fff;
   margin: 11px 11px 1 0;
   color: white;
-  height: 51px;
+  height: 48px;
   width: 48px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          border-bottom: 1px solid #d64141;
+  -webkit-transition: all .25s;
+     -moz-transition: all .25s;
+      -ms-transition: all .25s;
+       -o-transition: all .25s;
+          transition: all .25s;
 }
 
 .ses_widget-box .ses_box_plus:hover {
-  float: right;
   background-color: transparent;
-  margin: 11px 11px 1 0;
-  color: white;
-  height: 51px;
-  width: 48px;
+  box-shadow: 0px 3px 12px -6px #111;
 }
 
-.ses_widget-box .ses_box_plus:hover i {
+.ses_widget-box .ses_box_plus i {
+  color: #d64141;
+  display: block;
+  height: 48px; line-height: 48px; width: 48px; text-align: center;
+  font-style: normal;
+  padding: 0; margin: 0;
+  font-size: 24px;
+  cursor: pointer;
+}
+.ses_widget-box .ses_box_plus:hover i{
   color: white;
 }
 
@@ -298,8 +303,24 @@ hr {
 /*Poll settings styling */
 .ses_poll_input {
   height: 100px;
-  width: 100px;
-  font-size: 50px;
+  width: 120px;
+  font-size: 42px;
+  padding: 0!important;
+  border-radius: 2px;
+  border: 1px solid #DEDEDE;
+  box-shadow: inset 0px 1px 6px -2px #DEDEDE;
+  outline: none;
+  color: #787878;
+  -webkit-transition: all .25s;
+     -moz-transition: all .25s;
+      -ms-transition: all .25s;
+       -o-transition: all .25s;
+          transition: all .25s;
+
+}
+.ses_poll_input:focus{
+  box-shadow: 0px 1px 9px -2px #DEDEDE;
+  border: 1px solid #5c9cd8;
 }
 
 
