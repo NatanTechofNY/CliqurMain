@@ -116,34 +116,34 @@
       </div>
       <div class="ses_widget-content" style="color:black">
       <center><br>
-               {{#if pollTime}}
-                      <div class="page-header create_header_text">
-                          <h1><small> Time Left: {{pollTime}} </small></h1>
-                      </div>
-<a class="ses_button" href="#" id="timerEndBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
-  <span>Close Poll</span>
-  <div class="ses_icon">
-    <i class="fa fa-clock-o"></i>
-    <i class="fa fa-check"></i>
-  </div>
-</a>
-               {{else}}
-  <select name="timeSet60" id="sources" class=" ses_custom-select sources" placeholder="Poll Time">
-    <option value="15">15 seconds</option>
-    <option value="30">30 seconds</option>
-    <option value="60">60 seconds</option>
-  </select><br><br>
-  or set a custom time<br><br>
-      <input type="text" style="text-align: center" name="timeSet" class="ses_poll_input" min="1" maxlength="4" max="9999" placeholder="120">
-      <br><br><br>
-<a class="ses_button" href="#" id="timerSetBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
-  <span>Start Poll</span>
-  <div class="ses_icon">
-    <i class="fa fa-clock-o"></i>
-    <i class="fa fa-check"></i>
-  </div>
-</a>
-{{/if}}
+       {{#if pollTime}}
+          <div class="page-header create_header_text">
+              <h1><small> Time Left: {{pollTime}} </small></h1>
+          </div>
+          <a class="ses_button" href="#" id="timerEndBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
+            <span>Close Poll</span>
+            <div class="ses_icon">
+              <i class="fa fa-clock-o"></i>
+              <i class="fa fa-check"></i>
+            </div>
+          </a>
+        {{else}}
+            <select name="timeSet60" id="sources" class=" ses_custom-select sources" placeholder="Poll Time">
+              <option value="15">15 seconds</option>
+              <option value="30">30 seconds</option>
+              <option value="60">60 seconds</option>
+            </select><br><br>
+            or set a custom time<br><br>
+            <input type="text" style="text-align: center" name="timeSet" class="ses_poll_input" min="1" maxlength="4" max="9999" placeholder="120">
+            <br><br><br>
+            <a class="ses_button" href="#" id="timerSetBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
+              <span>Start Poll</span>
+              <div class="ses_icon">
+                <i class="fa fa-clock-o"></i>
+                <i class="fa fa-check"></i>
+              </div>
+            </a>
+        {{/if}}
       </center>
       </div>
     </div>
