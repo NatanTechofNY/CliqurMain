@@ -444,11 +444,9 @@ h1 {
 }
 
 .panel {
-  max-width: 450px;
   margin: 0 auto;
 }
 .panel.panel-default{
-	padding: 18px 12px;
 }
 .panel .panel-element {
   position: relative;

@@ -61,15 +61,53 @@
 </div>
       </div>
     </div>
-  <div class="col-md-5 ses_widget-box ses_sample-widget" style="margin-left: 50px">
+  <div class="col-md-5 ses_widget-box ses_sample-widget" style="margin-left: 50px;">
       <div class="ses_widget-header">
-        <input type="text" placeholder="Questions (Click to search)">
-        <div class="ses_box_plus">
+        <input type="text" name="creatorQuestion" placeholder="Questions (Type a question and submit it using the + sign)">
+        <div id="addQuestion" class="ses_box_plus">
                 <i class="">+</i>
         </div>
       </div>
-      <div class="ses_widget-content" style="color:black">
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="ses_widget-content" style="color:black;height:330px;overflow: scroll;">
+     <div class="panel panel-default" style="width:100%;height:100%;border:none;border-radius: 0px">
+                 <div class="panel-body create_question_panel" style="border: none;width:100%">
+                    
+
+                    <div class="panel" style="border: none;width:100%;border-radius: 0px">
+
+                      {{#each questionItem}}
+                        <div class="panel-element" data-id="{{_id}}">
+                          <div class="element-actions">
+                            <button class="btn btn-action btn-hide deleteQuestionBtn"><i class="fa fa-ban"></i></button>
+                           <!--  <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button> -->
+                          </div>
+                          <div class="element-content">
+                            <button class="btn btn-more">
+                              <i class="fa fa-ellipsis-h icon-closed"></i>
+                              <i class="fa fa-times icon-open"></i>
+                              <i class="fa fa-heart-o icon-hearted"></i>
+                            </button>
+                            <div class="content-post">
+                              {{#if isPublic}}
+                                <div class="post-avatar isPublic togglePulicBtn" title="currently in public view"></div>
+                              {{else}}
+                                <div class="post-avatar isntPublic togglePulicBtn" title="send to public view"></div>
+                              {{/if}}
+                              <div class="post-content">
+                                <span class="post-title">{{thisAuthorName}}</span>
+                                <p class="post-body">{{{body}}}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {{/each}}
+
+
+
+                    </div>
+
+                </div>
+              </div>
       </div>
     </div>
       <div class="col-md-2 ses_widget-box ses_sample-widget" style="width: 250px;height: 500px;margin-left: 50px;">
@@ -78,21 +116,34 @@
       </div>
       <div class="ses_widget-content" style="color:black">
       <center><br>
+               {{#if pollTime}}
+                      <div class="page-header create_header_text">
+                          <h1><small> Time Left: {{pollTime}} </small></h1>
+                      </div>
+<a class="ses_button" href="#" id="timerEndBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
+  <span>Close Poll</span>
+  <div class="ses_icon">
+    <i class="fa fa-clock-o"></i>
+    <i class="fa fa-check"></i>
+  </div>
+</a>
+               {{else}}
   <select name="timeSet60" id="sources" class=" ses_custom-select sources" placeholder="Poll Time">
     <option value="15">15 seconds</option>
     <option value="30">30 seconds</option>
     <option value="60">60 seconds</option>
   </select><br><br>
   or set a custom time<br><br>
-      <input type="text" style="text-align: center" class="ses_poll_input" min="1" maxlength="4" max="9999" placeholder="120">
+      <input type="text" style="text-align: center" name="timeSet" class="ses_poll_input" min="1" maxlength="4" max="9999" placeholder="120">
       <br><br><br>
-<a class="ses_button" href="#" role="button" style="line-height: 70px;height: 70px;width:80%">
+<a class="ses_button" href="#" id="timerSetBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
   <span>Start Poll</span>
   <div class="ses_icon">
     <i class="fa fa-clock-o"></i>
     <i class="fa fa-check"></i>
   </div>
 </a>
+{{/if}}
       </center>
       </div>
     </div>
