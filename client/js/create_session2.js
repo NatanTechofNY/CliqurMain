@@ -160,7 +160,7 @@ Blaze._allowJavascriptUrls();
   };
 
   Template.create_session2.events({
-      'click .btn': function(e) {
+      'click #more': function(e) {
         var $t = e.currentTarget;
         var $parent;
         $parent = $($t).parents('.panel-element');

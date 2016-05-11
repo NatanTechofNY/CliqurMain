@@ -3,8 +3,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <header class="ses_index_navbar">
     <ul>
-      <li><a style="font-size: 13px" href="/">Presentation View &rarr;</a><span></span></li>
-      <li><a href="/about" style="color: #DB9C84;font-size: 13px">End Session</a><span style="background-color: red"></span></li>
+      <li><a style="font-size: 13px" target="_blank" href="/d/{{sessionId}}/p">Presentation View &rarr;</a><span></span></li>
+      <li><a id="endssn" style="color: #DB9C84;font-size: 13px">End Session</a><span style="background-color: red"></span></li>
     </ul>
   </header>
 <div style="background-image: url('/school.png');background-repeat: repeat;height:100%;width:100%;z-index: -1;opacity: 0.8;position: fixed;"></div>
@@ -82,7 +82,7 @@
                            <!--  <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button> -->
                           </div>
                           <div class="element-content">
-                            <button class="btn btn-more">
+                            <button id="more" class="btn btn-more">
                               <i class="fa fa-ellipsis-h icon-closed"></i>
                               <i class="fa fa-times icon-open"></i>
                               <i class="fa fa-heart-o icon-hearted"></i>
@@ -115,19 +115,17 @@
         <h2>Poll Settings</h2>
       </div>
       <div class="ses_widget-content" style="color:black">
-      <center><br>
+      <center>
        {{#if pollTime}}
-          <div class="page-header create_header_text">
-              <h1><small> Time Left: {{pollTime}} </small></h1>
-          </div>
-          <a class="ses_button" href="#" id="timerEndBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
-            <span>Close Poll</span>
-            <div class="ses_icon">
-              <i class="fa fa-clock-o"></i>
-              <i class="fa fa-check"></i>
-            </div>
-          </a>
-        {{else}}
+              <div class="overlay" style="position:absolute;height: 400px;width:100%;z-index:9999;padding:0px;margin:0;background-color: rgba(1,1,1,0.93);"><h1 style="background-color: transparent;color:white;padding: 5px"><br><br><br><br><br>Time Left: {{pollTime}}</h1><br><br><a class="ses_button" href="#" id="timerEndBtn" role="button" style="line-height: 70px;height: 70px;width:80%;">
+              <span>Close Poll</span>
+              <div class="ses_icon">
+                <i class="fa fa-clock-o"></i>
+                <i class="fa fa-check"></i>
+              </div>
+            </a></div>
+          {{/if}}
+          <br>
             <select name="timeSet60" id="sources" class=" ses_custom-select sources" placeholder="Poll Time">
               <option value="15">15 seconds</option>
               <option value="30">30 seconds</option>
@@ -143,7 +141,6 @@
                 <i class="fa fa-check"></i>
               </div>
             </a>
-        {{/if}}
       </center>
       </div>
     </div>
@@ -160,7 +157,7 @@
       <div class="row">
             <div class="col-md-1"></div>
       <div class="col-md-5">
-<a class="ses_button" href="#" role="button">
+<a id="createAtten" class="ses_button" href="#" role="button">
   <span>Attendance Report</span>
   <div class="ses_icon">
     <i class="fa fa-users"></i>
@@ -169,7 +166,7 @@
 </a>
 </div>
       <div class="col-md-5">
-<a class="ses_button" href="#" role="button">
+<a id="pollRespReport" class="ses_button" href="#" role="button">
   <span>Poll Report</span>
   <div class="ses_icon">
     <i class="fa fa-bar-chart"></i>
