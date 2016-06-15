@@ -200,10 +200,6 @@ input[type=password] {
 	border-radius: 0px !important;
 	
 }
-.navbar-brand {
-	color: #BDBDBD;
-	margin-left: 0.5% !important;
-}
 .navbar-brand: hover {
 	color: white;
 }

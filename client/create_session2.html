@@ -1,185 +1,91 @@
 <template name="create_session2">
-    
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <header class="ses_index_navbar">
-    <ul>
-      <li><a style="font-size: 13px" target="_blank" href="/d/{{sessionId}}/p">Presentation View &rarr;</a><span></span></li>
-      <li><a id="endssn" style="color: #DB9C84;font-size: 13px">End Session</a><span style="background-color: red"></span></li>
-    </ul>
-  </header>
-<div style="background-image: url('/school.png');background-repeat: repeat;height:100%;width:100%;z-index: -1;opacity: 0.8;position: fixed;"></div>
 
-<div class="ses_text">
-<div class="row">
-<div class="col-md-3 ses_widget-box ses_sample-widget" style="height: 470px;margin-left: 50px">
-<div id="tableID">
-      <div class="ses_widget-header">
-      <input class="ses_search" placeholder="Attendance (Click to search)">
+
+<nav id="nav-or" class="navbar navbar-default dcreate-navbar-style">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" class="dcreate-nav-img" src="/logoCliqurcopy.png">
+      </a>
+      <div class="dcreate-id-group">
+        <label>Class ID</label>
+        <input readonly="">
       </div>
-      <div class="ses_widget-content" style="color:black">
-  <table class="ses_table-list" data-currentpage="1">
-    <thead>
-      <th><button type="button" class="ses_sort" data-sort="sortID">ID #<i class="ses_caret"></i></button></th>
-      <th><button type="button" class="ses_sort" data-sort="sortDesc">Name<i class="ses_caret"></i></button></th>
-    </thead>
-    <!-- IMPORTANT, class="list" must be on tbody -->
-    <tbody class="ses_list">
-      <tr>
-        <td class="ses_minify sortID">000001</td>
-        <td class="ses_sortDesc">Alpha Bravo Charlie</td>
-      </tr>
-      <tr>
-        <td class="ses_minify sortID">000002</td>
-        <td class="ses_sortDesc">Bravo Charlie Delta</td>
-      </tr>
-      <tr>
-        <td class="ses_minify sortID">000003</td>
-        <td class="ses_sortDesc">Charlie Delto Echo</td>
-      </tr>
-      <tr>
-        <td class="ses_minify sortID">000004</td>
-        <td class="ses_sortDesc">Foxtrot</td>
-      </tr>
-      <tr>
-        <td class="ses_minify sortID">000005</td>
-        <td class="ses_sortDesc">Golf Hotel India</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="3" class="ses_table-footer">
-          <div class="ses_table-pagination">
-            <button type="button" class="btn-tablepage ses_jTablePagePrev">&laquo;</button>
-            <ul class="ses_pagination"></ul>
-            <button type="button" class="ses_btn-tablepage ses_jTablePageNext">&raquo;</button>
-          </div>
-          </td>
-      </tr>
-    </tfoot>
-  </table>
-
-</div>
-      </div>
-    </div>
-  <div class="col-md-5 ses_widget-box ses_sample-widget" style="margin-left: 50px;">
-      <div class="ses_widget-header">
-        <input type="text" name="creatorQuestion" placeholder="Questions (Type a question and submit it using the + sign)">
-        <div id="addQuestion" class="ses_box_plus">
-                <i class="">+</i>
-        </div>
-      </div>
-      <div class="ses_widget-content" style="color:black;height:330px;overflow: scroll;">
-     <div class="panel panel-default" style="width:100%;height:100%;border:none;border-radius: 0px">
-                 <div class="panel-body create_question_panel" style="border: none;width:100%">
-                    
-
-                    <div class="panel" style="border: none;width:100%;border-radius: 0px">
-
-                      {{#each questionItem}}
-                        <div class="panel-element" data-id="{{_id}}">
-                          <div class="element-actions">
-                            <button class="btn btn-action btn-hide deleteQuestionBtn"><i class="fa fa-ban"></i></button>
-                           <!--  <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button> -->
-                          </div>
-                          <div class="element-content">
-                            <button id="more" class="btn btn-more">
-                              <i class="fa fa-ellipsis-h icon-closed"></i>
-                              <i class="fa fa-times icon-open"></i>
-                              <i class="fa fa-heart-o icon-hearted"></i>
-                            </button>
-                            <div class="content-post">
-                              {{#if isPublic}}
-                                <div class="post-avatar isPublic togglePulicBtn" title="currently in public view"></div>
-                              {{else}}
-                                <div class="post-avatar isntPublic togglePulicBtn" title="send to public view"></div>
-                              {{/if}}
-                              <div class="post-content">
-                                <span class="post-title">{{thisAuthorName}}</span>
-                                <p class="post-body">{{{body}}}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      {{/each}}
-
-
-
-                    </div>
-
-                </div>
-              </div>
-      </div>
-    </div>
-      <div class="col-md-2 ses_widget-box ses_sample-widget" style="width: 250px;height: 500px;margin-left: 50px;">
-      <div class="ses_widget-header">
-        <h2>Poll Settings</h2>
-      </div>
-      <div class="ses_widget-content" style="color:black">
-      <center>
-       {{#if pollTime}}
-              <div class="overlay" style="position:absolute;height: 400px;width:100%;z-index:9999;padding:0px;margin:0;background-color: rgba(1,1,1,0.93);"><h1 style="background-color: transparent;color:white;padding: 5px"><br><br><br><br><br>Time Left: {{pollTime}}</h1><br><br><a class="ses_button" href="#" id="timerEndBtn" role="button" style="line-height: 70px;height: 70px;width:80%;">
-              <span>Close Poll</span>
-              <div class="ses_icon">
-                <i class="fa fa-clock-o"></i>
-                <i class="fa fa-check"></i>
-              </div>
-            </a></div>
-          {{/if}}
-          <br>
-            <select name="timeSet60" id="sources" class=" ses_custom-select sources" placeholder="Poll Time">
-              <option value="15">15 seconds</option>
-              <option value="30">30 seconds</option>
-              <option value="60">60 seconds</option>
-            </select><br><br>
-            or set a custom time<br><br>
-            <input type="text" style="text-align: center" name="timeSet" class="ses_poll_input" min="1" maxlength="4" max="9999" placeholder="120">
-            <br><br><br>
-            <a class="ses_button" href="#" id="timerSetBtn" role="button" style="line-height: 70px;height: 70px;width:80%">
-              <span>Start Poll</span>
-              <div class="ses_icon">
-                <i class="fa fa-clock-o"></i>
-                <i class="fa fa-check"></i>
-              </div>
-            </a>
-      </center>
-      </div>
-    </div>
-</div>
-<br><br>
-<div class="row" style="padding: 0;margin: 0;margin-top: -144px;margin-bottom:90px;">
-<div class="col-md-3" style="margin-left: 50px;"></div>
-      <div class="col-md-5 ses_widget-box ses_sample-widget" style="margin-left: 50px;">
-      <div class="ses_widget-header">
-        <h2>Generate Reports</h2>
-      </div>
-      <div class="ses_widget-content" style="color:black">
-      <center><br>
-      <div class="row">
-            <div class="col-md-1"></div>
-      <div class="col-md-5">
-<a id="createAtten" class="ses_button" href="#" role="button">
-  <span>Attendance Report</span>
-  <div class="ses_icon">
-    <i class="fa fa-users"></i>
-    <i class="fa fa-check"></i>
   </div>
-</a>
-</div>
-      <div class="col-md-5">
-<a id="pollRespReport" class="ses_button" href="#" role="button">
-  <span>Poll Report</span>
-  <div class="ses_icon">
-    <i class="fa fa-bar-chart"></i>
-    <i class="fa fa-check"></i>
-  </div>
-</a>
-</div>
-</div><br>
-      </center>
-      </div>
-    </div>
-</div>
+</nav>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </template>

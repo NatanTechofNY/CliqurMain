@@ -204,11 +204,6 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
 	
-	.navbar-brand {
-		margin-top: 0%;
-		margin-left: 0% !important;
-	}
-	
 	.login-name {
 		margin-top: 1%;
 	}
